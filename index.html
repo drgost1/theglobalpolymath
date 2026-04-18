@@ -92,7 +92,6 @@
     font-size: clamp(26px, 4.2vw, 58px);
     line-height: 1.04;
     letter-spacing: -0.01em;
-    text-transform: uppercase;
     color: var(--tgp-ink);
     margin: 0 0 10px;
     overflow-wrap: break-word;
@@ -110,9 +109,9 @@
     margin-bottom: 14px;
   }
   .lead .byline { margin-bottom: 16px; }
-  .lead figure { margin: 0 0 16px; }
+  .lead figure { margin: 0 0 14px; }
   .lead .hero {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 21 / 9;   /* tighter so the lead fits in the upper fold */
     width: 100%;
     overflow: hidden;
     background: var(--tgp-paper-deep);
@@ -127,25 +126,33 @@
     padding-top: 6px;
     border-top: .5px solid var(--tgp-paper-edge);
   }
-  .lead .prose {
-    column-count: 2;
-    column-gap: 18px;
-    column-rule: 1px solid var(--tgp-rule-thin);
+  .lead .teaser {
     font-family: var(--font-serif);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.55;
+    color: var(--tgp-ink);
+    margin: 0 0 14px;
   }
-  .lead .prose p { margin: 0 0 10px; }
-  .lead .prose p:last-child { margin-bottom: 0; }
-  .lead .prose .dek { color: var(--tgp-ink); font-weight: 700; }
-  .lead .prose .lede::first-letter {
-    font-family: var(--font-display);
-    font-weight: 800;
-    float: left;
-    font-size: 4.2em;
-    line-height: 0.88;
-    padding: 0.05em 0.08em 0 0;
+  .lead .teaser .dek { color: var(--tgp-ink); font-weight: 700; }
+  .lead .continue {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
     color: var(--tgp-navy);
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--tgp-gold);
+  }
+  .lead .continue:hover { color: var(--tgp-navy-deep); border-bottom-color: var(--tgp-gold-deep); }
+  .lead .continue .jump-page {
+    font-family: var(--font-mono);
+    color: var(--tgp-gold-deep);
+    letter-spacing: 0;
   }
 
   /* Right perspective column */
@@ -164,8 +171,7 @@
     font-family: var(--font-headline);
     font-weight: 700;
     font-size: 22px;
-    line-height: 1.1;
-    text-transform: uppercase;
+    line-height: 1.15;
     color: var(--tgp-ink);
     margin: 0 0 10px;
   }
@@ -206,7 +212,6 @@
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 28px;
-    text-transform: uppercase;
     color: var(--tgp-navy);
     letter-spacing: -.01em;
     margin: 0;
@@ -242,7 +247,6 @@
     line-height: 1.15;
     color: var(--tgp-ink);
     margin: 0 0 8px;
-    text-transform: uppercase;
     letter-spacing: -.005em;
   }
   .intl-grid h3 a { color: inherit; text-decoration: none; }
@@ -313,11 +317,10 @@
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 32px;
-    text-transform: uppercase;
     color: var(--tgp-navy);
     letter-spacing: -.01em;
     margin: 0 0 10px;
-    line-height: 1.05;
+    line-height: 1.1;
   }
   .mid-row h2 a { color: inherit; text-decoration: none; }
   .mid-row h2 a:hover { text-decoration: underline; }
@@ -417,7 +420,6 @@
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 26px;
-    text-transform: uppercase;
     color: var(--tgp-navy);
     letter-spacing: -.01em;
     margin: 0 0 14px;
@@ -695,45 +697,17 @@
             </figcaption>
           </figure>
 
-          <div class="prose">
-            <p class="lede">
-              <span class="dek">Dhaka &mdash;</span> A pioneering study published this week
-              in <i>Nature Energy</i> describes a photovoltaic architecture that combines
-              perovskite overlayers with a tandem silicon substrate, and reports conversion
-              efficiencies long thought to belong to the far side of the decade.
-            </p>
-            <p>
-              The finding is, on its face, an engineering triumph. Read sideways, it is
-              something considerably stranger: an accidental provocation to international
-              environmental law. If a single Bangladeshi&ndash;Dutch laboratory can supply
-              the energy of a small country at a fraction of the capital outlay, what
-              becomes of the treaties that apportion carbon quotas by nation?
-            </p>
-            <p>
-              &ldquo;We have, in effect, invented a fact that no existing regime knows how
-              to count,&rdquo; said Dr. Nadira Hossain, the project&rsquo;s co-lead and a
-              former fellow of the Hague Academy. &ldquo;The Paris framework assumes
-              scarcity. We have just built abundance.&rdquo;
-            </p>
-            <p>
-              Abundance, one suspects, will not be treated kindly. The scholars
-              convening at the UNFCCC&rsquo;s spring intersessional in Bonn are already
-              briefing late into the evening on what a nation-state is, for purposes of
-              the Convention, when it can supply its neighbours with power at cost.
-            </p>
-            <p>
-              In Delft, the atmosphere is more measured. Dr. Jan van der Bos, the
-              Dutch co-lead, maintains that the efficiencies are &ldquo;reproducible in
-              principle, not yet at industrial scale,&rdquo; and that the work ought to be
-              read less as a commercial announcement than as a proof-of-concept.
-            </p>
-            <p>
-              The question now traveling down the corridors of the UNFCCC is whether
-              abundance, arriving ahead of schedule and outside the developed world, will
-              be treated as the windfall it plainly is &mdash; or as something more
-              awkward. <a href="article.html" class="text-jump" style="text-decoration:none">&rarr; p. 3</a>
-            </p>
-          </div>
+          <p class="teaser">
+            <span class="dek">Dhaka &mdash;</span> A pioneering study published this week
+            in <i>Nature Energy</i> describes a photovoltaic architecture that combines
+            perovskite overlayers with a tandem silicon substrate, and reports conversion
+            efficiencies long thought to belong to the far side of the decade &mdash; an
+            engineering triumph that, read sideways, is an accidental provocation to
+            international environmental law.
+          </p>
+          <a class="continue" href="article.html">
+            Continue reading <span class="jump-page">&rarr; p. 3</span>
+          </a>
         </article>
 
         <!-- Perspective column -->
