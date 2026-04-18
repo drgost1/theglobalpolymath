@@ -9,54 +9,6 @@
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
 <style>
-  /* ---------- Trending strip ---------- */
-  .trending {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--tgp-rule-thin);
-    min-width: 0;
-  }
-  .trending-label {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: .24em;
-    text-transform: uppercase;
-    color: var(--tgp-oxblood);
-    flex-shrink: 0;
-    padding-right: 20px;
-    border-right: 1px solid var(--tgp-rule-thin);
-  }
-  .trending-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 28px;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    flex: 1;
-    min-width: 0;
-  }
-  .trending-list li {
-    white-space: nowrap;
-    font-family: var(--font-headline);
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--tgp-ink);
-  }
-  .trending-list a { color: inherit; text-decoration: none; }
-  .trending-list a:hover { color: var(--tgp-navy); text-decoration: underline; }
-  .trending-list .num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--tgp-gold-deep);
-    margin-right: 6px;
-    letter-spacing: .04em;
-  }
-
   /* ---------- Main 5-column grid ---------- */
   .grid-5 {
     display: grid;
@@ -641,17 +593,6 @@
         </div>
       </nav>
 
-      <!-- Trending / Right Now strip -->
-      <section class="trending" aria-label="Trending stories">
-        <span class="trending-label">Trending</span>
-        <ol class="trending-list">
-          <li><span class="num">1.</span><a href="article.html">Quantum Leap in Green Energy</a></li>
-          <li><span class="num">2.</span><a href="article.html">The Moral Ambiguity of AI Art</a></li>
-          <li><span class="num">3.</span><a href="article.html">ICJ Hearings on Carbon Liability</a></li>
-          <li><span class="num">4.</span><a href="article.html">Why Experts Fail in a Crisis</a></li>
-          <li><span class="num">5.</span><a href="article.html">The Quiet Decoupling</a></li>
-        </ol>
-      </section>
 
       <!-- Main 5-col grid -->
       <div class="grid-5">
