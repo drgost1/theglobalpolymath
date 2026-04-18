@@ -74,11 +74,16 @@
     border-bottom: 1px solid var(--tgp-rule-thin);
   }
   .section-lead .img {
-    height: clamp(280px, 32vw, 420px);
+    aspect-ratio: 4 / 3;
     border-right: 1px solid var(--tgp-rule-thin);
-    background: linear-gradient(180deg,#d9c99b 0%,#a78442 60%,#5a4220 100%);
-    position: relative;
+    background: var(--tgp-paper-deep);
     overflow: hidden;
+  }
+  .section-lead .img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.02) saturate(0.95);
   }
   .section-lead .text { padding: 0 28px; display: flex; flex-direction: column; justify-content: center; }
   .section-lead h2 {
@@ -114,9 +119,16 @@
   .section-list > article:first-child { padding-left: 0; }
   .section-list > article:last-child  { padding-right: 0; border-right: 0; }
   .section-list .thumb {
-    height: 160px;
+    aspect-ratio: 3 / 2;
     margin-bottom: 10px;
-    background: linear-gradient(180deg, #3a5468 0%, #1B3358 100%);
+    overflow: hidden;
+    background: var(--tgp-paper-deep);
+  }
+  .section-list .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.02) saturate(0.95);
   }
   .section-list h3 {
     font-family: var(--font-headline);
@@ -259,7 +271,7 @@
 
       <!-- Section lead -->
       <section class="section-lead">
-        <div class="img" aria-hidden="true"></div>
+        <div class="img"><img src="assets/img/section-hero.jpg" alt="Section lead photograph." loading="lazy"></div>
         <div class="text">
           <div class="kicker kicker--oxblood">The Section Lead &middot; This Week</div>
           <h2><a href="article.html">The Moral Ambiguity of AI-Generated Art</a></h2>
@@ -278,7 +290,7 @@
       <section class="section-list">
 
         <article>
-          <div class="thumb"></div>
+          <div class="thumb"><img src="assets/img/intl-hague.jpg" alt="The Hague." loading="lazy"></div>
           <div class="kicker kicker--oxblood">Analysis</div>
           <h3><a href="article.html">ICJ Hearings Open on Trans-Boundary Carbon Liability</a></h3>
           <p>For the first time, judges in the Peace Palace are being asked whether a
@@ -288,7 +300,7 @@
         </article>
 
         <article>
-          <div class="thumb"></div>
+          <div class="thumb"><img src="assets/img/intl-brussels.jpg" alt="Brussels." loading="lazy"></div>
           <div class="kicker kicker--oxblood">Europe</div>
           <h3><a href="article.html">Brussels Revisits the Digital Markets Act &mdash; Quietly</a></h3>
           <p>A working paper, leaked and then promptly footnoted out of existence, hints
@@ -298,7 +310,7 @@
         </article>
 
         <article>
-          <div class="thumb"></div>
+          <div class="thumb"><img src="assets/img/intl-monsoon.jpg" alt="South Asia." loading="lazy"></div>
           <div class="kicker kicker--oxblood">South Asia</div>
           <h3><a href="article.html">Dhaka&rsquo;s New Data Protection Bill: A First Read</a></h3>
           <p>The draft, circulated quietly among civil-society groups, is both more

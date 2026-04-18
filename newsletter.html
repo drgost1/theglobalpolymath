@@ -76,9 +76,16 @@
     margin: 0 0 14px;
   }
   .email-lead .hero {
-    height: 200px;
-    background: linear-gradient(180deg,#bcd3b8,#2e5339);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     margin-bottom: 14px;
+    background: var(--tgp-paper-deep);
+  }
+  .email-lead .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.02) saturate(0.95);
   }
   .email-lead p {
     font-family: var(--font-serif);
@@ -192,7 +199,7 @@
     <article class="email-lead">
       <div class="kick">This Week&rsquo;s Lead &nbsp;·&nbsp; Science &amp; Jurisprudence</div>
       <h1>Quantum Leap in Green Energy: A Jurisprudential Challenge</h1>
-      <div class="hero"></div>
+      <div class="hero"><img src="assets/img/hero-solar.jpg" alt="Solar and wind complex at dusk." loading="lazy"></div>
       <p>
         A consortium of researchers in Dhaka and Delft claim a fivefold gain in
         photovoltaic efficiency &mdash; and inadvertently raise questions the Hague
