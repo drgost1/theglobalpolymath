@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum Leap in Green Energy — The Global Polymath</title>
+<meta name="description" content="A consortium of researchers in Dhaka and Delft claim a fivefold gain in photovoltaic efficiency.">
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Article layout */
+  .article-wrap {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 700px) 1fr;
+    gap: 0;
+    padding: 36px 0 20px;
+  }
+  .article-rail-left,
+  .article-rail-right { padding: 0 28px; }
+  .article-rail-left {
+    border-right: 1px solid var(--tgp-rule-thin);
+    font-family: var(--font-sans);
+    font-size: 11px;
+  }
+  .article-rail-right {
+    border-left: 1px solid var(--tgp-rule-thin);
+  }
+
+  .article-rail-left .meta-block {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-left .meta-block:last-child { border-bottom: 0; }
+  .article-rail-left .meta-label {
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+  .article-rail-left .meta-val {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--tgp-ink);
+  }
+
+  .article-head { padding: 0 4px; }
+  .article-head .kick {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--tgp-forest);
+    margin-bottom: 14px;
+  }
+  .article-head h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(36px, 5.2vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: var(--tgp-ink);
+    margin: 0 0 16px;
+  }
+  .article-head .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(18px, 1.8vw, 22px);
+    line-height: 1.4;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 22px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    padding-bottom: 18px;
+  }
+  .article-head .byline-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 24px;
+  }
+  .article-head .byline-row b { color: var(--tgp-navy); font-weight: 600; }
+
+  .article-hero {
+    height: clamp(260px, 38vw, 420px);
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #bcd3b8 0%, #4a7d4a 60%, #2e5339 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .article-hero-cap {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    padding: 6px 0 22px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    margin-bottom: 24px;
+  }
+
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--tgp-ink);
+    max-width: 680px;
+  }
+  .article-body p { margin: 0 0 20px; }
+  .article-body p.lede::first-letter {
+    font-family: var(--font-display);
+    font-weight: 800;
+    float: left;
+    font-size: 4.4em;
+    line-height: 0.88;
+    padding: 0.05em 0.1em 0 0;
+    color: var(--tgp-navy);
+  }
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 36px 0 14px;
+  }
+  .article-body blockquote {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.35;
+    color: var(--tgp-navy);
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 3px double var(--tgp-navy);
+    padding: 22px 0;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .article-body .ornament {
+    text-align: center;
+    font-size: 18px;
+    color: var(--tgp-gold-deep);
+    margin: 28px 0;
+    letter-spacing: 1em;
+  }
+  .article-end {
+    text-align: center;
+    font-size: 16px;
+    color: var(--tgp-navy);
+    margin: 28px 0 10px;
+  }
+
+  .article-rail-right .related {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-right .related:last-child { border-bottom: 0; }
+  .article-rail-right .related h5 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: .5px solid var(--tgp-navy);
+  }
+  .article-rail-right .related h4 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+  }
+  .article-rail-right .related h4 a { color: inherit; text-decoration: none; }
+  .article-rail-right .related h4 a:hover { text-decoration: underline; }
+  .article-rail-right .related p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 6px;
+  }
+
+  @media (max-width: 1100px) {
+    .article-wrap { grid-template-columns: 0.8fr minmax(0, 620px) 0.8fr; padding: 28px 0 16px; }
+    .article-rail-left, .article-rail-right { padding: 0 18px; }
+  }
+  @media (max-width: 900px) {
+    .article-wrap { grid-template-columns: 1fr; gap: 0; padding: 24px 0 12px; }
+    .article-rail-left { order: 3; border-right: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-rail-right { order: 2; border-left: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-head { padding: 0; }
+    .article-body { font-size: 16px; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <!-- Top utility bar -->
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header class="masthead masthead--small">
+        <div class="masthead-row">
+          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
+          <div style="text-align:center">
+            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
+            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
+        <span>Vol. I, No. 1</span>
+        <span>Science &amp; Jurisprudence &middot; p. 3</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Front Page</a>
+        <a href="section.html?s=science" class="active">Science</a>
+        <a href="section.html?s=legal">Legal Perspective</a>
+        <a href="section.html?s=lyceum">The Lyceum</a>
+        <a href="section.html?s=literature">Literature</a>
+        <a href="section.html?s=economy">Economy</a>
+        <a href="section.html?s=psychology">Psychology</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+      </nav>
+
+      <!-- Article body -->
+      <div class="article-wrap">
+
+        <aside class="article-rail-left" aria-label="Article metadata">
+          <div class="meta-block">
+            <div class="meta-label">Filed in</div>
+            <div class="meta-val">Science · Jurisprudence</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Published</div>
+            <div class="meta-val">6 March 2026</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Reading time</div>
+            <div class="meta-val">11 minutes</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Share</div>
+            <div class="meta-val">
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Email</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">LinkedIn</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Print</a>
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Cite this piece</div>
+            <div class="meta-val" style="font-family:var(--font-mono);font-size:12px;line-height:1.5">
+              Rahman, A. &ldquo;Quantum Leap in Green Energy,&rdquo; <i>The Global Polymath</i>, I/1 (2026), p. 3.
+            </div>
+          </div>
+        </aside>
+
+        <article>
+          <div class="article-head">
+            <div class="kick">The Lead · Science &amp; Jurisprudence</div>
+            <h1>Quantum Leap in Green Energy: A Jurisprudential Challenge</h1>
+            <p class="deck">
+              A consortium of researchers in Dhaka and Delft claim a fivefold gain in
+              photovoltaic efficiency &mdash; and inadvertently raise questions the Hague
+              has not yet thought to ask.
+            </p>
+            <div class="byline-row">
+              <span><b>By Adiba Rahman</b> &nbsp;|&nbsp; Senior Correspondent</span>
+              <span>Dhaka &middot; Delft</span>
+            </div>
+
+            <figure class="article-hero-fig">
+              <div class="article-hero">
+                <svg viewBox="0 0 800 360" preserveAspectRatio="none">
+                  <rect x="0" y="250" width="800" height="110" fill="#264d2c"/>
+                  <g>
+                    <g transform="translate(40,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(140,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(240,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(340,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(440,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(540,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                    <g transform="translate(640,220)"><rect width="70" height="36" fill="#1a3456" stroke="#0F1F3A"/><line x1="35" y1="0" x2="35" y2="36" stroke="#0F1F3A"/></g>
+                  </g>
+                  <g stroke="#f5efe0" stroke-width="2.5" fill="#f5efe0">
+                    <g transform="translate(160,60)">
+                      <line x1="0" y1="0" x2="0" y2="160" stroke="#f5efe0"/><circle cx="0" cy="0" r="5"/>
+                      <line x1="0" y1="0" x2="40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-10" y2="46" stroke="#f5efe0" fill="none"/>
+                    </g>
+                    <g transform="translate(360,60)">
+                      <line x1="0" y1="0" x2="0" y2="160" stroke="#f5efe0"/><circle cx="0" cy="0" r="5"/>
+                      <line x1="0" y1="0" x2="40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-10" y2="46" stroke="#f5efe0" fill="none"/>
+                    </g>
+                    <g transform="translate(560,60)">
+                      <line x1="0" y1="0" x2="0" y2="160" stroke="#f5efe0"/><circle cx="0" cy="0" r="5"/>
+                      <line x1="0" y1="0" x2="40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-40" y2="-26" stroke="#f5efe0" fill="none"/>
+                      <line x1="0" y1="0" x2="-10" y2="46" stroke="#f5efe0" fill="none"/>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="article-hero-cap">
+                The Mongla solar-and-wind complex, photographed at dusk on the opening day
+                of the consortium&rsquo;s public trials. &mdash; <i>The Global Polymath / Coraline</i>
+              </div>
+            </figure>
+          </div>
+
+          <div class="article-body">
+            <p class="lede">
+              <b>Dhaka &mdash;</b> A pioneering study published this week in
+              <i>Nature Energy</i> describes a photovoltaic architecture that combines
+              perovskite overlayers with a tandem silicon substrate, and reports
+              conversion efficiencies long thought to belong to the far side of the decade.
+            </p>
+
+            <p>
+              The finding is, on its face, an engineering triumph. Read sideways, it is
+              something considerably stranger: an accidental provocation to international
+              environmental law. If a single Bangladeshi&ndash;Dutch laboratory can
+              supply the energy of a small country at a fraction of the capital outlay,
+              what becomes of the treaties that apportion carbon quotas by nation?
+            </p>
+
+            <p>
+              &ldquo;We have, in effect, invented a fact that no existing regime knows
+              how to count,&rdquo; said Dr. Nadira Hossain, the project&rsquo;s co-lead
+              and a former fellow of the Hague Academy. &ldquo;The Paris framework
+              assumes scarcity. We have just built abundance.&rdquo;
+            </p>
+
+            <blockquote>
+              &ldquo;The Paris framework assumes scarcity. We have just built abundance.&rdquo;
+            </blockquote>
+
+            <h2>A measurement, not a promise</h2>
+
+            <p>
+              Dr. Jan van der Bos, the Dutch co-lead, urged caution. The efficiencies,
+              he said, are &ldquo;reproducible in principle, not yet at industrial
+              scale,&rdquo; and ought to be read less as a commercial announcement than
+              as a proof-of-concept. Industrial reality, he noted, has a way of
+              reducing laboratory numbers by a factor or two. Even so, the numbers in
+              question are dramatic enough that the reduction leaves a remainder still
+              worth taking seriously.
+            </p>
+
+            <p>
+              What the consortium has measured, in essence, is a thermodynamic
+              shortcut: a device architecture in which two absorbing layers are tuned
+              to harvest different portions of the solar spectrum without the usual
+              losses at their interface. The physics is not new; the engineering is.
+              The trick, as the preprint describes it, lies in the annealing step that
+              knits the layers together.
+            </p>
+
+            <h2>The quiet corridor at the UNFCCC</h2>
+
+            <p>
+              In Bonn, the reaction has been more political. Delegates to the spring
+              intersessional session of the UN Framework Convention on Climate Change
+              are already briefing their capitals on what a nation-state is, for
+              purposes of the Convention, when it can supply its neighbours with power
+              at cost. The question, at first blush, is a technical one about
+              accounting &mdash; but the questions behind the question are older and
+              less tractable.
+            </p>
+
+            <p>
+              Counsel for the Republic of Vanuatu, which brought the first
+              trans-boundary carbon liability case before the International Court of
+              Justice last year, observed drily that &ldquo;abundance, in treaty law,
+              is always somebody&rsquo;s problem.&rdquo; It is, for the present,
+              unclear whose.
+            </p>
+
+            <h2>What it means for Bangladesh</h2>
+
+            <p>
+              For Dhaka, the implications are at once practical and rhetorical. A
+              country that has spent the better part of two decades arguing for
+              climate justice finds itself, unexpectedly, in a position to deliver it
+              &mdash; provided the industrial pipeline can be built, financed, and
+              defended against the patent thicket that will certainly follow. None of
+              these conditions is guaranteed.
+            </p>
+
+            <p>
+              The Prime Minister&rsquo;s office, approached for comment, declined to
+              be drawn. A senior civil servant, speaking on condition of anonymity,
+              allowed that &ldquo;the laboratory has put the Republic in an awkward
+              position, which is to say, a hopeful one.&rdquo;
+            </p>
+
+            <div class="ornament">&#10086;</div>
+
+            <p>
+              The question now traveling down the corridors of the UNFCCC is whether
+              abundance, arriving ahead of schedule and outside the developed world,
+              will be treated as the windfall it plainly is &mdash; or as something
+              more awkward. The answer, when it arrives, will be written as much by
+              lawyers as by engineers.
+            </p>
+
+            <p>
+              It will also, one suspects, be read in these pages first.
+            </p>
+
+            <div class="article-end">&#9632;</div>
+          </div>
+        </article>
+
+        <aside class="article-rail-right" aria-label="Related reading">
+          <section class="related">
+            <h5>Related Reading</h5>
+            <h4><a href="article.html">ICJ Hearings Open on Trans-Boundary Carbon Liability</a></h4>
+            <p>For the first time, judges in the Peace Palace are asked whether a
+               nation owes a duty of care to its neighbours&rsquo; atmosphere.</p>
+            <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 9</a>
+          </section>
+
+          <section class="related">
+            <h5>From The Lyceum</h5>
+            <h4><a href="article.html">Existential Risks in the Age of Technological Acceleration</a></h4>
+            <p>A species with Palaeolithic emotions, mediaeval institutions, and
+               god-like technology — a configuration whose stability no one has ever
+               had occasion to test.</p>
+            <a class="text-more text-more--aubergine" href="article.html">Read &rarr; p. 8</a>
+          </section>
+
+          <section class="related">
+            <h5>Editor&rsquo;s Note</h5>
+            <p style="font-family:var(--font-serif);font-size:14px;line-height:1.55;color:var(--tgp-ink)">
+              This piece will be followed, in next week&rsquo;s edition, by a companion
+              essay on the legal architecture of &ldquo;climate abundance,&rdquo; by our
+              Hague correspondent.
+            </p>
+            <div class="text-byline">— The Editors</div>
+          </section>
+
+          <section class="related">
+            <h5>Subscribe</h5>
+            <p style="font-family:var(--font-serif);font-size:14px;line-height:1.55">
+              Receive the Weekly Dispatch by email, free of charge, every Friday.
+            </p>
+            <a class="tgp-btn tgp-btn--gold" href="subscribe.html" style="font-size:12px;padding:10px 18px">Subscribe</a>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>An independent quarterly-weekly edition published from Dhaka,
+               read in thirty-four countries and answerable to none of them.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=legal">Legal Perspective</a></li>
+              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="wireframes.html">Design Explorations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>12 Gulshan Avenue, Dhaka 1212</li>
+              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li>+880 2 5566 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&#10086;</span>
+          <span>Continued on interior pages 2 &ndash; 52</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

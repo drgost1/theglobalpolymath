@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — The Global Polymath</title>
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .archive-hero {
+    padding: 40px 0 30px;
+    text-align: center;
+    border-bottom: 3px double var(--tgp-navy);
+  }
+  .archive-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -.015em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 12px;
+  }
+  .archive-hero .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: clamp(17px, 1.8vw, 20px);
+    line-height: 1.45;
+    color: var(--tgp-ink-soft);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .archive-filters {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--tgp-rule-thin);
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .archive-filters .chip {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1px solid var(--tgp-rule-thin);
+    background: transparent;
+    color: var(--tgp-navy);
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .archive-filters .chip.active,
+  .archive-filters .chip:hover {
+    background: var(--tgp-navy);
+    color: var(--tgp-paper);
+    border-color: var(--tgp-navy);
+  }
+  .archive-filters .label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-right: 6px;
+  }
+
+  .issues {
+    padding: 36px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 24px;
+  }
+  .issue {
+    display: flex;
+    flex-direction: column;
+  }
+  .issue .cover {
+    aspect-ratio: 3 / 4;
+    background: var(--tgp-paper-deep);
+    border: 1px solid var(--tgp-paper-edge);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .issue .cover .mini-masthead {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -.01em;
+    color: var(--tgp-navy);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--tgp-navy);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  .issue .cover .mini-meta {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: .08em;
+    color: var(--tgp-ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .issue .cover .mini-headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(16px, 1.8vw, 22px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: var(--tgp-ink);
+  }
+  .issue .cover .mini-kicker {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--tgp-oxblood);
+    margin-bottom: 6px;
+  }
+  .issue .cover .mini-rule {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: .5px solid var(--tgp-paper-edge);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--tgp-ink-mute);
+    display: flex;
+    justify-content: space-between;
+  }
+  .issue .meta {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 4px;
+  }
+  .issue h3 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+  }
+  .issue h3 a { color: inherit; text-decoration: none; }
+  .issue h3 a:hover { text-decoration: underline; }
+  .issue .desc {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 8px;
+  }
+  .issue .link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--tgp-navy);
+    text-decoration: none;
+  }
+  .issue .link:hover { text-decoration: underline; }
+
+  .cover--v1 { border-top: 3px solid var(--tgp-forest); }
+  .cover--v2 { border-top: 3px solid var(--tgp-oxblood); }
+  .cover--v3 { border-top: 3px solid var(--tgp-aubergine); }
+  .cover--v4 { border-top: 3px solid var(--tgp-ochre); }
+  .cover--v5 { border-top: 3px solid var(--tgp-navy); }
+  .cover--v6 { border-top: 3px solid var(--tgp-gold); }
+  .cover--v7 { border-top: 3px solid var(--tgp-forest); }
+  .cover--v8 { border-top: 3px solid var(--tgp-navy-soft); }
+
+  @media (max-width: 1100px) { .issues { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 900px)  { .issues { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px)  { .issues { grid-template-columns: 1fr 1fr; gap: 16px; } }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <header class="masthead masthead--small">
+        <div class="masthead-row">
+          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
+          <div style="text-align:center">
+            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
+            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
+        <span>Vol. I, Nos. 1 &ndash; 8</span>
+        <span>Back Issues &amp; Archive</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Front Page</a>
+        <a href="section.html?s=science">Science</a>
+        <a href="section.html?s=legal">Legal Perspective</a>
+        <a href="section.html?s=lyceum">The Lyceum</a>
+        <a href="section.html?s=literature">Literature</a>
+        <a href="section.html?s=economy">Economy</a>
+        <a href="section.html?s=psychology">Psychology</a>
+        <a href="archive.html" class="active">Archive</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+      </nav>
+
+      <!-- Hero -->
+      <header class="archive-hero">
+        <h1>The Archive</h1>
+        <p class="deck">
+          Every issue we have printed, in reverse-chronological order. Search by
+          section, by date, or by the kind of mood the piece answers to.
+        </p>
+      </header>
+
+      <!-- Filters -->
+      <div class="archive-filters" role="tablist" aria-label="Filter by section">
+        <span class="label">Filter</span>
+        <a href="#" class="chip active">All Issues</a>
+        <a href="section.html?s=science" class="chip">Science</a>
+        <a href="section.html?s=legal" class="chip">Legal</a>
+        <a href="section.html?s=lyceum" class="chip">The Lyceum</a>
+        <a href="section.html?s=literature" class="chip">Literature</a>
+        <a href="section.html?s=economy" class="chip">Economy</a>
+        <a href="section.html?s=psychology" class="chip">Psychology</a>
+      </div>
+
+      <!-- Issues -->
+      <section class="issues">
+
+        <article class="issue">
+          <div class="cover cover--v1">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 1 · 6 March 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-forest)">The Lead · Science</div>
+            <div class="mini-headline">Quantum Leap in Green Energy</div>
+            <div class="mini-rule"><span>Dhaka</span><span>p. 1 &ndash; 52</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 1 &nbsp;·&nbsp; 6 Mar 2026</div>
+          <h3><a href="index.html">Quantum Leap in Green Energy</a></h3>
+          <p class="desc">A laboratory fact with which the courts have not yet caught up.</p>
+          <a class="link" href="index.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v2">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 2 · 13 March 2026</div>
+            <div class="mini-kicker">Legal Perspective</div>
+            <div class="mini-headline">Sovereign Immunity, Revisited</div>
+            <div class="mini-rule"><span>The Hague</span><span>p. 1 &ndash; 48</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 2 &nbsp;·&nbsp; 13 Mar 2026</div>
+          <h3><a href="article.html">Sovereign Immunity, Revisited</a></h3>
+          <p class="desc">When a state&rsquo;s borders become climatological, what of its legal person?</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v3">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 3 · 20 March 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-aubergine)">The Lyceum</div>
+            <div class="mini-headline">Existential Risks</div>
+            <div class="mini-rule"><span>Essay</span><span>p. 1 &ndash; 44</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 3 &nbsp;·&nbsp; 20 Mar 2026</div>
+          <h3><a href="article.html">Existential Risks in the Age of Technological Acceleration</a></h3>
+          <p class="desc">Palaeolithic emotions, mediaeval institutions, god-like technology.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v4">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 4 · 27 March 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-ochre)">Literature</div>
+            <div class="mini-headline">Shakespeare, Four Centuries On</div>
+            <div class="mini-rule"><span>Arts &amp; Letters</span><span>p. 1 &ndash; 50</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 4 &nbsp;·&nbsp; 27 Mar 2026</div>
+          <h3><a href="article.html">Shakespeare, Four Centuries On</a></h3>
+          <p class="desc">The sonnets hold up; our relationship to them is what has not.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v5">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 5 · 3 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-navy)">Economy</div>
+            <div class="mini-headline">The Quiet Decoupling</div>
+            <div class="mini-rule"><span>Markets</span><span>p. 1 &ndash; 56</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 5 &nbsp;·&nbsp; 3 Apr 2026</div>
+          <h3><a href="article.html">The Post-Pandemic Decoupling</a></h3>
+          <p class="desc">Containers move again, along lines an economist of the 1990s would not recognise.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v6">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 6 · 10 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-gold-deep)">Psychology</div>
+            <div class="mini-headline">Crisis Decision-Making</div>
+            <div class="mini-rule"><span>Human Mind</span><span>p. 1 &ndash; 46</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 6 &nbsp;·&nbsp; 10 Apr 2026</div>
+          <h3><a href="article.html">Why Experts Fail When Experts Should Not</a></h3>
+          <p class="desc">A meta-analysis of 340 disaster after-actions, carefully reported.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v7">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 7 · 17 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-forest)">Science</div>
+            <div class="mini-headline">CRISPR at Twenty</div>
+            <div class="mini-rule"><span>Biology</span><span>p. 1 &ndash; 58</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 7 &nbsp;·&nbsp; 17 Apr 2026</div>
+          <h3><a href="article.html">CRISPR at Twenty: The Tools Grow Up</a></h3>
+          <p class="desc">The first generation of gene editors enters its austere middle age.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v8">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. I · No. 8 · 24 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-navy-soft)">Opinion</div>
+            <div class="mini-headline">On Thinking Across the Grain</div>
+            <div class="mini-rule"><span>Editorial</span><span>p. 1 &ndash; 52</span></div>
+          </div>
+          <div class="meta">Vol. I · No. 8 &nbsp;·&nbsp; 24 Apr 2026</div>
+          <h3><a href="article.html">On the Usefulness of Thinking Across the Grain</a></h3>
+          <p class="desc">Our editorial case for the publication&rsquo;s founding premise.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>An independent quarterly-weekly edition published from Dhaka.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=legal">Legal Perspective</a></li>
+              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="wireframes.html">Design Explorations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>12 Gulshan Avenue, Dhaka 1212</li>
+              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li>+880 2 5566 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&#10086;</span>
+          <span>Dhaka &middot; Bangladesh</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

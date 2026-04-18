@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Global Polymath — Homepage Wireframes</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sketch-ink: #1a1814;
+    --sketch-faint: #6b6456;
+    --sketch-box: #d9cfb8;
+    --sketch-box-strong: #a8a090;
+    --sketch-paper: #faf5e6;
+    --sketch-shade: rgba(27, 51, 88, 0.06);
+    --sketch-accent: #1B3358;
+    --sketch-gold: #C9A961;
+    --sketch-red: #7B2E2E;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: #efe8d4;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--sketch-ink);
+    min-height: 100vh;
+  }
+
+  /* -------- app chrome -------- */
+  .app-head {
+    position: sticky; top: 0; z-index: 50;
+    background: #efe8d4;
+    border-bottom: 1px solid var(--sketch-box-strong);
+    padding: 16px 32px 0;
+  }
+  .app-title {
+    display: flex; align-items: baseline; gap: 14px;
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 4px;
+  }
+  .app-title .name {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--sketch-accent);
+    text-transform: uppercase;
+  }
+  .app-title .sub {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--sketch-red);
+    font-weight: 600;
+  }
+  .app-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--sketch-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .tabs {
+    display: flex; flex-wrap: wrap; gap: 2px;
+    border-bottom: 1px solid var(--sketch-box-strong);
+    margin-bottom: -1px;
+  }
+  .tab {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 14px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--sketch-faint);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+  }
+  .tab .num {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--sketch-red);
+    margin-right: 6px;
+    font-weight: 700;
+  }
+  .tab.active {
+    color: var(--sketch-accent);
+    border-bottom-color: var(--sketch-accent);
+  }
+  .tab:hover:not(.active) { color: var(--sketch-ink); }
+
+  /* -------- stage -------- */
+  .stage {
+    padding: 32px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .var-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 18px;
+  }
+  .var-num {
+    font-family: 'Caveat', cursive;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 0.8;
+    color: var(--sketch-red);
+    transform: rotate(-4deg);
+  }
+  .var-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--sketch-accent);
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .var-desc {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--sketch-ink);
+    max-width: 700px;
+    line-height: 1.3;
+  }
+  .var-nav {
+    display: flex; gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+  }
+  .nav-btn {
+    padding: 8px 14px;
+    background: var(--sketch-paper);
+    border: 1px solid var(--sketch-box-strong);
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--sketch-accent);
+  }
+  .nav-btn:hover { background: var(--sketch-accent); color: var(--sketch-paper); }
+
+  /* -------- layout: desktop + mobile -------- */
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+  }
+  .device-label {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--sketch-faint);
+    margin: 0 0 8px 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .device-label::before {
+    content: ""; width: 12px; height: 1px; background: var(--sketch-box-strong);
+  }
+  .device-label::after {
+    content: ""; flex: 1; height: 1px; background: var(--sketch-box-strong);
+  }
+
+  /* -------- sketch primitives -------- */
+  .sheet {
+    background: var(--sketch-paper);
+    border: 1.5px solid var(--sketch-ink);
+    position: relative;
+    overflow: hidden;
+    /* subtle paper noise */
+    background-image:
+      radial-gradient(rgba(27,51,88,0.04) 1px, transparent 1px),
+      radial-gradient(rgba(123,46,46,0.03) 1px, transparent 1px);
+    background-size: 24px 24px, 48px 48px;
+    background-position: 0 0, 12px 12px;
+  }
+  .sheet.desktop { aspect-ratio: 1440 / 1100; width: 100%; }
+  .sheet.mobile { aspect-ratio: 375 / 780; width: 100%; }
+
+  /* sketchy, hand-drawn border */
+  .sheet::after {
+    content: "";
+    position: absolute; inset: 3px;
+    border: 0.5px solid rgba(26,24,20,0.25);
+    pointer-events: none;
+  }
+
+  /* the actual wire layout is an absolutely-positioned canvas system */
+  .wire {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+  }
+
+  /* sketchy dashed/solid box primitives */
+  .box {
+    border: 1px solid var(--sketch-ink);
+    background: transparent;
+    position: relative;
+  }
+  .box.shaded { background: var(--sketch-shade); }
+  .box.dashed { border-style: dashed; }
+  .box.filled-navy { background: var(--sketch-accent); color: var(--sketch-paper); }
+  .box.filled-gold { background: var(--sketch-gold); }
+
+  /* image placeholder — diagonal X */
+  .img-ph {
+    background:
+      linear-gradient(45deg, transparent calc(50% - 0.5px), var(--sketch-box-strong) calc(50% - 0.5px), var(--sketch-box-strong) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+      linear-gradient(-45deg, transparent calc(50% - 0.5px), var(--sketch-box-strong) calc(50% - 0.5px), var(--sketch-box-strong) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+      var(--sketch-shade);
+    border: 1px solid var(--sketch-ink);
+  }
+
+  /* text line placeholder — hatched, reads as lorem body */
+  .line {
+    height: 3px;
+    background: repeating-linear-gradient(90deg,
+      rgba(26,24,20,0.55) 0 6px,
+      transparent 6px 8px,
+      rgba(26,24,20,0.55) 8px 14px,
+      transparent 14px 17px);
+    margin: 4px 0;
+    border-radius: 0;
+  }
+  .line.thin {
+    height: 2px;
+    background: repeating-linear-gradient(90deg,
+      rgba(26,24,20,0.4) 0 5px,
+      transparent 5px 7px,
+      rgba(26,24,20,0.4) 7px 12px,
+      transparent 12px 15px);
+  }
+  .line.short { width: 60%; }
+  .line.med { width: 80%; }
+  .line.xs { width: 40%; }
+
+  /* headline bar — outlined, hatched fill so it reads as "big text" */
+  .hd {
+    height: 14px;
+    border: 1px solid var(--sketch-ink);
+    background: repeating-linear-gradient(135deg,
+      rgba(27,51,88,0.14) 0 3px,
+      transparent 3px 6px);
+    margin: 5px 0;
+    position: relative;
+  }
+  .hd.sm { height: 10px; }
+  .hd.xs {
+    height: 7px;
+    background: repeating-linear-gradient(135deg,
+      rgba(27,51,88,0.10) 0 3px,
+      transparent 3px 6px);
+  }
+  .hd.short { width: 70%; }
+  .hd.xshort { width: 50%; }
+
+  /* kicker pill */
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--sketch-accent);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .kicker.oxblood { color: var(--sketch-red); }
+  .kicker.gold { color: #A8893F; }
+  .kicker.forest { color: #2E5339; }
+  .kicker.aubergine { color: #4B2E4F; }
+
+  /* handwritten annotation */
+  .note {
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--sketch-red);
+    font-weight: 600;
+    line-height: 1.1;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .note::before {
+    content: "";
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--sketch-red);
+    border-radius: 50%;
+    background: transparent;
+  }
+  .note.bubble {
+    background: #fff8d0;
+    padding: 4px 8px;
+    border: 1px dashed var(--sketch-red);
+    transform: rotate(-1.5deg);
+  }
+  .note.arrow-r::after {
+    content: "→"; margin-left: 4px; font-family: serif;
+  }
+  .note.arrow-l::before {
+    content: "←"; margin-right: 4px; font-family: serif;
+    border: none; width: auto; height: auto; position: static;
+  }
+
+  /* The real masthead — looks like TGP */
+  .mast {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    color: var(--sketch-accent);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    text-align: center;
+    color: var(--sketch-accent);
+    font-size: 9px;
+  }
+
+  .dateline-sm {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sketch-faint);
+  }
+
+  /* global rules */
+  .rule { height: 1px; background: var(--sketch-ink); opacity: 0.55; }
+  .rule.thick { height: 3px; opacity: 0.8; }
+  .rule.double { height: 4px; border-top: 1px solid var(--sketch-accent); border-bottom: 1px solid var(--sketch-accent); background: transparent; }
+  .rule.gold { background: var(--sketch-gold); height: 1px; opacity: 1; }
+  .rule.v { width: 1px; height: auto; background: var(--sketch-box-strong); }
+
+  /* panels */
+  .var-panel { display: none; }
+  .var-panel.active { display: block; }
+
+  /* annotations block under the pair */
+  .annotations {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px 24px;
+    background: var(--sketch-paper);
+    border: 1px dashed var(--sketch-box-strong);
+  }
+  .anno h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sketch-accent);
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+  .anno p {
+    font-family: 'Caveat', cursive;
+    font-size: 17px;
+    line-height: 1.35;
+    margin: 0;
+    color: var(--sketch-ink);
+  }
+
+  /* tweaks panel */
+  #tweaks {
+    display: none;
+    position: fixed; bottom: 20px; right: 20px;
+    background: var(--sketch-paper);
+    border: 2px solid var(--sketch-ink);
+    padding: 16px 18px;
+    width: 260px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    z-index: 100;
+    box-shadow: 4px 4px 0 rgba(27,51,88,0.2);
+  }
+  #tweaks.on { display: block; }
+  #tweaks h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0 0 4px;
+    color: var(--sketch-accent);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  #tweaks .t-sub {
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--sketch-red);
+    margin-bottom: 12px;
+  }
+  #tweaks label {
+    display: block;
+    margin: 10px 0 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--sketch-faint);
+  }
+  #tweaks .seg {
+    display: flex; border: 1px solid var(--sketch-ink);
+  }
+  #tweaks .seg button {
+    flex: 1;
+    background: transparent; border: none;
+    padding: 6px 4px;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: var(--sketch-ink);
+  }
+  #tweaks .seg button + button { border-left: 1px solid var(--sketch-ink); }
+  #tweaks .seg button.on {
+    background: var(--sketch-accent); color: var(--sketch-paper);
+  }
+
+  /* sketchiness modifiers */
+  body.sketch-lo .sheet::after { display: none; }
+  body.sketch-lo .note { opacity: 0; }
+
+  body.sketch-hi {
+    /* amp up: rotate boxes a touch, wobbly borders */
+  }
+  body.sketch-hi .box,
+  body.sketch-hi .img-ph,
+  body.sketch-hi .sheet { filter: url(#wobble); }
+
+  /* hide mobile pane toggle */
+  body.hide-mobile .pair { grid-template-columns: 1fr; }
+  body.hide-mobile .pair .mobile-wrap { display: none; }
+</style>
+</head>
+<body class="sketch-med">
+
+<!-- SVG filter for "wobble" sketchy edges -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="wobble">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" />
+    <feDisplacementMap in="SourceGraphic" scale="1.2" />
+  </filter>
+</svg>
+
+<header class="app-head">
+  <h1 class="app-title">
+    <span class="name">The Global Polymath</span>
+    <span class="sub">— homepage wireframes, v1</span>
+    <a href="index.html" style="margin-left:auto;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--sketch-accent);text-decoration:none;border:1px solid var(--sketch-box-strong);padding:6px 12px;background:var(--sketch-paper);">← Back to Site</a>
+  </h1>
+  <div class="app-meta">Dhaka · Desktop + Mobile · 8 exploratory directions · Low-fi</div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+
+<main id="stage" class="stage"></main>
+
+<!-- Tweaks panel -->
+<div id="tweaks">
+  <h3>Tweaks</h3>
+  <div class="t-sub">for the wireframes</div>
+
+  <label>Sketchiness</label>
+  <div class="seg" data-tweak="sketch">
+    <button data-val="lo">Clean</button>
+    <button data-val="med" class="on">Med</button>
+    <button data-val="hi">Wobbly</button>
+  </div>
+
+  <label>Mobile pane</label>
+  <div class="seg" data-tweak="mobile">
+    <button data-val="show" class="on">Show</button>
+    <button data-val="hide">Hide</button>
+  </div>
+
+  <label>Annotations</label>
+  <div class="seg" data-tweak="notes">
+    <button data-val="on" class="on">On</button>
+    <button data-val="off">Off</button>
+  </div>
+</div>
+
+<script src="wireframes.js"></script>
+</body>
+</html>

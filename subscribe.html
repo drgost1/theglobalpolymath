@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe — The Global Polymath</title>
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .sub-hero {
+    padding: 48px 0 36px;
+    text-align: center;
+    border-bottom: 3px double var(--tgp-navy);
+  }
+  .sub-hero .kick {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--tgp-gold-deep);
+    margin-bottom: 10px;
+  }
+  .sub-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -.015em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 14px;
+  }
+  .sub-hero .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.45;
+    color: var(--tgp-ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .plans {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .plan {
+    padding: 30px 26px;
+    border-right: 1px solid var(--tgp-rule-thin);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .plan:last-child { border-right: 0; }
+  .plan.featured {
+    background: var(--tgp-paper-deep);
+    border-top: 3px solid var(--tgp-gold);
+    border-bottom: 3px solid var(--tgp-gold);
+  }
+  .plan .badge {
+    position: absolute;
+    top: -12px;
+    left: 26px;
+    background: var(--tgp-gold);
+    color: var(--tgp-navy);
+    padding: 4px 10px;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .plan .kicker {
+    color: var(--tgp-navy);
+    margin-bottom: 14px;
+  }
+  .plan h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 6px;
+  }
+  .plan .blurb {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 20px;
+  }
+  .plan .price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--tgp-navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .plan .price .per {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--tgp-ink-mute);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-left: 6px;
+  }
+  .plan .price-note {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tgp-ink-mute);
+    margin: 0 0 18px;
+  }
+  .plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--tgp-paper-edge);
+  }
+  .plan li {
+    padding: 9px 0 9px 20px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--tgp-ink);
+    position: relative;
+  }
+  .plan li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--tgp-gold-deep);
+    font-size: 12px;
+  }
+  .plan li.muted { color: var(--tgp-ink-faint); }
+  .plan li.muted::before { color: var(--tgp-ink-faint); content: '·'; }
+  .plan .cta { margin-top: auto; }
+
+  .sub-form {
+    margin: 28px 0;
+    padding: 32px 36px;
+    background: var(--tgp-paper-deep);
+    border: 1px solid var(--tgp-paper-edge);
+  }
+  .sub-form h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    letter-spacing: -.01em;
+    margin: 0 0 8px;
+  }
+  .sub-form p {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 20px;
+    max-width: 520px;
+  }
+  .sub-form .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    max-width: 720px;
+  }
+  .sub-form input,
+  .sub-form button {
+    font-family: var(--font-sans);
+    font-size: 14px;
+  }
+  .sub-form input[type=email],
+  .sub-form input[type=text] {
+    padding: 12px 14px;
+    border: 1px solid var(--tgp-rule-thin);
+    background: var(--tgp-paper);
+    color: var(--tgp-ink);
+    border-radius: 0;
+    font-family: var(--font-serif);
+  }
+  .sub-form input:focus {
+    outline: none;
+    border-color: var(--tgp-navy);
+  }
+  .sub-form .disclaim {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .guarantee {
+    padding: 24px 0;
+    margin-top: 28px;
+    border-top: 3px double var(--tgp-navy);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .guarantee h4 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 8px;
+  }
+  .guarantee p {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--tgp-ink);
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .plans { grid-template-columns: 1fr; }
+    .plan {
+      border-right: 0;
+      border-bottom: 1px solid var(--tgp-rule-thin);
+    }
+    .plan:last-child { border-bottom: 0; }
+  }
+  @media (max-width: 900px) {
+    .sub-form .row { grid-template-columns: 1fr; }
+    .guarantee { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <header class="masthead masthead--small">
+        <div class="masthead-row">
+          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
+          <div style="text-align:center">
+            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
+            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
+        <span>Vol. I, No. 1</span>
+        <span>Subscriptions &amp; Memberships</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Front Page</a>
+        <a href="section.html?s=science">Science</a>
+        <a href="section.html?s=legal">Legal Perspective</a>
+        <a href="section.html?s=lyceum">The Lyceum</a>
+        <a href="section.html?s=literature">Literature</a>
+        <a href="section.html?s=economy">Economy</a>
+        <a href="section.html?s=psychology">Psychology</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html" class="active">Subscribe</a>
+      </nav>
+
+      <!-- Hero -->
+      <header class="sub-hero">
+        <div class="kick">Subscribe</div>
+        <h1>Read Slowly. Think Sideways.</h1>
+        <p class="deck">
+          <i>The Global Polymath</i> is a reader-supported publication. Our three
+          subscription tiers buy different amounts of patience with the same
+          editorial posture.
+        </p>
+      </header>
+
+      <!-- Plans -->
+      <section class="plans">
+
+        <div class="plan">
+          <div class="kicker">Digital</div>
+          <h3>The Weekly</h3>
+          <p class="blurb">Our full weekly edition, delivered each Friday to your inbox.</p>
+          <div class="price">৳600<span class="per">/ mo</span></div>
+          <p class="price-note">Or ৳6,000 annually &middot; cancel at any time.</p>
+          <ul>
+            <li>Weekly Dispatch email, every Friday</li>
+            <li>Full digital access to all articles</li>
+            <li>Unabridged long-reads and essays</li>
+            <li>Archive access, back to Vol. I, No. 1</li>
+            <li class="muted">Print edition not included</li>
+            <li class="muted">No founder&rsquo;s-list privileges</li>
+          </ul>
+          <div class="cta">
+            <a class="tgp-btn" href="#subscribe-form" style="width:100%;text-align:center;box-sizing:border-box">Choose The Weekly</a>
+          </div>
+        </div>
+
+        <div class="plan featured">
+          <div class="badge">Most Considered</div>
+          <div class="kicker">Print &amp; Digital</div>
+          <h3>The Broadsheet</h3>
+          <p class="blurb">The printed weekly, hand-folded in Dhaka, posted wherever you read.</p>
+          <div class="price">৳1,400<span class="per">/ mo</span></div>
+          <p class="price-note">Or ৳15,000 annually &middot; international shipping included.</p>
+          <ul>
+            <li>Everything in The Weekly</li>
+            <li>Printed broadsheet, posted weekly</li>
+            <li>Saturday Lyceum supplement (monthly)</li>
+            <li>Early access to long-reads (48 hrs)</li>
+            <li>Letters-to-the-Editor priority review</li>
+            <li class="muted">Founder&rsquo;s-list editions sold separately</li>
+          </ul>
+          <div class="cta">
+            <a class="tgp-btn tgp-btn--gold" href="#subscribe-form" style="width:100%;text-align:center;box-sizing:border-box">Choose The Broadsheet</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="kicker kicker--ochre">Patron</div>
+          <h3>The Founder&rsquo;s List</h3>
+          <p class="blurb">For readers who want their name in the colophon, and their ear in the editorial.</p>
+          <div class="price">৳12,000<span class="per">/ yr</span></div>
+          <p class="price-note">Or by standing order &middot; 140 readers, annually capped.</p>
+          <ul>
+            <li>Everything in The Broadsheet</li>
+            <li>Hand-numbered founder&rsquo;s edition</li>
+            <li>Annual name-in-colophon</li>
+            <li>Private quarterly editorial correspondence</li>
+            <li>Invitation to the annual Gulshan reading</li>
+            <li>One bespoke long-read commissioned for you</li>
+          </ul>
+          <div class="cta">
+            <a class="tgp-btn" href="#subscribe-form" style="width:100%;text-align:center;box-sizing:border-box;background:var(--tgp-ochre);border-color:var(--tgp-ochre)">Join the List</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Form -->
+      <section class="sub-form" id="subscribe-form">
+        <h2>Start Your Subscription</h2>
+        <p>We&rsquo;ll send you a single email to confirm and, once you&rsquo;ve
+           confirmed, nothing else until Friday noon.</p>
+        <form onsubmit="event.preventDefault(); this.innerHTML='<div class=&quot;text-mono&quot; style=&quot;font-size:14px;color:var(--tgp-navy);padding:10px 0&quot;>Thank you. A confirmation has been dispatched to your inbox.</div>'">
+          <div class="row">
+            <input type="text" placeholder="Your name" required aria-label="Name">
+            <input type="email" placeholder="Your email address" required aria-label="Email">
+            <button type="submit" class="tgp-btn tgp-btn--gold">Subscribe</button>
+          </div>
+          <div class="disclaim">
+            By subscribing you agree to our letters-of-record privacy posture &mdash;
+            we keep the minimum, and we keep it in Dhaka.
+          </div>
+        </form>
+      </section>
+
+      <!-- Guarantees -->
+      <section class="guarantee">
+        <div>
+          <h4>No Advertising</h4>
+          <p>The Trust receives no advertising revenue. What you pay is what pays.</p>
+        </div>
+        <div>
+          <h4>No Paywalls in Bangladesh</h4>
+          <p>Readers with a Bangladesh IP address may read everything, free of charge,
+             for as long as we can afford it.</p>
+        </div>
+        <div>
+          <h4>Cancel Anytime</h4>
+          <p>One email ends it. We will ask once whether you would like to tell us why;
+             you are under no obligation to answer.</p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>An independent quarterly-weekly edition published from Dhaka.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=legal">Legal Perspective</a></li>
+              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="wireframes.html">Design Explorations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>12 Gulshan Avenue, Dhaka 1212</li>
+              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li>+880 2 5566 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&#10086;</span>
+          <span>Dhaka &middot; Bangladesh</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

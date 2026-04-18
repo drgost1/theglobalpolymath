@@ -7,84 +7,14 @@
 <meta name="description" content="The Global Polymath — where empirical science meets human philosophy and jurisprudence.">
 <link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
 <link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
 <style>
-  html, body { margin: 0; padding: 0; background: var(--tgp-paper-deep); }
-  body { font-family: var(--font-serif); }
-
-  .page-shell {
-    background: var(--tgp-paper);
-    box-shadow: 0 6px 40px -16px rgba(15,31,58,.25);
-    max-width: 1280px;
-    margin: 24px auto;
-  }
-  .front-page { padding: 28px 36px 40px; }
-
-  /* Masthead */
-  .masthead { border-bottom: 3px double var(--tgp-navy); padding-bottom: 14px; }
-  .masthead-row { display: flex; align-items: center; justify-content: center; gap: 28px; }
-  .masthead-emblem { flex-shrink: 0; }
-  .masthead-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 84px;
-    letter-spacing: -0.02em;
-    line-height: 1;
-    color: var(--tgp-navy);
-    text-transform: uppercase;
-  }
-  .masthead-tagline {
-    font-family: var(--font-sans);
-    font-size: 12px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--tgp-navy);
-    margin-top: 10px;
-    font-weight: 500;
-  }
-
-  /* Dateline */
-  .dateline {
-    border-bottom: 1px solid var(--tgp-navy);
-    padding: 8px 0;
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--tgp-ink-soft);
-  }
-  .dateline b { color: var(--tgp-navy); }
-
-  /* Main grid */
+  /* ---------- Main 5-column grid ---------- */
   .grid-5 {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr 1.15fr;
     gap: 0;
     padding-top: 20px;
-  }
-
-  /* Kickers */
-  .kicker {
-    font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--tgp-navy);
-    padding-bottom: 6px;
-    border-bottom: .5px solid currentColor;
-    margin-bottom: 10px;
-  }
-  .kicker--gold     { color: var(--tgp-gold-deep); }
-  .kicker--oxblood  { color: var(--tgp-oxblood); }
-  .kicker--aubergine{ color: var(--tgp-aubergine); }
-  .kicker--forest   { color: var(--tgp-forest); }
-  .kicker--ochre    { color: var(--tgp-ochre); }
-  .kicker em {
-    text-transform: none;
-    letter-spacing: normal;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--tgp-ink-mute);
   }
 
   /* Today's Imperatives */
@@ -142,44 +72,34 @@
   .lead h1 {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: 60px;
+    font-size: clamp(34px, 4.6vw, 58px);
     line-height: 1.02;
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--tgp-ink);
     margin: 0 0 10px;
   }
+  .lead h1 a { color: inherit; text-decoration: none; }
   .lead h1 .accent { color: var(--tgp-navy); }
   .lead .deck {
     font-family: var(--font-serif-alt);
     font-style: italic;
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(17px, 1.6vw, 20px);
     line-height: 1.35;
     color: var(--tgp-ink-soft);
     margin-bottom: 14px;
   }
-  .lead .byline {
-    font-family: var(--font-sans);
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--tgp-ink-mute);
-    margin-bottom: 16px;
-  }
+  .lead .byline { margin-bottom: 16px; }
   .lead figure { margin: 0 0 16px; }
   .lead .hero {
-    height: 240px;
+    height: clamp(220px, 28vw, 300px);
     position: relative;
     overflow: hidden;
     background: linear-gradient(180deg, #bcd3b8 0%, #4a7d4a 60%, #2e5339 100%);
   }
   .lead .hero svg { position: absolute; inset: 0; }
   .lead figcaption {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 12px;
-    color: var(--tgp-ink-mute);
     padding-top: 6px;
     border-top: .5px solid var(--tgp-paper-edge);
   }
@@ -194,13 +114,6 @@
   .lead .prose p { margin: 0 0 10px; }
   .lead .prose p:last-child { margin-bottom: 0; }
   .lead .prose .dek { color: var(--tgp-ink); font-weight: 700; }
-  .lead .prose .jump {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--tgp-gold-deep);
-  }
-
-  /* Drop cap on first paragraph */
   .lead .prose .lede::first-letter {
     font-family: var(--font-display);
     font-weight: 800;
@@ -232,6 +145,8 @@
     color: var(--tgp-ink);
     margin: 0 0 10px;
   }
+  .perspective h3 a { color: inherit; text-decoration: none; }
+  .perspective h3 a:hover { text-decoration: underline; }
   .perspective .thumb {
     height: 120px;
     position: relative;
@@ -242,24 +157,19 @@
     background: linear-gradient(135deg,#4B2E4F 0%,#7B2E2E 60%,#B8862C 100%);
   }
   .perspective .thumb--legal .canvas {
-    position: absolute;
-    inset: 15% 20%;
+    position: absolute; inset: 15% 20%;
     border: 1px solid #E5D3A0;
     background: linear-gradient(120deg,#c9a961,#4B2E4F 70%);
   }
-  .perspective .thumb--legal .brush {
-    position: absolute;
-    right: 12px; bottom: 10px;
-    width: 44px; height: 10px;
-    background: #3B362C;
-    transform: rotate(-15deg);
-  }
   .perspective .thumb--legal .handle {
-    position: absolute;
-    right: 34px; bottom: 28px;
+    position: absolute; right: 34px; bottom: 28px;
     width: 3px; height: 28px;
-    background: #3B362C;
-    transform: rotate(-15deg);
+    background: #3B362C; transform: rotate(-15deg);
+  }
+  .perspective .thumb--legal .brush {
+    position: absolute; right: 12px; bottom: 10px;
+    width: 44px; height: 10px;
+    background: #3B362C; transform: rotate(-15deg);
   }
   .perspective .thumb--lyceum { background: var(--tgp-navy-deep); }
   .perspective p {
@@ -269,21 +179,75 @@
     margin: 0 0 8px;
     color: var(--tgp-ink);
   }
-  .perspective .more {
-    font-family: var(--font-sans);
-    font-size: 11px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .more--oxblood   { color: var(--tgp-oxblood); }
-  .more--aubergine { color: var(--tgp-aubergine); }
-  .more:hover { text-decoration: underline; }
 
-  /* Bottom strip */
+  /* International row */
+  .international {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 3px double var(--tgp-navy);
+  }
+  .international .section-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 16px;
+  }
+  .international .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+  .intl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .intl-grid > article {
+    padding: 0 18px;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .intl-grid > article:first-child { padding-left: 0; }
+  .intl-grid > article:last-child  { padding-right: 0; border-right: 0; }
+  .intl-grid .img {
+    height: 160px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .intl-grid .img--hague {
+    background: linear-gradient(180deg, #d9c99b 0%, #a78442 60%, #5a4220 100%);
+  }
+  .intl-grid .img--monsoon {
+    background: linear-gradient(180deg, #8ba4b8 0%, #3a5468 55%, #1e2e3c 100%);
+  }
+  .intl-grid .img--archive {
+    background: linear-gradient(180deg, #2a4771 0%, #1B3358 100%);
+  }
+  .intl-grid h3 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--tgp-ink);
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: -.005em;
+  }
+  .intl-grid h3 a { color: inherit; text-decoration: none; }
+  .intl-grid h3 a:hover { text-decoration: underline; }
+  .intl-grid p {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 8px;
+  }
+
+  /* Bottom brief strip */
   .strip {
-    margin-top: 20px;
+    margin-top: 28px;
     padding-top: 16px;
     border-top: 3px double var(--tgp-navy);
     display: grid;
@@ -294,7 +258,8 @@
     padding: 0 18px;
     border-right: 1px solid var(--tgp-rule-thin);
   }
-  .strip > article:last-child { border-right: 0; }
+  .strip > article:first-child { padding-left: 0; }
+  .strip > article:last-child  { padding-right: 0; border-right: 0; }
   .strip h4 {
     font-family: var(--font-headline);
     font-weight: 700;
@@ -303,55 +268,268 @@
     color: var(--tgp-ink);
     margin: 0 0 8px;
   }
+  .strip h4 a { color: inherit; text-decoration: none; }
+  .strip h4 a:hover { text-decoration: underline; }
   .strip p {
     font-family: var(--font-serif);
     font-size: 13px;
     line-height: 1.5;
     color: var(--tgp-ink-soft);
-    margin: 0;
+    margin: 0 0 6px;
   }
 
-  /* Footer */
-  .page-footer {
-    margin-top: 32px;
-    padding-top: 12px;
-    border-top: 1px solid var(--tgp-rule-thin);
+  /* Opinion + Letters + Review */
+  .mid-row {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 3px double var(--tgp-navy);
+    display: grid;
+    grid-template-columns: 2fr 1.4fr 1.4fr;
+    gap: 24px;
+  }
+  .mid-row h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    letter-spacing: -.01em;
+    margin: 0 0 10px;
+    line-height: 1.05;
+  }
+  .mid-row h2 a { color: inherit; text-decoration: none; }
+  .mid-row h2 a:hover { text-decoration: underline; }
+  .mid-row p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--tgp-ink);
+    margin: 0 0 10px;
+  }
+  .mid-row .col {
+    padding-right: 24px;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .mid-row .col:last-child {
+    padding-right: 0; border-right: 0;
+  }
+  .mid-row .letter {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .mid-row .letter:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+  .mid-row .letter .title {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--tgp-ink);
+    margin-bottom: 4px;
+  }
+  .mid-row .letter .sig {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tgp-ink-mute);
+    margin-top: 4px;
+  }
+  .mid-row .book-cover {
+    aspect-ratio: 3 / 4;
+    max-width: 160px;
+    background: linear-gradient(135deg, #7B2E2E 0%, #4B2E4F 100%);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,169,97,.35);
+  }
+  .mid-row .book-cover::before {
+    content: '';
+    position: absolute; inset: 12px;
+    border: 1px solid rgba(229,211,160,.6);
+  }
+  .mid-row .book-cover::after {
+    content: 'ISHIGURO';
+    position: absolute; left: 0; right: 0; bottom: 18%;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: .2em;
+    color: #E5D3A0;
+  }
+
+  /* Pull quote between lead and international */
+  .pullquote-row {
+    margin: 28px 40px;
+    padding: 18px 0;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 3px double var(--tgp-navy);
+    text-align: center;
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.3;
+    color: var(--tgp-navy);
+  }
+  .pullquote-row .attrib {
+    display: block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  /* Inside this issue */
+  .inside {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 3px double var(--tgp-navy);
+  }
+  .inside h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    letter-spacing: -.01em;
+    margin: 0 0 14px;
+    text-align: center;
+  }
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .inside-grid > section {
+    padding: 0 18px;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .inside-grid > section:first-child { padding-left: 0; }
+  .inside-grid > section:last-child  { padding-right: 0; border-right: 0; }
+  .inside-grid h5 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: .5px solid var(--tgp-navy);
+  }
+  .inside-grid ul { list-style: none; padding: 0; margin: 0; }
+  .inside-grid li {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.45;
+    padding: 5px 0;
+    color: var(--tgp-ink);
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+  }
+  .inside-grid li a { color: inherit; text-decoration: none; }
+  .inside-grid li a:hover { text-decoration: underline; color: var(--tgp-navy); }
+  .inside-grid li .pg {
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--tgp-ink-mute);
+    flex-shrink: 0;
   }
 
-  /* Responsive collapse to single column */
-  @media (max-width: 960px) {
-    .front-page { padding: 20px 18px 32px; }
-    .masthead-row { flex-direction: column; gap: 14px; }
-    .masthead-title { font-size: clamp(40px, 10vw, 72px); }
-    .dateline { flex-wrap: wrap; gap: 6px 14px; font-size: 11px; }
-    .grid-5 { grid-template-columns: 1fr; }
+  /* ---------- RESPONSIVE ---------- */
+
+  /* Tablet-large */
+  @media (max-width: 1100px) {
+    .grid-5 {
+      grid-template-columns: 1fr 2fr 1.2fr;
+    }
+    .lead { grid-column: span 1; }
+    .perspective { grid-column: 3; grid-row: 1 / span 2; }
+    .imperatives {
+      grid-column: 1; grid-row: 1 / span 1;
+      padding-bottom: 18px;
+    }
+    /* Move lead story below imperatives on mid sizes? No — keep 3-col layout */
+    .lead .prose { column-count: 2; }
+    .mid-row { grid-template-columns: 1.6fr 1fr 1fr; gap: 18px; }
+  }
+
+  /* Tablet */
+  @media (max-width: 900px) {
+    .grid-5 { grid-template-columns: 1fr; padding-top: 14px; }
     .imperatives, .lead, .perspective {
       padding: 0;
       border-right: 0;
       grid-column: auto;
+      grid-row: auto;
     }
-    .imperatives { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--tgp-paper-edge); }
-    .lead { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--tgp-paper-edge); }
-    .lead h1 { font-size: clamp(32px, 7vw, 48px); }
+    .imperatives {
+      margin-bottom: 22px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--tgp-paper-edge);
+    }
+    .imperatives ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 16px;
+    }
+    .imperatives li { padding: 10px 0; }
+    .lead {
+      margin-bottom: 24px; padding-bottom: 18px;
+      border-bottom: 1px solid var(--tgp-paper-edge);
+    }
     .lead .prose { column-count: 1; }
-    .strip { grid-template-columns: 1fr; }
-    .strip > article {
+    .pullquote-row { margin: 22px 10px; }
+    .intl-grid, .strip, .inside-grid { grid-template-columns: 1fr; }
+    .intl-grid > article, .strip > article, .inside-grid > section {
       padding: 14px 0;
       border-right: 0;
       border-bottom: 1px solid var(--tgp-paper-edge);
     }
-    .strip > article:last-child { border-bottom: 0; }
+    .intl-grid > article:last-child,
+    .strip > article:last-child,
+    .inside-grid > section:last-child { border-bottom: 0; }
+    .mid-row { grid-template-columns: 1fr; gap: 0; }
+    .mid-row .col {
+      padding: 18px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--tgp-paper-edge);
+    }
+    .mid-row .col:last-child { border-bottom: 0; padding-bottom: 0; }
+  }
+
+  /* Phone */
+  @media (max-width: 560px) {
+    .imperatives ul { grid-template-columns: 1fr; }
+    .lead .hero { height: 180px; }
+    .international .section-head h2 { font-size: 22px; }
+    .mid-row h2 { font-size: 24px; }
+    .inside h2 { font-size: 20px; }
+    .pullquote-row { margin: 18px 0; padding: 14px 0; }
   }
 </style>
 </head>
 <body class="tgp">
   <div class="page-shell">
-    <main class="front-page">
+    <main class="page-body">
+
+      <!-- Top utility bar -->
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
 
       <!-- Masthead -->
       <header class="masthead">
@@ -364,15 +542,38 @@
         </div>
       </header>
 
-      <!-- Dateline -->
+      <!-- Dateline (no price) -->
       <div class="dateline">
         <span><b>Dhaka</b> · Friday, March 6, 2026</span>
         <span>Vol. I, No. 1</span>
-        <span>Price: 50 BDT</span>
         <span>www.theglobalpolymath.com</span>
       </div>
 
-      <!-- Main grid -->
+      <!-- Navigation -->
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="active">Front Page</a>
+        <a href="section.html?s=science">Science</a>
+        <a href="section.html?s=legal">Legal Perspective</a>
+        <a href="section.html?s=lyceum">The Lyceum</a>
+        <a href="section.html?s=literature">Literature</a>
+        <a href="section.html?s=economy">Economy</a>
+        <a href="section.html?s=psychology">Psychology</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+      </nav>
+
+      <!-- Markets / indices strip -->
+      <div class="markets" aria-label="Market indices">
+        <div><span class="label">BDT · USD</span><span class="val">109.42</span><span class="delta delta--up">+0.08</span></div>
+        <div><span class="label">DSE Broad</span><span class="val">5,412.18</span><span class="delta delta--up">+23.11</span></div>
+        <div><span class="label">Nikkei</span><span class="val">38,214.77</span><span class="delta delta--down">-142.06</span></div>
+        <div><span class="label">Brent Crude</span><span class="val">$74.60</span><span class="delta delta--down">-0.42</span></div>
+        <div><span class="label">Gold, 22K</span><span class="val">৳125,400</span><span class="delta delta--up">+620</span></div>
+        <div><span class="label">Dhaka · Weather</span><span class="val">27° / Hazy</span><span class="delta">AQI 164</span></div>
+      </div>
+
+      <!-- Main 5-col grid -->
       <div class="grid-5">
 
         <!-- Today's Imperatives -->
@@ -381,33 +582,43 @@
           <ul>
             <li>
               <div class="tag">Science</div>
-              <a href="#">Green Energy Breakthrough?</a>
+              <a href="article.html">Green Energy Breakthrough?</a>
               <div class="page">p. 3</div>
             </li>
             <li>
               <div class="tag">Legal</div>
-              <a href="#">Cyber Law Reform in the EU</a>
+              <a href="article.html">Cyber Law Reform in the EU</a>
               <div class="page">p. 5</div>
             </li>
             <li>
               <div class="tag">Lyceum</div>
-              <a href="#">AI &amp; Human Emotion</a>
+              <a href="article.html">AI &amp; Human Emotion</a>
               <div class="page">p. 8</div>
             </li>
             <li>
               <div class="tag">Arts</div>
-              <a href="#">Literature Review: Ishiguro</a>
+              <a href="article.html">Literature Review: Ishiguro</a>
               <div class="page">p. 12</div>
             </li>
             <li>
               <div class="tag">Economy</div>
-              <a href="#">The Rupee&rsquo;s Quiet Rally</a>
+              <a href="article.html">The Rupee&rsquo;s Quiet Rally</a>
               <div class="page">p. 15</div>
             </li>
             <li>
               <div class="tag">Psychology</div>
-              <a href="#">Chess, Chance, and Consciousness</a>
+              <a href="article.html">Chess, Chance, and Consciousness</a>
               <div class="page">p. 18</div>
+            </li>
+            <li>
+              <div class="tag">Archaeology</div>
+              <a href="article.html">Beneath the Pahārpur Stupa</a>
+              <div class="page">p. 20</div>
+            </li>
+            <li>
+              <div class="tag">Politics</div>
+              <a href="article.html">The Quiet Return of Non-Alignment</a>
+              <div class="page">p. 22</div>
             </li>
           </ul>
         </aside>
@@ -416,15 +627,17 @@
         <article class="lead">
           <div class="lead-kicker">The Lead · Science &amp; Jurisprudence</div>
           <h1>
-            Quantum Leap in Green Energy:<br>
-            <span class="accent">A Jurisprudential Challenge</span>
+            <a href="article.html">
+              Quantum Leap in Green Energy:<br>
+              <span class="accent">A Jurisprudential Challenge</span>
+            </a>
           </h1>
           <div class="deck">
             A consortium of researchers in Dhaka and Delft claim a fivefold gain in
             photovoltaic efficiency &mdash; and inadvertently raise questions the Hague has
             not yet thought to ask.
           </div>
-          <div class="byline">By Adiba Rahman &nbsp;|&nbsp; Senior Correspondent</div>
+          <div class="byline text-byline">By Adiba Rahman &nbsp;|&nbsp; Senior Correspondent</div>
 
           <figure>
             <div class="hero">
@@ -443,7 +656,7 @@
                 <g transform="translate(420,40)"><line x1="0" y1="0" x2="0" y2="110" stroke="#f5efe0" stroke-width="2"/><circle cx="0" cy="0" r="4" fill="#f5efe0"/><line x1="0" y1="0" x2="28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-8" y2="32" stroke="#f5efe0" stroke-width="2"/></g>
               </svg>
             </div>
-            <figcaption>
+            <figcaption class="text-cap">
               The Mongla solar-and-wind complex, photographed at dusk. &mdash;
               <i>The Global Polymath / Coraline</i>
             </figcaption>
@@ -470,10 +683,22 @@
               scarcity. We have just built abundance.&rdquo;
             </p>
             <p>
+              Abundance, one suspects, will not be treated kindly. The scholars
+              convening at the UNFCCC&rsquo;s spring intersessional in Bonn are already
+              briefing late into the evening on what a nation-state is, for purposes of
+              the Convention, when it can supply its neighbours with power at cost.
+            </p>
+            <p>
+              In Delft, the atmosphere is more measured. Dr. Jan van der Bos, the
+              Dutch co-lead, maintains that the efficiencies are &ldquo;reproducible in
+              principle, not yet at industrial scale,&rdquo; and that the work ought to be
+              read less as a commercial announcement than as a proof-of-concept.
+            </p>
+            <p>
               The question now traveling down the corridors of the UNFCCC is whether
               abundance, arriving ahead of schedule and outside the developed world, will
               be treated as the windfall it plainly is &mdash; or as something more
-              awkward. <span class="jump">&rarr; p. 3</span>
+              awkward. <a href="article.html" class="text-jump" style="text-decoration:none">&rarr; p. 3</a>
             </p>
           </div>
         </article>
@@ -482,7 +707,7 @@
         <aside class="perspective">
           <section class="item">
             <div class="kicker kicker--oxblood">Legal Perspective</div>
-            <h3>The Moral Ambiguity of AI-Generated Art</h3>
+            <h3><a href="article.html">The Moral Ambiguity of AI-Generated Art</a></h3>
             <div class="thumb thumb--legal">
               <div class="canvas"></div>
               <div class="handle"></div>
@@ -493,12 +718,12 @@
               who &mdash; precisely &mdash; may be said to have painted it? The courts in
               Brussels and Mumbai have begun to disagree.
             </p>
-            <a class="more more--oxblood" href="#">Continue &rarr; p. 5</a>
+            <a class="text-more text-more--oxblood" href="article.html">Continue &rarr; p. 5</a>
           </section>
 
           <section class="item">
             <div class="kicker kicker--aubergine">The Lyceum <em>· Philosophy</em></div>
-            <h3>Existential Risks in the Age of Technological Acceleration</h3>
+            <h3><a href="article.html">Existential Risks in the Age of Technological Acceleration</a></h3>
             <div class="thumb thumb--lyceum">
               <svg viewBox="0 0 200 120" width="100%" height="100%" preserveAspectRatio="none">
                 <defs>
@@ -519,35 +744,272 @@
               mediaeval institutions, and god-like technology &mdash; a configuration
               whose stability no one has ever had occasion to test.
             </p>
-            <a class="more more--aubergine" href="#">Continue &rarr; p. 8</a>
+            <a class="text-more text-more--aubergine" href="article.html">Continue &rarr; p. 8</a>
           </section>
         </aside>
       </div>
 
-      <!-- Bottom strip -->
+      <!-- Pull quote -->
+      <div class="pullquote-row">
+        &ldquo;The purpose of knowledge is action, not knowledge.&rdquo;
+        <span class="attrib">— Aristotle · cited in this week&rsquo;s Lyceum essay</span>
+      </div>
+
+      <!-- International row -->
+      <section class="international">
+        <div class="section-head">
+          <h2>International</h2>
+          <a class="text-more text-more--navy" href="section.html?s=international">See all &rarr;</a>
+        </div>
+        <div class="intl-grid">
+
+          <article>
+            <div class="img img--hague"></div>
+            <div class="kicker kicker--oxblood">The Hague</div>
+            <h3><a href="article.html">ICJ Hearings Open on Trans-Boundary Carbon Liability</a></h3>
+            <p>
+              For the first time, judges in the Peace Palace are being asked whether a
+              nation owes a duty of care to its neighbours&rsquo; atmosphere. Vanuatu&rsquo;s
+              counsel opened with a sentence so dry it drew laughter.
+            </p>
+            <div class="text-byline" style="margin-bottom:6px">By Kamran Ahmed &nbsp;|&nbsp; The Hague Correspondent</div>
+            <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 9</a>
+          </article>
+
+          <article>
+            <div class="img img--monsoon"></div>
+            <div class="kicker kicker--forest">South Asia</div>
+            <h3><a href="article.html">Monsoon 2026: The Models Disagree, and That Is the Story</a></h3>
+            <p>
+              Five regional weather services have produced five different seasonal
+              outlooks for the Bay of Bengal. The divergence, more than any single
+              forecast, is the thing to watch &mdash; and to plan for.
+            </p>
+            <div class="text-byline" style="margin-bottom:6px">By Sadia Khan &nbsp;|&nbsp; Climate Desk</div>
+            <a class="text-more text-more--forest" href="article.html">Read &rarr; p. 11</a>
+          </article>
+
+          <article>
+            <div class="img img--archive">
+              <svg viewBox="0 0 200 160" width="100%" height="100%" preserveAspectRatio="none">
+                <g stroke="#C9A961" stroke-width="1" fill="none" opacity=".7">
+                  <rect x="30" y="30" width="140" height="100"/>
+                  <line x1="60" y1="30" x2="60" y2="130"/>
+                  <line x1="100" y1="30" x2="100" y2="130"/>
+                  <line x1="140" y1="30" x2="140" y2="130"/>
+                  <line x1="30" y1="60" x2="170" y2="60"/>
+                  <line x1="30" y1="90" x2="170" y2="90"/>
+                  <line x1="30" y1="120" x2="170" y2="120"/>
+                </g>
+              </svg>
+            </div>
+            <div class="kicker kicker--aubergine">Europe</div>
+            <h3><a href="article.html">Brussels Revisits the Digital Markets Act &mdash; Quietly</a></h3>
+            <p>
+              A working paper, leaked and then promptly footnoted out of existence, hints
+              at a second-generation enforcement regime. The small print is where the
+              story is; it always is.
+            </p>
+            <div class="text-byline" style="margin-bottom:6px">By Ingrid Laurent &nbsp;|&nbsp; Brussels Bureau</div>
+            <a class="text-more text-more--aubergine" href="article.html">Read &rarr; p. 13</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Bottom brief strip -->
       <section class="strip">
         <article>
           <div class="kicker">Psychology</div>
-          <h4>Crisis Decision-Making: Why Experts Fail Exactly When Experts Should Not</h4>
-          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+          <h4><a href="article.html">Crisis Decision-Making: Why Experts Fail Exactly When Experts Should Not</a></h4>
+          <p>A new meta-analysis of 340 disaster after-actions finds a pattern:
+             expertise predicts confidence more reliably than it predicts accuracy.</p>
+          <a class="text-more text-more--navy" href="article.html">Continue &rarr;</a>
         </article>
         <article>
           <div class="kicker kicker--ochre">Literature</div>
-          <h4>Shakespeare&rsquo;s Digital Relevance, Four Centuries On</h4>
-          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+          <h4><a href="article.html">Shakespeare&rsquo;s Digital Relevance, Four Centuries On</a></h4>
+          <p>The sonnets hold up. The plays hold up. What isn&rsquo;t holding up, argues
+             our correspondent, is our relationship to reading them aloud.</p>
+          <a class="text-more text-more--ochre" href="article.html">Continue &rarr;</a>
         </article>
         <article>
           <div class="kicker kicker--forest">Global Economy</div>
-          <h4>The Post-Pandemic Landscape: A Quiet Decoupling</h4>
-          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+          <h4><a href="article.html">The Post-Pandemic Landscape: A Quiet Decoupling</a></h4>
+          <p>Containers are moving again. They are, however, moving along lines an
+             economist of the 1990s would find unrecognisable.</p>
+          <a class="text-more text-more--forest" href="article.html">Continue &rarr;</a>
         </article>
       </section>
 
-      <!-- Footer -->
-      <footer class="page-footer">
-        <span>&copy; 2026 The Global Polymath Trust</span>
-        <span>&#10086;</span>
-        <span>Continued on interior pages 2 &ndash; 24</span>
+      <!-- Opinion + Letters + Book review -->
+      <section class="mid-row">
+
+        <div class="col">
+          <div class="kicker kicker--oxblood">Editorial &middot; The Polymath&rsquo;s View</div>
+          <h2><a href="article.html">On the Usefulness of Thinking Across the Grain</a></h2>
+          <p>
+            This publication was founded on a quiet conviction: that the most
+            consequential problems of our century sit in the seams between disciplines
+            &mdash; where the climate scientist must read like a jurist, where the
+            jurist must read like a philosopher, and where the philosopher must, at
+            last, read like a child.
+          </p>
+          <p>
+            The past week furnishes a neat illustration. A laboratory announces a
+            breakthrough; a court, half a continent away, is asked to adjudicate its
+            implications; a philosopher, three centuries dead, supplies the vocabulary
+            in which the question is ultimately framed. These are not three stories.
+            They are one story, told badly in three places.
+          </p>
+          <p>
+            We propose, modestly, to tell it once, and well.
+          </p>
+          <div class="text-byline">— The Editors</div>
+        </div>
+
+        <div class="col">
+          <div class="kicker">Letters to the Editor</div>
+
+          <div class="letter">
+            <div class="title">On last week&rsquo;s Lyceum essay</div>
+            <p>
+              Your correspondent&rsquo;s invocation of Heidegger in the context of
+              deep-learning alignment is, I fear, a category error &mdash; though a
+              pleasantly written one.
+            </p>
+            <div class="sig">— Prof. R. Chakraborty, Presidency University, Calcutta</div>
+          </div>
+
+          <div class="letter">
+            <div class="title">Regarding the Padma Bridge retrospective</div>
+            <p>
+              One small correction: the design tonnage cited on page 14 is the load
+              rating, not the dead weight. An engineer&rsquo;s pedantry, for which I
+              apologise.
+            </p>
+            <div class="sig">— Mr. Ashraf Islam, BUET (Retd.), Dhaka</div>
+          </div>
+
+          <div class="letter">
+            <div class="title">A plea, respectfully</div>
+            <p>
+              Might the masthead serif be set at a point or two larger in the print
+              edition? My spectacles are not as forgiving as the layout assumes.
+            </p>
+            <div class="sig">— Dr. Farida Begum, London</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="kicker kicker--ochre">Book of the Week</div>
+          <div class="book-cover" aria-label="Book cover placeholder"></div>
+          <h2 style="font-size:20px"><a href="article.html">Klara and the Sun, Revisited</a></h2>
+          <p style="font-size:14px">
+            Five years on, Ishiguro&rsquo;s slender novel reads less like science fiction
+            and more like anticipatory grief. Our reviewer argues it is the quietest
+            indictment of the attention economy we have yet been handed.
+          </p>
+          <div class="text-byline">By Tasnim Ali &nbsp;|&nbsp; Arts &amp; Letters</div>
+        </div>
+
+      </section>
+
+      <!-- Inside this issue -->
+      <section class="inside">
+        <h2>Inside This Issue</h2>
+        <div class="inside-grid">
+
+          <section>
+            <h5>News &amp; Politics</h5>
+            <ul>
+              <li><a href="article.html">The quiet return of non-alignment</a><span class="pg">p. 22</span></li>
+              <li><a href="article.html">A ceasefire is a grammar, not a treaty</a><span class="pg">p. 24</span></li>
+              <li><a href="article.html">Dhaka&rsquo;s second metro: on time, over budget</a><span class="pg">p. 26</span></li>
+              <li><a href="article.html">Election day in a year without a calendar</a><span class="pg">p. 28</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h5>Science &amp; Tech</h5>
+            <ul>
+              <li><a href="article.html">CRISPR at twenty: the tools grow up</a><span class="pg">p. 30</span></li>
+              <li><a href="article.html">Quantum error-correction reaches threshold</a><span class="pg">p. 32</span></li>
+              <li><a href="article.html">A telescope on the far side of the Moon</a><span class="pg">p. 34</span></li>
+              <li><a href="article.html">Fusion: the decade it finally stopped joking</a><span class="pg">p. 36</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h5>Arts &amp; Letters</h5>
+            <ul>
+              <li><a href="article.html">A chamber concert at Shilpakala</a><span class="pg">p. 38</span></li>
+              <li><a href="article.html">Rilke&rsquo;s letters, in a new translation</a><span class="pg">p. 40</span></li>
+              <li><a href="article.html">The last of the hand-setters: a report</a><span class="pg">p. 42</span></li>
+              <li><a href="article.html">On re-reading Orhan Pamuk</a><span class="pg">p. 44</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h5>Business &amp; Economy</h5>
+            <ul>
+              <li><a href="article.html">The taka, after a quiet month</a><span class="pg">p. 46</span></li>
+              <li><a href="article.html">Remittance flows and what they obscure</a><span class="pg">p. 48</span></li>
+              <li><a href="article.html">A small story about a very large bank</a><span class="pg">p. 50</span></li>
+              <li><a href="article.html">Obituary: Sir James Hargreaves, 93</a><span class="pg">p. 52</span></li>
+            </ul>
+          </section>
+
+        </div>
+      </section>
+
+      <!-- Site footer -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>An independent quarterly-weekly edition published from Dhaka,
+               read in thirty-four countries and answerable to none of them.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=legal">Legal Perspective</a></li>
+              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="mailto:letters@theglobalpolymath.com">Letters to the Editor</a></li>
+              <li><a href="wireframes.html">Design Explorations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>12 Gulshan Avenue, Dhaka 1212</li>
+              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li>+880 2 5566 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&#10086;</span>
+          <span>Continued on interior pages 2 &ndash; 52</span>
+        </div>
       </footer>
 
     </main>
