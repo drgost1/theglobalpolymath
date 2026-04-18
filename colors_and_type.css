@@ -1,0 +1,285 @@
+/* =========================================================
+   THE GLOBAL POLYMATH — Design Tokens
+   "Where Empirical Science Meets Human Philosophy & Jurisprudence"
+   ========================================================= */
+
+/* Webfonts — loaded from Google Fonts CDN.
+   SUBSTITUTION NOTE: We do not have the original font files. These are the
+   closest public equivalents to the reference masthead (Playfair-style classical
+   serif w/ Caslon body + Georgia fallback). Ask the user for official .ttf/.otf
+   files if available. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ----------  BRAND CORE  ---------- */
+  --tgp-navy:        #1B3358;   /* primary masthead ink */
+  --tgp-navy-deep:   #0F1F3A;   /* headers on dark, emblem shadow */
+  --tgp-navy-soft:   #2A4771;   /* rules, secondary headlines */
+  --tgp-gold:        #C9A961;   /* emblem, rules, accents */
+  --tgp-gold-deep:   #A8893F;   /* gold hover / pressed */
+  --tgp-gold-soft:   #E5D3A0;   /* subtle gold washes */
+
+  /* ----------  PAPER / NEUTRALS  ---------- */
+  --tgp-paper:       #FBF7EE;   /* default page background — warm newsprint */
+  --tgp-paper-deep:  #F5EFE0;   /* sectional backgrounds */
+  --tgp-paper-edge:  #EDE4CE;   /* card borders, masthead rules */
+  --tgp-ink:         #1A1814;   /* body text */
+  --tgp-ink-soft:    #3B362C;   /* secondary body */
+  --tgp-ink-mute:    #6B6456;   /* captions, metadata, bylines */
+  --tgp-ink-faint:   #9A9382;   /* dividers, footnote text */
+  --tgp-rule:        #1B3358;   /* masthead hairline rules */
+  --tgp-rule-thin:   #C9B99A;   /* body rule lines */
+
+  /* ----------  SEMANTIC (editorial)  ---------- */
+  --tgp-oxblood:     #7B2E2E;   /* "Legal Perspective" section color */
+  --tgp-forest:      #2E5339;   /* "Science" section color */
+  --tgp-aubergine:   #4B2E4F;   /* "The Lyceum" / Philosophy */
+  --tgp-ochre:       #B8862C;   /* "Literature" / tags */
+
+  /* ----------  BASE TYPE FAMILIES  ---------- */
+  --font-display:    'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-headline:   'Playfair Display', 'Times New Roman', Georgia, serif;
+  --font-serif:      'Source Serif 4', 'Georgia', 'Cambria', serif;   /* body */
+  --font-serif-alt:  'Cormorant Garamond', 'Garamond', serif;          /* pull quotes, decks */
+  --font-sans:       'Inter', 'Helvetica Neue', system-ui, sans-serif; /* UI, labels */
+  --font-mono:       'IBM Plex Mono', ui-monospace, Menlo, monospace;  /* dates, section kickers */
+
+  /* ----------  TYPE SCALE  ---------- */
+  --fs-masthead:     clamp(56px, 9vw, 128px);   /* "THE GLOBAL POLYMATH" */
+  --fs-display:      clamp(40px, 5vw, 72px);    /* lead headline */
+  --fs-h1:           clamp(32px, 3.6vw, 52px);
+  --fs-h2:           clamp(24px, 2.6vw, 36px);
+  --fs-h3:           20px;
+  --fs-h4:           17px;
+  --fs-body:         17px;                       /* body serif */
+  --fs-body-sm:      15px;
+  --fs-caption:      13px;
+  --fs-kicker:       11px;                       /* small-caps section labels */
+  --fs-tagline:      14px;
+
+  /* ----------  LEADING  ---------- */
+  --lh-display:      1.02;
+  --lh-heading:      1.12;
+  --lh-body:         1.55;
+  --lh-tight:        1.25;
+
+  /* ----------  TRACKING  ---------- */
+  --ls-masthead:     -0.02em;
+  --ls-headline:     -0.01em;
+  --ls-kicker:       0.18em;   /* small-caps section labels */
+  --ls-tagline:      0.22em;
+  --ls-body:         0;
+
+  /* ----------  SPACING (8pt grid, with 4pt micro)  ---------- */
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:   12px;
+  --s-4:   16px;
+  --s-5:   24px;
+  --s-6:   32px;
+  --s-7:   48px;
+  --s-8:   64px;
+  --s-9:   96px;
+  --s-10: 128px;
+
+  /* ----------  RADII  ---------- */
+  /* The Global Polymath is a print-first brand. Corners are SHARP.
+     Only use radius for UI affordances (buttons in email, toast chips). */
+  --r-0:   0;
+  --r-1:   2px;
+  --r-2:   4px;
+  --r-pill: 999px;
+
+  /* ----------  RULES / BORDERS  ---------- */
+  --rule-hairline:   0.5px solid var(--tgp-rule);
+  --rule-thin:       1px solid var(--tgp-rule);
+  --rule-thick:      3px solid var(--tgp-navy);
+  --rule-double:     3px double var(--tgp-navy);
+  --rule-gold:       1px solid var(--tgp-gold);
+  --rule-paper:      1px solid var(--tgp-paper-edge);
+
+  /* ----------  SHADOWS (used sparingly — print aesthetic)  ---------- */
+  --shadow-paper:    0 1px 0 rgba(26, 24, 20, 0.04), 0 8px 24px -12px rgba(27, 51, 88, 0.18);
+  --shadow-card:     0 2px 0 rgba(26, 24, 20, 0.06), 0 16px 48px -20px rgba(27, 51, 88, 0.25);
+  --shadow-none:     none;
+
+  /* ----------  LAYOUT  ---------- */
+  --col-gap:         24px;
+  --col-rule:        1px solid var(--tgp-rule-thin);
+  --max-page:        1280px;
+  --max-prose:       640px;
+}
+
+/* =========================================================
+   SEMANTIC ELEMENT DEFAULTS
+   ========================================================= */
+
+body.tgp {
+  background: var(--tgp-paper);
+  color: var(--tgp-ink);
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tgp-masthead {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-masthead);
+  letter-spacing: var(--ls-masthead);
+  line-height: 1;
+  color: var(--tgp-navy);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tgp-tagline {
+  font-family: var(--font-sans);
+  font-size: var(--fs-tagline);
+  letter-spacing: var(--ls-tagline);
+  text-transform: uppercase;
+  color: var(--tgp-navy);
+  font-weight: 500;
+}
+
+.tgp-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-headline);
+  color: var(--tgp-ink);
+  text-transform: uppercase;
+}
+
+.tgp-h1 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-headline);
+  color: var(--tgp-ink);
+}
+
+.tgp-h2 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  color: var(--tgp-ink);
+}
+
+.tgp-h3 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+  color: var(--tgp-ink);
+}
+
+.tgp-kicker {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-kicker);
+  letter-spacing: var(--ls-kicker);
+  text-transform: uppercase;
+  color: var(--tgp-navy);
+}
+
+.tgp-kicker--gold { color: var(--tgp-gold-deep); }
+.tgp-kicker--oxblood { color: var(--tgp-oxblood); }
+.tgp-kicker--forest { color: var(--tgp-forest); }
+.tgp-kicker--aubergine { color: var(--tgp-aubergine); }
+
+.tgp-body {
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--tgp-ink);
+}
+
+.tgp-lede::first-letter {
+  font-family: var(--font-display);
+  font-weight: 800;
+  float: left;
+  font-size: 4.2em;
+  line-height: 0.88;
+  padding: 0.05em 0.08em 0 0;
+  color: var(--tgp-navy);
+}
+
+.tgp-byline {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tgp-ink-mute);
+}
+
+.tgp-dateline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--tgp-ink-soft);
+}
+
+.tgp-caption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-caption);
+  color: var(--tgp-ink-mute);
+}
+
+.tgp-pullquote {
+  font-family: var(--font-serif-alt);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.25;
+  color: var(--tgp-navy);
+  border-top: var(--rule-double);
+  border-bottom: var(--rule-double);
+  padding: var(--s-5) 0;
+  margin: var(--s-6) 0;
+  text-align: center;
+}
+
+.tgp-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.02em;
+  color: var(--tgp-ink-soft);
+}
+
+/* Rules & section dividers */
+.tgp-rule            { border-top: var(--rule-thin); }
+.tgp-rule--thick     { border-top: var(--rule-thick); }
+.tgp-rule--double    { border-top: var(--rule-double); height: 0; }
+.tgp-rule--gold      { border-top: var(--rule-gold); }
+.tgp-rule--hair      { border-top: var(--rule-hairline); }
+
+/* Buttons — used only in digital surfaces (email, web app) */
+.tgp-btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background: var(--tgp-navy);
+  color: var(--tgp-paper);
+  border: 1px solid var(--tgp-navy);
+  border-radius: var(--r-0);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+  text-decoration: none;
+}
+.tgp-btn:hover { background: var(--tgp-navy-deep); }
+.tgp-btn:active { background: #000; }
+.tgp-btn--gold { background: var(--tgp-gold); border-color: var(--tgp-gold); color: var(--tgp-navy); }
+.tgp-btn--gold:hover { background: var(--tgp-gold-deep); color: var(--tgp-paper); }
+.tgp-btn--ghost { background: transparent; color: var(--tgp-navy); }
+.tgp-btn--ghost:hover { background: var(--tgp-navy); color: var(--tgp-paper); }

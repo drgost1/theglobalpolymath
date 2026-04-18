@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Global Polymath — Front Page</title>
+<meta name="description" content="The Global Polymath — where empirical science meets human philosophy and jurisprudence.">
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--tgp-paper-deep); }
+  body { font-family: var(--font-serif); }
+
+  .page-shell {
+    background: var(--tgp-paper);
+    box-shadow: 0 6px 40px -16px rgba(15,31,58,.25);
+    max-width: 1280px;
+    margin: 24px auto;
+  }
+  .front-page { padding: 28px 36px 40px; }
+
+  /* Masthead */
+  .masthead { border-bottom: 3px double var(--tgp-navy); padding-bottom: 14px; }
+  .masthead-row { display: flex; align-items: center; justify-content: center; gap: 28px; }
+  .masthead-emblem { flex-shrink: 0; }
+  .masthead-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 84px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--tgp-navy);
+    text-transform: uppercase;
+  }
+  .masthead-tagline {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  /* Dateline */
+  .dateline {
+    border-bottom: 1px solid var(--tgp-navy);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--tgp-ink-soft);
+  }
+  .dateline b { color: var(--tgp-navy); }
+
+  /* Main grid */
+  .grid-5 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1.15fr;
+    gap: 0;
+    padding-top: 20px;
+  }
+
+  /* Kickers */
+  .kicker {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    padding-bottom: 6px;
+    border-bottom: .5px solid currentColor;
+    margin-bottom: 10px;
+  }
+  .kicker--gold     { color: var(--tgp-gold-deep); }
+  .kicker--oxblood  { color: var(--tgp-oxblood); }
+  .kicker--aubergine{ color: var(--tgp-aubergine); }
+  .kicker--forest   { color: var(--tgp-forest); }
+  .kicker--ochre    { color: var(--tgp-ochre); }
+  .kicker em {
+    text-transform: none;
+    letter-spacing: normal;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--tgp-ink-mute);
+  }
+
+  /* Today's Imperatives */
+  .imperatives {
+    padding: 0 16px 0 0;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .imperatives ul { list-style: none; padding: 0; margin: 0; }
+  .imperatives li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .imperatives li:last-child { border-bottom: 0; }
+  .imperatives .tag {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 4px;
+  }
+  .imperatives a {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--tgp-ink);
+    text-decoration: none;
+    display: block;
+  }
+  .imperatives a:hover { color: var(--tgp-navy-deep); text-decoration: underline; }
+  .imperatives .page {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    margin-top: 4px;
+  }
+
+  /* Lead story */
+  .lead {
+    padding: 0 20px;
+    grid-column: span 3;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .lead-kicker {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-forest);
+    margin-bottom: 8px;
+  }
+  .lead h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--tgp-ink);
+    margin: 0 0 10px;
+  }
+  .lead h1 .accent { color: var(--tgp-navy); }
+  .lead .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--tgp-ink-soft);
+    margin-bottom: 14px;
+  }
+  .lead .byline {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 16px;
+  }
+  .lead figure { margin: 0 0 16px; }
+  .lead .hero {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #bcd3b8 0%, #4a7d4a 60%, #2e5339 100%);
+  }
+  .lead .hero svg { position: absolute; inset: 0; }
+  .lead figcaption {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    padding-top: 6px;
+    border-top: .5px solid var(--tgp-paper-edge);
+  }
+  .lead .prose {
+    column-count: 2;
+    column-gap: 18px;
+    column-rule: 1px solid var(--tgp-rule-thin);
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .lead .prose p { margin: 0 0 10px; }
+  .lead .prose p:last-child { margin-bottom: 0; }
+  .lead .prose .dek { color: var(--tgp-ink); font-weight: 700; }
+  .lead .prose .jump {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-gold-deep);
+  }
+
+  /* Drop cap on first paragraph */
+  .lead .prose .lede::first-letter {
+    font-family: var(--font-display);
+    font-weight: 800;
+    float: left;
+    font-size: 4.2em;
+    line-height: 0.88;
+    padding: 0.05em 0.08em 0 0;
+    color: var(--tgp-navy);
+  }
+
+  /* Right perspective column */
+  .perspective { padding: 0 0 0 16px; }
+  .perspective .item {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    margin-bottom: 18px;
+  }
+  .perspective .item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+  .perspective h3 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--tgp-ink);
+    margin: 0 0 10px;
+  }
+  .perspective .thumb {
+    height: 120px;
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .perspective .thumb--legal {
+    background: linear-gradient(135deg,#4B2E4F 0%,#7B2E2E 60%,#B8862C 100%);
+  }
+  .perspective .thumb--legal .canvas {
+    position: absolute;
+    inset: 15% 20%;
+    border: 1px solid #E5D3A0;
+    background: linear-gradient(120deg,#c9a961,#4B2E4F 70%);
+  }
+  .perspective .thumb--legal .brush {
+    position: absolute;
+    right: 12px; bottom: 10px;
+    width: 44px; height: 10px;
+    background: #3B362C;
+    transform: rotate(-15deg);
+  }
+  .perspective .thumb--legal .handle {
+    position: absolute;
+    right: 34px; bottom: 28px;
+    width: 3px; height: 28px;
+    background: #3B362C;
+    transform: rotate(-15deg);
+  }
+  .perspective .thumb--lyceum { background: var(--tgp-navy-deep); }
+  .perspective p {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: var(--tgp-ink);
+  }
+  .perspective .more {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .more--oxblood   { color: var(--tgp-oxblood); }
+  .more--aubergine { color: var(--tgp-aubergine); }
+  .more:hover { text-decoration: underline; }
+
+  /* Bottom strip */
+  .strip {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 3px double var(--tgp-navy);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .strip > article {
+    padding: 0 18px;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .strip > article:last-child { border-right: 0; }
+  .strip h4 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.15;
+    color: var(--tgp-ink);
+    margin: 0 0 8px;
+  }
+  .strip p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0;
+  }
+
+  /* Footer */
+  .page-footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid var(--tgp-rule-thin);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-ink-mute);
+  }
+
+  /* Responsive collapse to single column */
+  @media (max-width: 960px) {
+    .front-page { padding: 20px 18px 32px; }
+    .masthead-row { flex-direction: column; gap: 14px; }
+    .masthead-title { font-size: clamp(40px, 10vw, 72px); }
+    .dateline { flex-wrap: wrap; gap: 6px 14px; font-size: 11px; }
+    .grid-5 { grid-template-columns: 1fr; }
+    .imperatives, .lead, .perspective {
+      padding: 0;
+      border-right: 0;
+      grid-column: auto;
+    }
+    .imperatives { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--tgp-paper-edge); }
+    .lead { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--tgp-paper-edge); }
+    .lead h1 { font-size: clamp(32px, 7vw, 48px); }
+    .lead .prose { column-count: 1; }
+    .strip { grid-template-columns: 1fr; }
+    .strip > article {
+      padding: 14px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--tgp-paper-edge);
+    }
+    .strip > article:last-child { border-bottom: 0; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="front-page">
+
+      <!-- Masthead -->
+      <header class="masthead">
+        <div class="masthead-row">
+          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="88" height="88">
+          <div style="text-align:center">
+            <div class="masthead-title">The Global Polymath</div>
+            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dateline -->
+      <div class="dateline">
+        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
+        <span>Vol. I, No. 1</span>
+        <span>Price: 50 BDT</span>
+        <span>www.theglobalpolymath.com</span>
+      </div>
+
+      <!-- Main grid -->
+      <div class="grid-5">
+
+        <!-- Today's Imperatives -->
+        <aside class="imperatives">
+          <div class="kicker">Today&rsquo;s Imperatives</div>
+          <ul>
+            <li>
+              <div class="tag">Science</div>
+              <a href="#">Green Energy Breakthrough?</a>
+              <div class="page">p. 3</div>
+            </li>
+            <li>
+              <div class="tag">Legal</div>
+              <a href="#">Cyber Law Reform in the EU</a>
+              <div class="page">p. 5</div>
+            </li>
+            <li>
+              <div class="tag">Lyceum</div>
+              <a href="#">AI &amp; Human Emotion</a>
+              <div class="page">p. 8</div>
+            </li>
+            <li>
+              <div class="tag">Arts</div>
+              <a href="#">Literature Review: Ishiguro</a>
+              <div class="page">p. 12</div>
+            </li>
+            <li>
+              <div class="tag">Economy</div>
+              <a href="#">The Rupee&rsquo;s Quiet Rally</a>
+              <div class="page">p. 15</div>
+            </li>
+            <li>
+              <div class="tag">Psychology</div>
+              <a href="#">Chess, Chance, and Consciousness</a>
+              <div class="page">p. 18</div>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Lead Story -->
+        <article class="lead">
+          <div class="lead-kicker">The Lead · Science &amp; Jurisprudence</div>
+          <h1>
+            Quantum Leap in Green Energy:<br>
+            <span class="accent">A Jurisprudential Challenge</span>
+          </h1>
+          <div class="deck">
+            A consortium of researchers in Dhaka and Delft claim a fivefold gain in
+            photovoltaic efficiency &mdash; and inadvertently raise questions the Hague has
+            not yet thought to ask.
+          </div>
+          <div class="byline">By Adiba Rahman &nbsp;|&nbsp; Senior Correspondent</div>
+
+          <figure>
+            <div class="hero">
+              <svg viewBox="0 0 600 240" preserveAspectRatio="none" width="100%" height="100%">
+                <rect x="0" y="170" width="600" height="70" fill="#264d2c"/>
+                <g transform="translate(40,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(110,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(180,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(250,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(320,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(390,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(460,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(530,150)"><rect width="48" height="26" fill="#1a3456" stroke="#0F1F3A"/><line x1="24" y1="0" x2="24" y2="26" stroke="#0F1F3A"/></g>
+                <g transform="translate(120,40)"><line x1="0" y1="0" x2="0" y2="110" stroke="#f5efe0" stroke-width="2"/><circle cx="0" cy="0" r="4" fill="#f5efe0"/><line x1="0" y1="0" x2="28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-8" y2="32" stroke="#f5efe0" stroke-width="2"/></g>
+                <g transform="translate(260,40)"><line x1="0" y1="0" x2="0" y2="110" stroke="#f5efe0" stroke-width="2"/><circle cx="0" cy="0" r="4" fill="#f5efe0"/><line x1="0" y1="0" x2="28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-8" y2="32" stroke="#f5efe0" stroke-width="2"/></g>
+                <g transform="translate(420,40)"><line x1="0" y1="0" x2="0" y2="110" stroke="#f5efe0" stroke-width="2"/><circle cx="0" cy="0" r="4" fill="#f5efe0"/><line x1="0" y1="0" x2="28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-28" y2="-18" stroke="#f5efe0" stroke-width="2"/><line x1="0" y1="0" x2="-8" y2="32" stroke="#f5efe0" stroke-width="2"/></g>
+              </svg>
+            </div>
+            <figcaption>
+              The Mongla solar-and-wind complex, photographed at dusk. &mdash;
+              <i>The Global Polymath / Coraline</i>
+            </figcaption>
+          </figure>
+
+          <div class="prose">
+            <p class="lede">
+              <span class="dek">Dhaka &mdash;</span> A pioneering study published this week
+              in <i>Nature Energy</i> describes a photovoltaic architecture that combines
+              perovskite overlayers with a tandem silicon substrate, and reports conversion
+              efficiencies long thought to belong to the far side of the decade.
+            </p>
+            <p>
+              The finding is, on its face, an engineering triumph. Read sideways, it is
+              something considerably stranger: an accidental provocation to international
+              environmental law. If a single Bangladeshi&ndash;Dutch laboratory can supply
+              the energy of a small country at a fraction of the capital outlay, what
+              becomes of the treaties that apportion carbon quotas by nation?
+            </p>
+            <p>
+              &ldquo;We have, in effect, invented a fact that no existing regime knows how
+              to count,&rdquo; said Dr. Nadira Hossain, the project&rsquo;s co-lead and a
+              former fellow of the Hague Academy. &ldquo;The Paris framework assumes
+              scarcity. We have just built abundance.&rdquo;
+            </p>
+            <p>
+              The question now traveling down the corridors of the UNFCCC is whether
+              abundance, arriving ahead of schedule and outside the developed world, will
+              be treated as the windfall it plainly is &mdash; or as something more
+              awkward. <span class="jump">&rarr; p. 3</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Perspective column -->
+        <aside class="perspective">
+          <section class="item">
+            <div class="kicker kicker--oxblood">Legal Perspective</div>
+            <h3>The Moral Ambiguity of AI-Generated Art</h3>
+            <div class="thumb thumb--legal">
+              <div class="canvas"></div>
+              <div class="handle"></div>
+              <div class="brush"></div>
+            </div>
+            <p>
+              When a statistical model assembles a canvas from ten million prior canvases,
+              who &mdash; precisely &mdash; may be said to have painted it? The courts in
+              Brussels and Mumbai have begun to disagree.
+            </p>
+            <a class="more more--oxblood" href="#">Continue &rarr; p. 5</a>
+          </section>
+
+          <section class="item">
+            <div class="kicker kicker--aubergine">The Lyceum <em>· Philosophy</em></div>
+            <h3>Existential Risks in the Age of Technological Acceleration</h3>
+            <div class="thumb thumb--lyceum">
+              <svg viewBox="0 0 200 120" width="100%" height="100%" preserveAspectRatio="none">
+                <defs>
+                  <pattern id="circ" width="14" height="14" patternUnits="userSpaceOnUse">
+                    <circle cx="7" cy="7" r="1" fill="#C9A961" opacity=".6"/>
+                  </pattern>
+                </defs>
+                <rect width="200" height="120" fill="url(#circ)"/>
+                <path d="M 80 30 Q 100 20 120 30 Q 130 60 120 90 Q 100 100 80 90 Q 70 60 80 30 Z"
+                      fill="none" stroke="#E5D3A0" stroke-width="1.5"/>
+                <circle cx="100" cy="55" r="3" fill="#C9A961"/>
+                <circle cx="93" cy="70" r="2" fill="#C9A961"/>
+                <circle cx="107" cy="70" r="2" fill="#C9A961"/>
+              </svg>
+            </div>
+            <p>
+              We are, an essayist once remarked, a species with Palaeolithic emotions,
+              mediaeval institutions, and god-like technology &mdash; a configuration
+              whose stability no one has ever had occasion to test.
+            </p>
+            <a class="more more--aubergine" href="#">Continue &rarr; p. 8</a>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Bottom strip -->
+      <section class="strip">
+        <article>
+          <div class="kicker">Psychology</div>
+          <h4>Crisis Decision-Making: Why Experts Fail Exactly When Experts Should Not</h4>
+          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+        </article>
+        <article>
+          <div class="kicker kicker--ochre">Literature</div>
+          <h4>Shakespeare&rsquo;s Digital Relevance, Four Centuries On</h4>
+          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+        </article>
+        <article>
+          <div class="kicker kicker--forest">Global Economy</div>
+          <h4>The Post-Pandemic Landscape: A Quiet Decoupling</h4>
+          <p>A short pr&eacute;cis continues below; see the full piece on the interior page.</p>
+        </article>
+      </section>
+
+      <!-- Footer -->
+      <footer class="page-footer">
+        <span>&copy; 2026 The Global Polymath Trust</span>
+        <span>&#10086;</span>
+        <span>Continued on interior pages 2 &ndash; 24</span>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

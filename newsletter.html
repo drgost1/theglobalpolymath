@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Global Polymath — Weekly Dispatch</title>
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--tgp-paper-deep); }
+  body { font-family: var(--font-serif); }
+
+  .email {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--tgp-paper);
+    box-shadow: 0 12px 40px -16px rgba(15,31,58,.25);
+  }
+
+  .email-header {
+    background: var(--tgp-navy);
+    padding: 28px 40px;
+    text-align: center;
+  }
+  .email-header img { display: inline-block; }
+  .email-header .title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--tgp-paper);
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    line-height: 1;
+  }
+  .email-header .issue {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--tgp-gold);
+    margin-top: 10px;
+  }
+
+  .email-meta {
+    padding: 14px 40px;
+    border-bottom: 3px double var(--tgp-navy);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-ink-soft);
+  }
+
+  .email-lead {
+    padding: 28px 40px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .email-lead .kick {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-forest);
+    margin-bottom: 10px;
+  }
+  .email-lead h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: var(--tgp-ink);
+    margin: 0 0 14px;
+  }
+  .email-lead .hero {
+    height: 200px;
+    background: linear-gradient(180deg,#bcd3b8,#2e5339);
+    margin-bottom: 14px;
+  }
+  .email-lead p {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+
+  .email-digest { padding: 24px 40px; }
+  .email-digest .section-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: .5px solid var(--tgp-navy);
+  }
+  .email-digest article {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .email-digest article:last-child { border-bottom: 0; }
+  .email-digest .k {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .email-digest .k--oxblood   { color: var(--tgp-oxblood); }
+  .email-digest .k--aubergine { color: var(--tgp-aubergine); }
+  .email-digest .k--ochre     { color: var(--tgp-ochre); }
+  .email-digest h3 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+  }
+  .email-digest p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--tgp-ink-soft);
+    margin: 0;
+  }
+
+  .email-footer {
+    background: var(--tgp-paper-deep);
+    padding: 28px 40px;
+    border-top: 3px double var(--tgp-navy);
+    text-align: center;
+  }
+  .email-footer .quote {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--tgp-navy);
+    margin-bottom: 14px;
+  }
+  .email-footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+  }
+  .email-footer nav a { color: inherit; text-decoration: none; }
+  .email-footer nav a:hover { text-decoration: underline; }
+  .email-footer nav .sep { color: var(--tgp-ink-faint); }
+  .email-footer .copy {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--tgp-ink-mute);
+    margin-top: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .email-header, .email-meta, .email-lead, .email-digest, .email-footer {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    .email-header .title { font-size: 28px; }
+    .email-lead h1 { font-size: 30px; }
+    .email-digest h3 { font-size: 20px; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="email">
+
+    <header class="email-header">
+      <img src="assets/emblem-mono-gold.svg" alt="" width="64" height="64">
+      <div class="title">The Global Polymath</div>
+      <div class="issue">The Weekly Dispatch &nbsp;·&nbsp; Vol. I, Issue 03</div>
+    </header>
+
+    <div class="email-meta">
+      <span>Dhaka · Friday, March 6, 2026</span>
+      <span>Reading time: 9 min</span>
+    </div>
+
+    <article class="email-lead">
+      <div class="kick">This Week&rsquo;s Lead &nbsp;·&nbsp; Science &amp; Jurisprudence</div>
+      <h1>Quantum Leap in Green Energy: A Jurisprudential Challenge</h1>
+      <div class="hero"></div>
+      <p>
+        A consortium of researchers in Dhaka and Delft claim a fivefold gain in
+        photovoltaic efficiency &mdash; and inadvertently raise questions the Hague
+        has not yet thought to ask.
+      </p>
+      <a class="tgp-btn tgp-btn--gold" href="#">Read the full piece</a>
+    </article>
+
+    <section class="email-digest">
+      <div class="section-label">Also In This Issue</div>
+
+      <article>
+        <div class="k k--oxblood">Legal Perspective</div>
+        <h3>The Moral Ambiguity of AI-Generated Art</h3>
+        <p>When a statistical model assembles a canvas from ten million prior canvases, who may be said to have painted it?</p>
+      </article>
+
+      <article>
+        <div class="k k--aubergine">The Lyceum</div>
+        <h3>Existential Risks in the Age of Technological Acceleration</h3>
+        <p>Palaeolithic emotions, mediaeval institutions, god-like technology &mdash; a configuration no one has had occasion to test.</p>
+      </article>
+
+      <article>
+        <div class="k k--ochre">Literature</div>
+        <h3>Shakespeare, Four Centuries On</h3>
+        <p>The sonnets are holding up. The plays are holding up. What isn&rsquo;t holding up is our relationship to them.</p>
+      </article>
+    </section>
+
+    <footer class="email-footer">
+      <div class="quote">&ldquo; The cure for the ills of curiosity is more curiosity. &rdquo;</div>
+      <nav>
+        <a href="#">Archive</a>
+        <span class="sep">·</span>
+        <a href="#">Subscribe</a>
+        <span class="sep">·</span>
+        <a href="#">Unsubscribe</a>
+      </nav>
+      <div class="copy">&copy; 2026 The Global Polymath Trust &nbsp;·&nbsp; Dhaka, Bangladesh</div>
+    </footer>
+
+  </div>
+</body>
+</html>
