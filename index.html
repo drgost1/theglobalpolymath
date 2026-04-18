@@ -9,6 +9,54 @@
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
 <style>
+  /* ---------- Trending strip ---------- */
+  .trending {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--tgp-rule-thin);
+    min-width: 0;
+  }
+  .trending-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--tgp-oxblood);
+    flex-shrink: 0;
+    padding-right: 20px;
+    border-right: 1px solid var(--tgp-rule-thin);
+  }
+  .trending-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    flex: 1;
+    min-width: 0;
+  }
+  .trending-list li {
+    white-space: nowrap;
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--tgp-ink);
+  }
+  .trending-list a { color: inherit; text-decoration: none; }
+  .trending-list a:hover { color: var(--tgp-navy); text-decoration: underline; }
+  .trending-list .num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-gold-deep);
+    margin-right: 6px;
+    letter-spacing: .04em;
+  }
+
   /* ---------- Main 5-column grid ---------- */
   .grid-5 {
     display: grid;
@@ -21,29 +69,46 @@
   .imperatives {
     padding: 0 16px 0 0;
     border-right: 1px solid var(--tgp-rule-thin);
+    min-width: 0;
   }
   .imperatives ul { list-style: none; padding: 0; margin: 0; }
   .imperatives li {
-    padding: 14px 0;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid var(--tgp-paper-edge);
+    min-width: 0;
   }
   .imperatives li:last-child { border-bottom: 0; }
+  .imperatives .imp-thumb {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    display: block;
+    background: var(--tgp-paper-deep);
+    filter: contrast(1.02) saturate(0.95);
+    flex-shrink: 0;
+  }
+  .imperatives .imp-body { min-width: 0; }
   .imperatives .tag {
     font-family: var(--font-sans);
     font-size: 9px;
     letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--tgp-ink-mute);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .imperatives a {
     font-family: var(--font-headline);
     font-weight: 700;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.2;
     color: var(--tgp-ink);
     text-decoration: none;
     display: block;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .imperatives a:hover { color: var(--tgp-navy-deep); text-decoration: underline; }
   .imperatives .page {
@@ -51,7 +116,7 @@
     font-style: italic;
     font-size: 12px;
     color: var(--tgp-ink-mute);
-    margin-top: 4px;
+    margin-top: 3px;
   }
 
   /* Lead story */
@@ -72,12 +137,14 @@
   .lead h1 {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(34px, 4.6vw, 58px);
-    line-height: 1.02;
+    font-size: clamp(26px, 4.2vw, 58px);
+    line-height: 1.04;
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--tgp-ink);
     margin: 0 0 10px;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .lead h1 a { color: inherit; text-decoration: none; }
   .lead h1 .accent { color: var(--tgp-navy); }
@@ -555,27 +622,36 @@
 
       <!-- Navigation -->
       <nav class="site-nav" aria-label="Primary">
-        <a href="index.html" class="active">Front Page</a>
-        <a href="section.html?s=science">Science</a>
-        <a href="section.html?s=legal">Legal Perspective</a>
-        <a href="section.html?s=lyceum">The Lyceum</a>
-        <a href="section.html?s=literature">Literature</a>
-        <a href="section.html?s=economy">Economy</a>
-        <a href="section.html?s=psychology">Psychology</a>
-        <a href="archive.html">Archive</a>
-        <a href="about.html">About</a>
-        <a href="subscribe.html">Subscribe</a>
+        <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+        <label for="navToggle" class="nav-hamburger" aria-label="Open menu">
+          <span class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+          <span><span class="open-label">Menu</span><span class="close-label">Close</span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html" class="active">Front Page</a>
+          <a href="section.html?s=science">Science</a>
+          <a href="section.html?s=legal">Legal Perspective</a>
+          <a href="section.html?s=lyceum">The Lyceum</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=economy">Economy</a>
+          <a href="section.html?s=psychology">Psychology</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="subscribe.html">Subscribe</a>
+        </div>
       </nav>
 
-      <!-- Markets / indices strip -->
-      <div class="markets" aria-label="Market indices">
-        <div><span class="label">BDT · USD</span><span class="val">109.42</span><span class="delta delta--up">+0.08</span></div>
-        <div><span class="label">DSE Broad</span><span class="val">5,412.18</span><span class="delta delta--up">+23.11</span></div>
-        <div><span class="label">Nikkei</span><span class="val">38,214.77</span><span class="delta delta--down">-142.06</span></div>
-        <div><span class="label">Brent Crude</span><span class="val">$74.60</span><span class="delta delta--down">-0.42</span></div>
-        <div><span class="label">Gold, 22K</span><span class="val">৳125,400</span><span class="delta delta--up">+620</span></div>
-        <div><span class="label">Dhaka · Weather</span><span class="val">27° / Hazy</span><span class="delta">AQI 164</span></div>
-      </div>
+      <!-- Trending / Right Now strip -->
+      <section class="trending" aria-label="Trending stories">
+        <span class="trending-label">Trending</span>
+        <ol class="trending-list">
+          <li><span class="num">1.</span><a href="article.html">Quantum Leap in Green Energy</a></li>
+          <li><span class="num">2.</span><a href="article.html">The Moral Ambiguity of AI Art</a></li>
+          <li><span class="num">3.</span><a href="article.html">ICJ Hearings on Carbon Liability</a></li>
+          <li><span class="num">4.</span><a href="article.html">Why Experts Fail in a Crisis</a></li>
+          <li><span class="num">5.</span><a href="article.html">The Quiet Decoupling</a></li>
+        </ol>
+      </section>
 
       <!-- Main 5-col grid -->
       <div class="grid-5">
@@ -585,44 +661,68 @@
           <div class="kicker">Today&rsquo;s Imperatives</div>
           <ul>
             <li>
-              <div class="tag">Science</div>
-              <a href="article.html">Green Energy Breakthrough?</a>
-              <div class="page">p. 3</div>
+              <img class="imp-thumb" src="assets/img/hero-solar.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Science</div>
+                <a href="article.html">Green Energy Breakthrough?</a>
+                <div class="page">p. 3</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Legal</div>
-              <a href="article.html">Cyber Law Reform in the EU</a>
-              <div class="page">p. 5</div>
+              <img class="imp-thumb" src="assets/img/intl-hague.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Legal</div>
+                <a href="article.html">Cyber Law Reform in the EU</a>
+                <div class="page">p. 5</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Lyceum</div>
-              <a href="article.html">AI &amp; Human Emotion</a>
-              <div class="page">p. 8</div>
+              <img class="imp-thumb" src="assets/img/lyceum-books.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Lyceum</div>
+                <a href="article.html">AI &amp; Human Emotion</a>
+                <div class="page">p. 8</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Arts</div>
-              <a href="article.html">Literature Review: Ishiguro</a>
-              <div class="page">p. 12</div>
+              <img class="imp-thumb" src="assets/img/book-ishiguro.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Arts</div>
+                <a href="article.html">Literature Review: Ishiguro</a>
+                <div class="page">p. 12</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Economy</div>
-              <a href="article.html">The Rupee&rsquo;s Quiet Rally</a>
-              <div class="page">p. 15</div>
+              <img class="imp-thumb" src="assets/img/strip-econ.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Economy</div>
+                <a href="article.html">The Rupee&rsquo;s Quiet Rally</a>
+                <div class="page">p. 15</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Psychology</div>
-              <a href="article.html">Chess, Chance, and Consciousness</a>
-              <div class="page">p. 18</div>
+              <img class="imp-thumb" src="assets/img/strip-psych.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Psychology</div>
+                <a href="article.html">Chess, Chance, and Consciousness</a>
+                <div class="page">p. 18</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Archaeology</div>
-              <a href="article.html">Beneath the Pahārpur Stupa</a>
-              <div class="page">p. 20</div>
+              <img class="imp-thumb" src="assets/img/section-hero.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Archaeology</div>
+                <a href="article.html">Beneath the Pah&#x0101;rpur Stupa</a>
+                <div class="page">p. 20</div>
+              </div>
             </li>
             <li>
-              <div class="tag">Politics</div>
-              <a href="article.html">The Quiet Return of Non-Alignment</a>
-              <div class="page">p. 22</div>
+              <img class="imp-thumb" src="assets/img/editorial.jpg" alt="" loading="lazy">
+              <div class="imp-body">
+                <div class="tag">Politics</div>
+                <a href="article.html">The Quiet Return of Non-Alignment</a>
+                <div class="page">p. 22</div>
+              </div>
             </li>
           </ul>
         </aside>

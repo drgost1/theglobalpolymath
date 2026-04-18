@@ -60,12 +60,14 @@
   .article-head h1 {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(36px, 5.2vw, 62px);
-    line-height: 1.02;
+    font-size: clamp(26px, 5vw, 62px);
+    line-height: 1.04;
     letter-spacing: -.01em;
     text-transform: uppercase;
     color: var(--tgp-ink);
     margin: 0 0 16px;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .article-head .deck {
     font-family: var(--font-serif-alt);
@@ -133,12 +135,14 @@
   .article-body h2 {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 26px;
+    font-size: clamp(20px, 3vw, 26px);
     line-height: 1.2;
     letter-spacing: -.005em;
     text-transform: uppercase;
     color: var(--tgp-navy);
     margin: 36px 0 14px;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .article-body blockquote {
     font-family: var(--font-serif-alt);
@@ -250,16 +254,23 @@
       </div>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="index.html">Front Page</a>
-        <a href="section.html?s=science" class="active">Science</a>
-        <a href="section.html?s=legal">Legal Perspective</a>
-        <a href="section.html?s=lyceum">The Lyceum</a>
-        <a href="section.html?s=literature">Literature</a>
-        <a href="section.html?s=economy">Economy</a>
-        <a href="section.html?s=psychology">Psychology</a>
-        <a href="archive.html">Archive</a>
-        <a href="about.html">About</a>
-        <a href="subscribe.html">Subscribe</a>
+        <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+        <label for="navToggle" class="nav-hamburger" aria-label="Open menu">
+          <span class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+          <span><span class="open-label">Menu</span><span class="close-label">Close</span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Front Page</a>
+          <a href="section.html?s=science" class="active">Science</a>
+          <a href="section.html?s=legal">Legal Perspective</a>
+          <a href="section.html?s=lyceum">The Lyceum</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=economy">Economy</a>
+          <a href="section.html?s=psychology">Psychology</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="subscribe.html">Subscribe</a>
+        </div>
       </nav>
 
       <!-- Article body -->
