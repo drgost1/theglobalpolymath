@@ -263,6 +263,340 @@
     color: var(--tgp-ink-mute);
   }
 
+  /* ---------- OPINION DESK (British comment-page style) ---------- */
+  .opinion-desk {
+    margin-top: 32px;
+    border-top: 5px solid var(--tgp-ink);
+    border-bottom: 5px solid var(--tgp-ink);
+    padding: 22px 0 28px;
+    background:
+      linear-gradient(180deg, rgba(123, 46, 46, 0.04) 0, transparent 80px);
+  }
+  .opinion-banner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--tgp-ink);
+  }
+  .opinion-banner .badge {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -.02em;
+    color: var(--tgp-paper);
+    background: var(--tgp-oxblood);
+    padding: 10px 18px;
+    display: inline-block;
+  }
+  .opinion-banner .badge .dot { color: var(--tgp-gold); margin: 0 8px; }
+  .opinion-banner .running {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: clamp(15px, 1.4vw, 19px);
+    color: var(--tgp-ink-soft);
+    flex: 1;
+    text-align: right;
+  }
+  .opinion-banner .page-ref {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--tgp-ink-mute);
+    text-transform: uppercase;
+  }
+
+  .opinion-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1.1fr 1fr;
+    gap: 0;
+  }
+  .opinion-grid > * {
+    padding: 0 22px;
+    border-right: 1px solid var(--tgp-rule-thin);
+    min-width: 0;
+  }
+  .opinion-grid > *:first-child { padding-left: 0; }
+  .opinion-grid > *:last-child  { padding-right: 0; border-right: 0; }
+
+  /* Editor's column (Russell) */
+  .editor-column .author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: .5px solid var(--tgp-paper-edge);
+    margin-bottom: 16px;
+  }
+  .editor-column .portrait {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--tgp-navy);
+    color: var(--tgp-gold);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--tgp-gold);
+    letter-spacing: -.02em;
+  }
+  .editor-column .author .meta { min-width: 0; }
+  .editor-column .author .role {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--tgp-oxblood);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .editor-column .author .name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--tgp-navy);
+    line-height: 1.1;
+  }
+  .editor-column .author .name-sub {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tgp-ink-mute);
+    margin-top: 2px;
+  }
+  .editor-column .kicker-line {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--tgp-oxblood);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .editor-column h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(24px, 2.6vw, 34px);
+    line-height: 1.0;
+    text-transform: uppercase;
+    letter-spacing: -.02em;
+    color: var(--tgp-navy);
+    margin: 0 0 14px;
+  }
+  .editor-column p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--tgp-ink);
+    margin: 0 0 12px;
+  }
+  .editor-column p i { color: var(--tgp-navy); }
+  .editor-column blockquote {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--tgp-oxblood);
+    border-left: 4px solid var(--tgp-oxblood);
+    padding: 6px 0 6px 14px;
+    margin: 14px 0;
+  }
+  .editor-column .continue {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--tgp-navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--tgp-gold);
+    padding-bottom: 2px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 6px;
+  }
+  .editor-column .continue:hover { color: var(--tgp-navy-deep); border-bottom-color: var(--tgp-gold-deep); }
+
+  /* Op-Ed stack (three columnists) */
+  .op-ed-stack > article {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .op-ed-stack > article:first-child { padding-top: 0; }
+  .op-ed-stack > article:last-child { border-bottom: 0; }
+  .op-ed-stack .author-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .op-ed-stack .portrait-sm {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--tgp-paper-deep);
+    color: var(--tgp-navy);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1.5px solid var(--tgp-rule-thin);
+    letter-spacing: -.02em;
+  }
+  .op-ed-stack .portrait-sm.philo { background: var(--tgp-aubergine); color: var(--tgp-paper); border-color: var(--tgp-aubergine); }
+  .op-ed-stack .portrait-sm.psyc  { background: var(--tgp-forest); color: var(--tgp-paper); border-color: var(--tgp-forest); }
+  .op-ed-stack .portrait-sm.law   { background: var(--tgp-oxblood); color: var(--tgp-paper); border-color: var(--tgp-oxblood); }
+  .op-ed-stack .author-mini .byline { min-width: 0; line-height: 1.2; }
+  .op-ed-stack .author-mini .name {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--tgp-ink);
+  }
+  .op-ed-stack .author-mini .role {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+  }
+  .op-ed-stack .kicker-line {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0;
+    color: var(--tgp-oxblood);
+    margin-bottom: 4px;
+  }
+  .op-ed-stack h4 {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.18;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+    text-transform: none;
+    letter-spacing: -.01em;
+  }
+  .op-ed-stack h4 a { color: inherit; text-decoration: none; }
+  .op-ed-stack h4 a:hover { color: var(--tgp-navy); text-decoration: underline; }
+  .op-ed-stack p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 6px;
+  }
+  .op-ed-stack .jump {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-ink-mute);
+  }
+
+  /* Letters & Cartoon */
+  .letters-stack > .head {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -.015em;
+    color: var(--tgp-navy);
+    padding-bottom: 8px;
+    border-bottom: .5px solid var(--tgp-navy);
+    margin-bottom: 12px;
+  }
+  .letters-stack .letter {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .letters-stack .letter:last-of-type { border-bottom: 0; }
+  .letters-stack .letter .title {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--tgp-ink);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .letters-stack .letter p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink);
+    margin: 0 0 4px;
+  }
+  .letters-stack .letter .sig {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+  }
+  .letters-stack .cartoon {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 3px double var(--tgp-navy);
+  }
+  .letters-stack .cartoon .head {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    margin-bottom: 8px;
+  }
+  .letters-stack .cartoon-frame {
+    aspect-ratio: 4 / 3;
+    background:
+      repeating-linear-gradient(45deg, var(--tgp-paper-deep), var(--tgp-paper-deep) 8px, var(--tgp-paper) 8px, var(--tgp-paper) 16px);
+    border: 1.5px solid var(--tgp-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .letters-stack .cartoon-frame .glyph {
+    font-family: var(--font-display);
+    font-size: 44px;
+    color: var(--tgp-navy);
+    opacity: 0.45;
+    font-weight: 900;
+  }
+  .letters-stack .cartoon-frame .legend {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--tgp-paper);
+    padding: 4px 10px;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--tgp-navy);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border: 1px solid var(--tgp-rule-thin);
+  }
+  .letters-stack .cartoon .credit {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    text-align: right;
+  }
+
   /* ---------- DELTA-ZERO RIBBON ---------- */
   .delta-zero-ribbon {
     margin-top: 28px;
@@ -525,6 +859,8 @@
     .cover-secondary article { padding: 0 16px; border-right: 1px solid var(--tgp-rule-thin); border-bottom: 0; }
     .cover-secondary article:first-of-type { padding-left: 0; }
     .cover-secondary article:last-of-type { padding-right: 0; border-right: 0; }
+    .opinion-grid { grid-template-columns: 1.4fr 1fr; }
+    .opinion-grid > .letters-stack { grid-column: 1 / -1; padding: 18px 0 0; border-right: 0; border-top: 1px solid var(--tgp-rule-thin); margin-top: 10px; }
   }
   @media (max-width: 900px) {
     .cover-grid { grid-template-columns: 1fr; padding-top: 14px; }
@@ -543,6 +879,10 @@
     }
     .intl-grid > article:last-child,
     .inside-grid > section:last-child { border-bottom: 0; }
+    .opinion-grid { grid-template-columns: 1fr; }
+    .opinion-grid > * { padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--tgp-paper-edge); margin-top: 0; border-top: 0; }
+    .opinion-grid > *:last-child { border-bottom: 0; }
+    .opinion-banner .running { text-align: left; flex: none; width: 100%; }
   }
   @media (max-width: 560px) {
     .cover-banner { padding: 18px 0 14px; }
@@ -632,7 +972,7 @@
           How the James Webb Telescope is rewriting our cosmic origin story &mdash;
           <em>unveiling the Universe, the Psyche, &amp; Global Law.</em>
         </p>
-        <div class="byline">By <b>Dr. Russell Mostafa Kamal</b> &nbsp;&middot;&nbsp; Editor-in-Chief</div>
+        <div class="byline">By <b>Dr. Mostafa Kamal Russell</b> &nbsp;&middot;&nbsp; Editor-in-Chief</div>
       </section>
 
       <!-- HERO COMPOSITE -->
@@ -717,7 +1057,7 @@
             </tbody>
           </table>
 
-          <p class="byline-bottom">&mdash; Dr. Russell Mostafa Kamal &nbsp;&middot;&nbsp; Editor-in-Chief &amp; Founder</p>
+          <p class="byline-bottom">&mdash; Dr. Mostafa Kamal Russell &nbsp;&middot;&nbsp; Editor-in-Chief &amp; Founder</p>
         </article>
 
         <!-- ALSO THIS WEEK (right) -->
@@ -748,6 +1088,156 @@
 
       </div>
 
+      <!-- OPINION DESK — British comment-page style -->
+      <section class="opinion-desk" aria-labelledby="opinionLabel">
+        <header class="opinion-banner">
+          <span class="badge" id="opinionLabel">Opinion <span class="dot">&middot;</span> Comment <span class="dot">&middot;</span> Letters</span>
+          <span class="running">The Polymath's View &mdash; the editorial pages of <i>The Global Polymath</i>, where the publication argues with itself in print.</span>
+          <span class="page-ref">p. 22 &mdash; The Comment Desk</span>
+        </header>
+
+        <div class="opinion-grid">
+
+          <!-- EDITOR'S COLUMN — Russell -->
+          <article class="editor-column">
+            <div class="author">
+              <span class="portrait" aria-hidden="true">MK<span style="font-size:.6em;vertical-align:super;color:var(--tgp-paper)">R</span></span>
+              <div class="meta">
+                <div class="role">The Polymath's View &middot; Editor's Column</div>
+                <div class="name">Dr. Mostafa Kamal Russell</div>
+                <div class="name-sub">Editor-in-Chief &amp; Founder</div>
+              </div>
+            </div>
+            <div class="kicker-line">This Week's Editorial</div>
+            <h3>Reading Across the Grain &mdash; A Defence of the Polymath's Habit</h3>
+            <p>
+              The cover story of this issue is, by an editor's confession, not
+              one story but three. We have set the James Webb Telescope's deepest
+              field beside Sartre's <i>Being and Nothingness</i>, and beside the
+              architecture of <i>Pacta Sunt Servanda</i>. The proximity is not
+              accidental.
+            </p>
+            <blockquote>
+              The most consequential problems of our century sit in the seams
+              between disciplines. We propose, modestly, to keep insisting on it.
+            </blockquote>
+            <p>
+              The objection writes itself. <i>Are these not three different
+              questions?</i> They are. But they are three answers to the same
+              question &mdash; the question of what kind of creature can ask its
+              own origin, and on what authority it expects an answer. The cosmologist,
+              the philosopher, and the jurist are talking past each other; this paper
+              has been founded on the conviction that they should not.
+            </p>
+            <p>
+              A polymath, in the older sense the masthead of this publication
+              borrows, was not a generalist. She was someone for whom the
+              disciplines were not yet at war. We mean to recover the habit; the
+              forty-second issue is one more attempt at it.
+            </p>
+            <a class="continue" href="article.html">Continue the editorial &rarr; p. 22</a>
+          </article>
+
+          <!-- OP-ED COLUMNISTS STACK -->
+          <div class="op-ed-stack" aria-label="Op-Ed columnists">
+
+            <article>
+              <div class="author-mini">
+                <span class="portrait-sm philo" aria-hidden="true">ID</span>
+                <div class="byline">
+                  <div class="name">Prof. Ishaan Dey</div>
+                  <div class="role">Visiting columnist &middot; The Lyceum</div>
+                </div>
+              </div>
+              <div class="kicker-line">Op-Ed &middot; Philosophy</div>
+              <h4><a href="article.html">Sartre Was Right About Bad Faith &mdash; and the Algorithm Has Made Him Right Twice</a></h4>
+              <p>
+                The freedom to evade is the only freedom a system without
+                consciousness cannot exercise. That is, this column suspects, the
+                most useful sentence anyone has yet written about machine learning.
+              </p>
+              <span class="jump">&rarr; p. 23</span>
+            </article>
+
+            <article>
+              <div class="author-mini">
+                <span class="portrait-sm psyc" aria-hidden="true">AS</span>
+                <div class="byline">
+                  <div class="name">Dr. Anika Sen</div>
+                  <div class="role">Psychology columnist</div>
+                </div>
+              </div>
+              <div class="kicker-line">Op-Ed &middot; Psychology</div>
+              <h4><a href="article.html">Why the Id Will Outlive the Decade That Tried to Decode It</a></h4>
+              <p>
+                We have replaced Freud's vocabulary three times in a hundred
+                years and his question once. The question, on inspection, is the
+                only thing in the file that has held its value.
+              </p>
+              <span class="jump">&rarr; p. 23</span>
+            </article>
+
+            <article>
+              <div class="author-mini">
+                <span class="portrait-sm law" aria-hidden="true">RC</span>
+                <div class="byline">
+                  <div class="name">Raihan Chowdhury</div>
+                  <div class="role">Legal Affairs Editor</div>
+                </div>
+              </div>
+              <div class="kicker-line">Op-Ed &middot; Global Law</div>
+              <h4><a href="article.html">The Treaty Architecture Has a New Frontier &mdash; and It Is Not on Earth</a></h4>
+              <p>
+                Outer-space law was a curiosity in 1967 and a hobby in 2007. The
+                Webb instrument has, almost as a side effect, made it the most
+                practical question in the field.
+              </p>
+              <span class="jump">&rarr; p. 24</span>
+            </article>
+
+          </div>
+
+          <!-- LETTERS + CARTOON -->
+          <aside class="letters-stack">
+            <div class="head">Letters to the Editor</div>
+
+            <div class="letter">
+              <div class="title">On the Trinity essay</div>
+              <p>Your editor's invocation of Heidegger in the same breath as
+                 Webb spectroscopy is, I fear, a category error &mdash; though a
+                 pleasantly written one.</p>
+              <div class="sig">&mdash; Prof. R. Chakraborty, Presidency University, Calcutta</div>
+            </div>
+
+            <div class="letter">
+              <div class="title">On the Treaty Architecture primer</div>
+              <p>One small correction: <i>Jus Cogens</i> norms are non-derogable,
+                 not unalterable. The distinction matters in the hard cases, of which
+                 we have lately had several.</p>
+              <div class="sig">&mdash; Mr. Ashraf Islam, BUET (Retd.), Dhaka</div>
+            </div>
+
+            <div class="letter">
+              <div class="title">A respectful plea</div>
+              <p>Might the masthead serif be set at a point or two larger in the
+                 print edition? My spectacles are not as forgiving as the layout
+                 assumes.</p>
+              <div class="sig">&mdash; Dr. Farida Begum, London</div>
+            </div>
+
+            <div class="cartoon">
+              <div class="head">Cartoon of the Week</div>
+              <div class="cartoon-frame" role="img" aria-label="Cartoon: a small figure in a library, dwarfed by a tall window onto a JWST deep field.">
+                <span class="glyph">&infin;</span>
+                <span class="legend">A Small Reader, an Honest Sky</span>
+              </div>
+              <div class="credit">&mdash; A sketch by Tariq Rehman</div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
       <!-- DELTA-ZERO RIBBON -->
       <section class="delta-zero-ribbon">
         <div class="kicker">Special Spotlight &middot; Continued From Vol. 14, No. 41</div>
@@ -759,7 +1249,7 @@
       <!-- PULL QUOTE -->
       <div class="pullquote-row">
         &ldquo;Existence precedes essence &mdash; and so, perhaps, does measurement.&rdquo;
-        <span class="attrib">&mdash; A reflection on this week's Lyceum essay, by R. M. Kamal</span>
+        <span class="attrib">&mdash; A reflection on this week's Lyceum essay, by M. K. Russell</span>
       </div>
 
       <!-- WEEKLY CHALLENGE -->
@@ -897,7 +1387,7 @@
           <div>
             <h5>Editor &amp; Publisher</h5>
             <ul>
-              <li><b>Dr. Russell Mostafa Kamal</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><b>Dr. Mostafa Kamal Russell</b><br>Editor-in-Chief &amp; Founder</li>
               <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
               <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
               <li>+880 2 5566 4311</li>

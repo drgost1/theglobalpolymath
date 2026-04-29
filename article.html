@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Trinity of Human Discovery — The Global Polymath</title>
-<meta name="description" content="How the James Webb Telescope is rewriting our cosmic origin story — unveiling the Universe, the Psyche, &amp; Global Law. By Dr. Russell Mostafa Kamal.">
+<meta name="description" content="How the James Webb Telescope is rewriting our cosmic origin story — unveiling the Universe, the Psyche, &amp; Global Law. By Dr. Mostafa Kamal Russell.">
 <link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
@@ -14,7 +14,7 @@
     display: grid;
     grid-template-columns: 1fr minmax(0, 720px) 1fr;
     gap: 0;
-    padding: 36px 0 20px;
+    padding: 8px 0 20px;
   }
   .article-rail-left,
   .article-rail-right { padding: 0 28px; }
@@ -49,73 +49,103 @@
     line-height: 1.45;
   }
 
-  .article-head { padding: 0 4px; }
-  .article-head .kick {
+  /* Article cover — kicker + headline + deck + byline ABOVE the hero,
+     full-width centred (magazine-cover treatment, like the Independent's
+     long-form features). */
+  .article-cover {
+    padding: 36px 24px 22px;
+    text-align: center;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    background:
+      linear-gradient(180deg, transparent 0, transparent 60%, rgba(201, 169, 97, 0.06) 100%);
+  }
+  .article-cover .kick {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0;
     text-transform: none;
     color: var(--tgp-forest);
     margin-bottom: 14px;
   }
-  .article-head h1 {
+  .article-cover h1 {
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(30px, 5.6vw, 76px);
-    line-height: 0.95;
-    letter-spacing: -.022em;
+    font-size: clamp(34px, 6vw, 88px);
+    line-height: 0.93;
+    letter-spacing: -.025em;
     color: var(--tgp-ink);
     text-transform: uppercase;
-    margin: 0 0 16px;
+    margin: 0 auto 18px;
+    max-width: 1080px;
     overflow-wrap: break-word;
     hyphens: auto;
   }
-  .article-head .deck {
+  .article-cover .deck {
     font-family: var(--font-serif-alt);
     font-style: italic;
     font-weight: 500;
-    font-size: clamp(18px, 1.8vw, 24px);
-    line-height: 1.4;
+    font-size: clamp(18px, 1.9vw, 26px);
+    line-height: 1.36;
     color: var(--tgp-ink-soft);
-    margin: 0 0 22px;
-    border-bottom: 1px solid var(--tgp-paper-edge);
-    padding-bottom: 18px;
+    margin: 0 auto 22px;
+    max-width: 880px;
   }
-  .article-head .byline-row {
+  .article-cover .byline-row {
     display: flex;
-    justify-content: space-between;
-    gap: 18px;
+    justify-content: center;
+    gap: 6px 22px;
     flex-wrap: wrap;
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--tgp-ink-mute);
-    margin-bottom: 24px;
   }
-  .article-head .byline-row b { color: var(--tgp-navy); font-weight: 700; }
+  .article-cover .byline-row b { color: var(--tgp-navy); font-weight: 700; }
+  .article-cover .byline-row .sep { color: var(--tgp-paper-edge); }
 
-  .article-hero {
-    aspect-ratio: 16 / 9;
-    margin-bottom: 10px;
-    background: var(--tgp-paper-deep);
-    overflow: hidden;
+  /* Mega hero — the big, edge-to-edge, cinematic image Russell asked for.
+     21:9 aspect ratio, full page-body width, with caption strip below. */
+  .article-mega-hero {
+    margin: 0 0 24px;
   }
-  .article-hero img {
+  .article-mega-hero .img {
+    aspect-ratio: 21 / 9;
+    width: 100%;
+    overflow: hidden;
+    background: var(--tgp-paper-deep);
+    position: relative;
+  }
+  .article-mega-hero .img img {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.04) saturate(0.95);
+    filter: contrast(1.05) saturate(0.96);
   }
-  .article-hero-cap {
+  .article-mega-hero .img::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent 0, rgba(15, 31, 58, 0.18) 100%);
+    pointer-events: none;
+  }
+  .article-mega-hero figcaption {
+    padding: 8px 6px;
+    border-bottom: .5px solid var(--tgp-paper-edge);
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--tgp-ink-mute);
-    padding: 6px 0 22px;
-    border-bottom: 1px solid var(--tgp-paper-edge);
-    margin-bottom: 24px;
+    text-align: center;
+  }
+  .article-mega-hero figcaption i { color: var(--tgp-navy); font-style: italic; }
+
+  @media (max-width: 700px) {
+    .article-cover { padding: 24px 4px 16px; }
+    .article-mega-hero .img { aspect-ratio: 16 / 10; }
   }
 
   .article-body {
@@ -327,6 +357,39 @@
         </div>
       </nav>
 
+      <!-- ARTICLE COVER — kicker / headline / deck / byline -->
+      <header class="article-cover">
+        <div class="kick">The Cover Story &middot; Science, Philosophy &amp; Global Law</div>
+        <h1>The Trinity of Human Discovery</h1>
+        <p class="deck">
+          How the James Webb Telescope is rewriting our cosmic origin story
+          &mdash; and why the philosopher, the psychoanalyst, and the
+          international jurist all have something to say about it.
+        </p>
+        <div class="byline-row">
+          <span><b>By Dr. Mostafa Kamal Russell</b> <span class="sep">&middot;</span> Editor-in-Chief &amp; Founder</span>
+          <span class="sep">|</span>
+          <span>Dhaka <span class="sep">&middot;</span> Singapore <span class="sep">&middot;</span> UAE</span>
+          <span class="sep">|</span>
+          <span>14 min read</span>
+        </div>
+      </header>
+
+      <!-- MEGA HERO — full-bleed cinematic 21:9 image -->
+      <figure class="article-mega-hero">
+        <div class="img">
+          <img
+            src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2400&amp;q=88&amp;auto=format&amp;fit=crop"
+            alt="A James Webb Telescope deep-field image showing distant galaxies."
+            loading="eager" width="2400" height="1029">
+        </div>
+        <figcaption>
+          The James Webb Space Telescope's most recent deep-field exposure, photographed in
+          three-channel infrared and rendered for the visible spectrum.
+          &mdash; <i>The Russell Civilizations Review &middot; NASA / ESA / CSA composite</i>
+        </figcaption>
+      </figure>
+
       <!-- Article body -->
       <div class="article-wrap">
 
@@ -358,13 +421,13 @@
           <div class="meta-block">
             <div class="meta-label">Cite this piece</div>
             <div class="meta-val" style="font-family:var(--font-mono);font-size:12px;line-height:1.5">
-              Kamal, R. M. &ldquo;The Trinity of Human Discovery,&rdquo; <i>The Global Polymath</i>, XIV/42 (2026), pp. 1, 4 &amp; 12.
+              Russell, M. K. &ldquo;The Trinity of Human Discovery,&rdquo; <i>The Global Polymath</i>, XIV/42 (2026), pp. 1, 4 &amp; 12.
             </div>
           </div>
           <div class="meta-block">
             <div class="meta-label">Author</div>
             <div class="meta-val">
-              <b>Dr. Russell Mostafa Kamal</b><br>
+              <b>Dr. Mostafa Kamal Russell</b><br>
               Editor-in-Chief &amp; Founder<br>
               <a href="https://drrussellmostafakamal.com" style="color:var(--tgp-navy)">drrussellmostafakamal.com</a>
             </div>
@@ -372,34 +435,6 @@
         </aside>
 
         <article>
-          <div class="article-head">
-            <div class="kick">The Cover Story &middot; Science, Philosophy &amp; Global Law</div>
-            <h1>The Trinity of Human Discovery</h1>
-            <p class="deck">
-              How the James Webb Telescope is rewriting our cosmic origin story
-              &mdash; and why the philosopher, the psychoanalyst, and the
-              international jurist all have something to say about it.
-            </p>
-            <div class="byline-row">
-              <span><b>By Dr. Russell Mostafa Kamal</b> &nbsp;|&nbsp; Editor-in-Chief &amp; Founder</span>
-              <span>Dhaka &middot; Singapore &middot; UAE</span>
-            </div>
-
-            <figure class="article-hero-fig">
-              <div class="article-hero">
-                <img
-                  src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1800&amp;q=85&amp;auto=format&amp;fit=crop"
-                  alt="A James Webb Telescope deep-field image showing distant galaxies."
-                  loading="eager" width="1800" height="1012">
-              </div>
-              <div class="article-hero-cap">
-                The James Webb Telescope's most recent deep-field exposure, photographed in
-                three-channel infrared and rendered for the visible spectrum.
-                &mdash; <i>The Russell Civilizations Review &middot; NASA / ESA / CSA composite</i>
-              </div>
-            </figure>
-          </div>
-
           <div class="article-body">
             <p class="lede">
               <b>Three weeks ago,</b> at a small ceremony in Baltimore that drew rather
@@ -585,7 +620,7 @@
             <h4>From the Founder's Desk</h4>
             <p>This is the cover story of the forty-second issue I have had the
             privilege of editing. The premise is the same as the first: that
-            knowledge is best read across the grain. <i>&mdash; R. M. K.</i></p>
+            knowledge is best read across the grain. <i>&mdash; M. K. R.</i></p>
           </div>
 
         </aside>
@@ -626,7 +661,7 @@
           <div>
             <h5>Editor &amp; Publisher</h5>
             <ul>
-              <li><b>Dr. Russell Mostafa Kamal</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><b>Dr. Mostafa Kamal Russell</b><br>Editor-in-Chief &amp; Founder</li>
               <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
               <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
               <li>+880 2 5566 4311</li>
