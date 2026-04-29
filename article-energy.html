@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Energy Dilemma: Renewables vs Fossils — The Global Polymath</title>
+<meta name="description" content="The Road to a Zero-Carbon Frontier. The definitive geopolitical and ethical struggle of the 21st century. An editorial from The Global Polymath Weekly.">
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Article layout */
+  .article-wrap {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 720px) 1fr;
+    gap: 0;
+    padding: 8px 0 20px;
+  }
+  .article-rail-left,
+  .article-rail-right { padding: 0 28px; }
+  .article-rail-left {
+    border-right: 1px solid var(--tgp-rule-thin);
+    font-family: var(--font-sans);
+    font-size: 11px;
+  }
+  .article-rail-right {
+    border-left: 1px solid var(--tgp-rule-thin);
+  }
+
+  .article-rail-left .meta-block {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-left .meta-block:last-child { border-bottom: 0; }
+  .article-rail-left .meta-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .article-rail-left .meta-val {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--tgp-ink);
+    line-height: 1.45;
+  }
+
+  /* Article cover — kicker + headline + deck + byline ABOVE the hero */
+  .article-cover {
+    padding: 36px 24px 22px;
+    text-align: center;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    background:
+      linear-gradient(180deg, transparent 0, transparent 60%, rgba(46, 83, 57, 0.08) 100%);
+  }
+  .article-cover .kick {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-forest);
+    margin-bottom: 14px;
+  }
+  .article-cover h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(34px, 6vw, 88px);
+    line-height: 0.93;
+    letter-spacing: -.025em;
+    color: var(--tgp-ink);
+    text-transform: uppercase;
+    margin: 0 auto 18px;
+    max-width: 1080px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .article-cover .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(18px, 1.9vw, 26px);
+    line-height: 1.36;
+    color: var(--tgp-ink-soft);
+    margin: 0 auto 22px;
+    max-width: 880px;
+  }
+  .article-cover .byline-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px 22px;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+  }
+  .article-cover .byline-row b { color: var(--tgp-navy); font-weight: 700; }
+  .article-cover .byline-row .sep { color: var(--tgp-paper-edge); }
+
+  /* Mega hero — full-bleed cinematic image */
+  .article-mega-hero { margin: 0 0 24px; }
+  .article-mega-hero .img {
+    aspect-ratio: 21 / 9;
+    width: 100%;
+    overflow: hidden;
+    background: var(--tgp-paper-deep);
+    position: relative;
+  }
+  .article-mega-hero .img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.04) saturate(0.98);
+  }
+  .article-mega-hero .img::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent 0, rgba(15, 31, 58, 0.18) 100%);
+    pointer-events: none;
+  }
+  .article-mega-hero figcaption {
+    padding: 8px 6px;
+    border-bottom: .5px solid var(--tgp-paper-edge);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tgp-ink-mute);
+    text-align: center;
+  }
+  .article-mega-hero figcaption i { color: var(--tgp-navy); font-style: italic; }
+
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--tgp-ink);
+    max-width: 700px;
+  }
+  .article-body p { margin: 0 0 20px; }
+  .article-body p.lede::first-letter {
+    font-family: var(--font-display);
+    font-weight: 900;
+    float: left;
+    font-size: 4.4em;
+    line-height: 0.88;
+    padding: 0.05em 0.1em 0 0;
+    color: var(--tgp-forest);
+  }
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(22px, 3.2vw, 32px);
+    line-height: 1.12;
+    text-transform: uppercase;
+    letter-spacing: -.012em;
+    color: var(--tgp-forest);
+    margin: 36px 0 14px;
+  }
+  .article-body blockquote {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    color: var(--tgp-forest);
+    border-top: 3px double var(--tgp-forest);
+    border-bottom: 3px double var(--tgp-forest);
+    padding: 22px 0;
+    margin: 28px 0;
+    text-align: center;
+  }
+
+  /* Numbered priority list (the three mandates) */
+  .priority-list {
+    counter-reset: prio;
+    list-style: none;
+    padding: 0;
+    margin: 22px 0;
+  }
+  .priority-list li {
+    counter-increment: prio;
+    position: relative;
+    padding: 14px 0 14px 56px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--tgp-ink);
+  }
+  .priority-list li:last-child { border-bottom: 0; }
+  .priority-list li::before {
+    content: counter(prio, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--tgp-gold-deep);
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .priority-list b {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--tgp-navy);
+    letter-spacing: -.005em;
+  }
+
+  /* Key Takeaways box */
+  .takeaways {
+    margin: 32px 0;
+    padding: 22px 26px;
+    background: var(--tgp-paper-deep);
+    border-left: 5px solid var(--tgp-gold);
+  }
+  .takeaways h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: -.015em;
+    color: var(--tgp-navy);
+    margin: 0 0 14px;
+  }
+  .takeaways dl { margin: 0; }
+  .takeaways dt {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--tgp-forest);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin: 8px 0 2px;
+  }
+  .takeaways dt:first-of-type { margin-top: 0; }
+  .takeaways dd {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--tgp-ink);
+    margin: 0;
+  }
+
+  /* Hashtag footer */
+  .hashtag-row {
+    margin: 28px 0 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--tgp-paper-edge);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    line-height: 1.7;
+  }
+  .hashtag-row .tag {
+    display: inline-block;
+    color: var(--tgp-navy);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  .article-end {
+    text-align: center;
+    font-size: 16px;
+    color: var(--tgp-navy);
+    margin: 28px 0 10px;
+  }
+
+  .article-rail-right .related {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-right .related:last-child { border-bottom: 0; }
+  .article-rail-right .related h5 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-navy);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: .5px solid var(--tgp-navy);
+  }
+  .article-rail-right .related h4 {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+    text-transform: none;
+    letter-spacing: -.005em;
+  }
+  .article-rail-right .related h4 a { color: inherit; text-decoration: none; }
+  .article-rail-right .related h4 a:hover { text-decoration: underline; }
+  .article-rail-right .related p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 6px;
+  }
+
+  @media (max-width: 1100px) {
+    .article-wrap { grid-template-columns: 0.8fr minmax(0, 640px) 0.8fr; padding: 28px 0 16px; }
+    .article-rail-left, .article-rail-right { padding: 0 18px; }
+  }
+  @media (max-width: 900px) {
+    .article-wrap { grid-template-columns: 1fr; gap: 0; padding: 24px 0 12px; }
+    .article-rail-left { order: 3; border-right: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-rail-right { order: 2; border-left: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-body { font-size: 16px; }
+  }
+  @media (max-width: 700px) {
+    .article-cover { padding: 24px 4px 16px; }
+    .article-mega-hero .img { aspect-ratio: 16 / 10; }
+    .priority-list li { padding-left: 44px; font-size: 15px; }
+    .priority-list li::before { font-size: 26px; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <!-- Top utility bar -->
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+          <span>Singapore &middot; Dhaka &middot; UAE</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header class="masthead masthead--small">
+        <div class="masthead-title">
+          <a href="index.html">
+            <span class="globe-row">
+              <span>The Global</span>
+              <span class="globe">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="60" cy="60" r="52" fill="#C9A961" stroke="#1B3358" stroke-width="3"/>
+                  <ellipse cx="60" cy="60" rx="52" ry="20" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <ellipse cx="60" cy="60" rx="22" ry="52" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <line x1="8" y1="60" x2="112" y2="60" stroke="#1B3358" stroke-width="2.4"/>
+                  <line x1="60" y1="8" x2="60" y2="112" stroke="#1B3358" stroke-width="2.4"/>
+                </svg>
+              </span>
+              <span>Polymath</span>
+            </span>
+          </a>
+        </div>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Vol. 14</b> &middot; No. 42</span>
+        <span>Saturday, April 18, 2026</span>
+        <span>Editorial &middot; p. 22</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+        <label for="navToggle" class="nav-hamburger" aria-label="Open menu">
+          <span class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+          <span><span class="open-label">Menu</span><span class="close-label">Close</span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Front Page</a>
+          <a href="section.html?s=science">Science</a>
+          <a href="section.html?s=philosophy">Philosophy</a>
+          <a href="section.html?s=global-law" class="active">Global Law</a>
+          <a href="section.html?s=psychology">Psychology</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=spirituality">Art &amp; Spirituality</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="subscribe.html">Subscribe</a>
+        </div>
+      </nav>
+
+      <!-- ARTICLE COVER -->
+      <header class="article-cover">
+        <div class="kick">The Editorial &middot; Energy &amp; the Climate Frontier</div>
+        <h1>The Energy Dilemma: Renewables vs Fossils</h1>
+        <p class="deck">
+          The Road to a Zero-Carbon Frontier &mdash; the definitive geopolitical
+          and ethical struggle of the twenty-first century, and what an honest
+          editorial position on it must look like.
+        </p>
+        <div class="byline-row">
+          <span><b>By the Editorial Staff</b> <span class="sep">&middot;</span> The Global Polymath Weekly</span>
+          <span class="sep">|</span>
+          <span>Singapore <span class="sep">&middot;</span> Dhaka <span class="sep">&middot;</span> UAE</span>
+          <span class="sep">|</span>
+          <span>9 min read</span>
+        </div>
+      </header>
+
+      <!-- MEGA HERO — Russell's illustration -->
+      <figure class="article-mega-hero">
+        <div class="img">
+          <img
+            src="assets/img/energy-dilemma.jpg"
+            alt="The Energy Dilemma — an illustrated panorama of renewable innovation on the left, urban sustainability in the centre, and a responsible fossil phase-out on the right, with a Net-Zero 2050 globe presiding."
+            loading="eager" width="2000" height="1200">
+        </div>
+        <figcaption>
+          A panorama of the transition: from renewable innovation through
+          urban sustainability and bridge fuels to the responsible phase-out of
+          hydrocarbon legacies.
+          &mdash; <i>The Russell Civilizations Review &middot; original illustration</i>
+        </figcaption>
+      </figure>
+
+      <!-- Article body -->
+      <div class="article-wrap">
+
+        <aside class="article-rail-left" aria-label="Article metadata">
+          <div class="meta-block">
+            <div class="meta-label">Filed in</div>
+            <div class="meta-val">Editorial &middot; Energy &middot; Global Law</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Published</div>
+            <div class="meta-val">18 April 2026</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Reading time</div>
+            <div class="meta-val">9 minutes</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Section</div>
+            <div class="meta-val">The Editorial &middot; Vol. 14, No. 42 &middot; p. 22</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Share</div>
+            <div class="meta-val">
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Email</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">LinkedIn</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Print</a>
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Cite this piece</div>
+            <div class="meta-val" style="font-family:var(--font-mono);font-size:12px;line-height:1.5">
+              Editorial Staff. &ldquo;The Energy Dilemma: Renewables vs Fossils,&rdquo; <i>The Global Polymath</i>, XIV/42 (2026), p. 22.
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Editorial Direction</div>
+            <div class="meta-val">
+              <b>Dr. Mostafa Kamal Russell</b><br>
+              Editor-in-Chief &amp; Founder<br>
+              <a href="https://drrussellmostafakamal.com" style="color:var(--tgp-navy)">drrussellmostafakamal.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <article>
+
+          <div class="article-body">
+            <p class="lede">
+              <b>As the gears of the global economy</b> grind against the
+              limitations of our planetary boundaries, a singular question
+              dominates the corridors of power: how do we fuel our future without
+              torching our home? The debate between Renewable Energy and Fossil
+              Fuels is no longer a mere academic exercise in thermodynamics; it
+              is the definitive geopolitical and ethical struggle of the
+              twenty-first century.
+            </p>
+
+            <h2>The Legacy of Hydrocarbons</h2>
+
+            <p>
+              For two centuries, fossil fuels &mdash; coal, oil, and gas &mdash;
+              have been the bedrock of human advancement. Their energy density
+              and established infrastructure provided the sheer horsepower
+              required for the Industrial Revolution. Yet, this progress came
+              with a hidden cost: an atmospheric carbon debt that is now being
+              called in.
+            </p>
+
+            <p>
+              While &ldquo;abated&rdquo; fossil fuels via Carbon Capture and
+              Storage (CCS) offer a transitional bridge, the era of unbridled
+              hydrocarbon dominance is facing its twilight. The instruments of
+              measurement are sharper than they have ever been; the patience of
+              the public, sharper still.
+            </p>
+
+            <h2>The Rise of the Renewables</h2>
+
+            <p>
+              In the opposite corner stands the green vanguard &mdash; solar,
+              wind, and the burgeoning promise of <i>green hydrogen</i>. These
+              sources offer a tantalising prospect: an effectively infinite
+              energy supply with a near-zero carbon footprint.
+            </p>
+
+            <p>
+              The plummeting costs of photovoltaics and electrolysis mean that
+              being &ldquo;green&rdquo; is finally becoming &ldquo;profitable.&rdquo;
+              The argument from virtue and the argument from cost have, almost
+              for the first time, begun to converge.
+            </p>
+
+            <blockquote>
+              We do not just need <i>more</i> energy. We need <i>smarter</i>
+              energy.
+            </blockquote>
+
+            <h2>The Verdict: Which Path Must We Choose?</h2>
+
+            <p>
+              The transition is not as simple as flipping a switch. The
+              intermittency of wind and solar requires massive advancements in
+              grid-scale storage and strategic intelligence. However, to achieve
+              a truly carbon-free world, the mandate is clear, and it can be
+              read in three sentences:
+            </p>
+
+            <ol class="priority-list">
+              <li><b>Accelerated Decarbonisation.</b> We must aggressively pivot toward renewables to meet Net-Zero targets. Half-measures are no longer politically credible, and they were never scientifically credible.</li>
+              <li><b>Strategic Integration.</b> Natural gas and hydrogen serve as high-density &ldquo;bridge fuels&rdquo; to maintain grid stability during the transition &mdash; provided the bridge is understood, by everyone holding its blueprints, to be temporary.</li>
+              <li><b>Efficiency and Innovation.</b> Investment in biophilic architecture, smart-city frameworks, and demand-side intelligence must run alongside the supply-side build. The cheapest kilowatt-hour is the one we never had to generate.</li>
+            </ol>
+
+            <h2>The Conclusion</h2>
+
+            <p>
+              We do not just need <i>more</i> energy; we need <i>smarter</i>
+              energy. For a sustainable and dignified future, the global
+              community must choose the path of renewable innovation while
+              responsibly phasing out the carbon-heavy legacies of the past.
+            </p>
+
+            <p>
+              The honest editorial position, this paper has long maintained, is
+              the one that does not flatter either side of the present debate.
+              Renewables alone are not sufficient yet; fossil incumbency is no
+              longer defensible. The art of the next decade will lie in walking,
+              quickly, the narrow ridge between those two facts.
+            </p>
+
+            <div class="takeaways">
+              <h3>Key Takeaways</h3>
+              <dl>
+                <dt>Sustainability</dt>
+                <dd>Green hydrogen is the &ldquo;missing link&rdquo; for heavy industry &mdash; steel, shipping, long-haul aviation &mdash; where direct electrification will not, in the foreseeable engineering, suffice.</dd>
+
+                <dt>Economics</dt>
+                <dd>The &ldquo;green premium&rdquo; is shrinking. For the first time in the modern era, renewables are also the most logical fiscal choice in most major markets.</dd>
+
+                <dt>Legacy</dt>
+                <dd>Decarbonising the existing fleet &mdash; refits, abatement, methodical retirement &mdash; is as vital as building new turbines. The transition is, in the end, an act of accountancy as much as engineering.</dd>
+              </dl>
+            </div>
+
+            <p>
+              The cover story of this issue argued that the universe, the
+              psyche, and global law are three answers to one question. The
+              editorial argument is narrower, but of the same family. The
+              question of how a curious species fuels its civilisation is a
+              question of physics, of economics, and of treaty law &mdash; in
+              that order, and at the same time. We mean to keep reporting on it
+              that way.
+            </p>
+
+            <div class="hashtag-row">
+              <span class="tag">#TheGlobalPolymath</span>
+              <span class="tag">#EnergyTransition</span>
+              <span class="tag">#RenewableEnergy</span>
+              <span class="tag">#NetZero</span>
+              <span class="tag">#GreenHydrogen</span>
+              <span class="tag">#SustainableFuture</span>
+              <span class="tag">#BritishJournalism</span>
+              <span class="tag">#PolymathicInsight</span>
+            </div>
+
+            <p class="article-end">&mdash;&mdash;&mdash;</p>
+          </div>
+        </article>
+
+        <aside class="article-rail-right" aria-label="Related reading">
+
+          <div class="related">
+            <h5>From the Cover</h5>
+            <h4><a href="article.html">The Trinity of Human Discovery</a></h4>
+            <p>How the James Webb Telescope is rewriting our cosmic origin story &mdash; and why the philosopher, the psychoanalyst, and the international jurist all have something to say about it.</p>
+            <a class="text-more text-more--navy" href="article.html">Read &rarr; p. 1</a>
+          </div>
+
+          <div class="related">
+            <h5>The Special Spotlight</h5>
+            <h4><a href="article.html">Delta-Zero 2031: A Roadmap for a Carbon-Neutral Economy</a></h4>
+            <p>This week, Phase 3 &mdash; The Eco-Diplomacy Act. Implementation begins. The eight-phase roadmap, in detail.</p>
+            <a class="text-more text-more--forest" href="article.html">Read &rarr; p. 22</a>
+          </div>
+
+          <div class="related">
+            <h5>Global Law</h5>
+            <h4><a href="article.html">The Treaty Architecture: How Nations Agree to Exist</a></h4>
+            <p><i>Pacta Sunt Servanda</i>, <i>Opinio Juris</i>, and the limits of consent &mdash; the architecture that governs the carbon-budget agreements.</p>
+            <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 12</a>
+          </div>
+
+          <div class="related">
+            <h5>Editor's Note</h5>
+            <h4>From the Founder's Desk</h4>
+            <p>This editorial was drafted, like every leader column we publish, in conversation with the cover story. It is the same argument in a different register. <i>&mdash; M. K. R.</i></p>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- SITE FOOTER -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Singapore, with bureaus in Dhaka and the UAE.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="https://drrussellmostafakamal.com">drrussellmostafakamal.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Editor &amp; Publisher</h5>
+            <ul>
+              <li><b>Dr. Mostafa Kamal Russell</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
+              <li>+65 6789 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
+          <span>&#10086;</span>
+          <span>Vol. 14, No. 42 &middot; Editorial &middot; p. 22</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>
