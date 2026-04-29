@@ -62,9 +62,10 @@
   }
   .archive-filters .label {
     font-family: var(--font-sans);
-    font-size: 10px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-ink-mute);
     margin-right: 6px;
   }
@@ -119,10 +120,10 @@
   }
   .issue .cover .mini-kicker {
     font-family: var(--font-sans);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: .15em;
-    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-oxblood);
     margin-bottom: 6px;
   }
@@ -138,9 +139,10 @@
   }
   .issue .meta {
     font-family: var(--font-sans);
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-ink-mute);
     margin-bottom: 4px;
   }
@@ -194,6 +196,7 @@
         <div class="left">
           <span>EN</span>
           <span>Edition: International</span>
+          <span>Dhaka &middot; Singapore &middot; UAE</span>
         </div>
         <div class="right">
           <a href="subscribe.html">Subscribe</a>
@@ -203,18 +206,29 @@
       </div>
 
       <header class="masthead masthead--small">
-        <div class="masthead-row">
-          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
-          <div style="text-align:center">
-            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
-            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
-          </div>
+        <div class="masthead-title">
+          <a href="index.html">
+            <span class="globe-row">
+              <span>The Global</span>
+              <span class="globe">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="60" cy="60" r="52" fill="#C9A961" stroke="#1B3358" stroke-width="3"/>
+                  <ellipse cx="60" cy="60" rx="52" ry="20" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <ellipse cx="60" cy="60" rx="22" ry="52" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <line x1="8" y1="60" x2="112" y2="60" stroke="#1B3358" stroke-width="2.4"/>
+                  <line x1="60" y1="8" x2="60" y2="112" stroke="#1B3358" stroke-width="2.4"/>
+                </svg>
+              </span>
+              <span>Polymath</span>
+            </span>
+          </a>
         </div>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
       </header>
 
       <div class="dateline">
-        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
-        <span>Vol. I, Nos. 1 &ndash; 8</span>
+        <span><b>Vol. 14</b> &middot; Nos. 1 &ndash; 42</span>
+        <span>April 2026</span>
         <span>Back Issues &amp; Archive</span>
       </div>
 
@@ -227,11 +241,11 @@
         <div class="nav-menu">
           <a href="index.html">Front Page</a>
           <a href="section.html?s=science">Science</a>
-          <a href="section.html?s=legal">Legal Perspective</a>
-          <a href="section.html?s=lyceum">The Lyceum</a>
-          <a href="section.html?s=literature">Literature</a>
-          <a href="section.html?s=economy">Economy</a>
+          <a href="section.html?s=philosophy">Philosophy</a>
+          <a href="section.html?s=global-law">Global Law</a>
           <a href="section.html?s=psychology">Psychology</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=spirituality">Art &amp; Spirituality</a>
           <a href="archive.html" class="active">Archive</a>
           <a href="about.html">About</a>
           <a href="subscribe.html">Subscribe</a>
@@ -242,8 +256,9 @@
       <header class="archive-hero">
         <h1>The Archive</h1>
         <p class="deck">
-          Every issue we have printed, in reverse-chronological order. Search by
-          section, by date, or by the kind of mood the piece answers to.
+          Every issue we have printed, in reverse-chronological order &mdash; from
+          Vol. I, No. 1 to the current Vol. 14, No. 42. Search by section, by date,
+          or by the kind of mood the piece answers to.
         </p>
       </header>
 
@@ -252,125 +267,125 @@
         <span class="label">Filter</span>
         <a href="#" class="chip active">All Issues</a>
         <a href="section.html?s=science" class="chip">Science</a>
-        <a href="section.html?s=legal" class="chip">Legal</a>
-        <a href="section.html?s=lyceum" class="chip">The Lyceum</a>
-        <a href="section.html?s=literature" class="chip">Literature</a>
-        <a href="section.html?s=economy" class="chip">Economy</a>
+        <a href="section.html?s=philosophy" class="chip">Philosophy</a>
+        <a href="section.html?s=global-law" class="chip">Global Law</a>
         <a href="section.html?s=psychology" class="chip">Psychology</a>
+        <a href="section.html?s=literature" class="chip">Literature</a>
+        <a href="section.html?s=spirituality" class="chip">Spirituality</a>
       </div>
 
       <!-- Issues -->
       <section class="issues">
 
         <article class="issue">
-          <div class="cover cover--v1">
+          <div class="cover cover--v5">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 1 · 6 March 2026</div>
-            <div class="mini-kicker" style="color:var(--tgp-forest)">The Lead · Science</div>
-            <div class="mini-headline">Quantum Leap in Green Energy</div>
-            <div class="mini-rule"><span>Dhaka</span><span>p. 1 &ndash; 52</span></div>
+            <div class="mini-meta">Vol. 14 · No. 42 · 18 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-navy)">The Cover Story</div>
+            <div class="mini-headline">The Trinity of Human Discovery</div>
+            <div class="mini-rule"><span>JWST</span><span>p. 1 &ndash; 52</span></div>
           </div>
-          <div class="meta">Vol. I · No. 1 &nbsp;·&nbsp; 6 Mar 2026</div>
-          <h3><a href="index.html">Quantum Leap in Green Energy</a></h3>
-          <p class="desc">A laboratory fact with which the courts have not yet caught up.</p>
+          <div class="meta">Vol. 14 &middot; No. 42 &nbsp;&middot;&nbsp; 18 Apr 2026 &nbsp;&middot;&nbsp; <b>Current Issue</b></div>
+          <h3><a href="index.html">The Trinity of Human Discovery</a></h3>
+          <p class="desc">How the James Webb Telescope is rewriting our cosmic origin story &mdash; and what philosophy and global law have to say about it.</p>
           <a class="link" href="index.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
-          <div class="cover cover--v2">
+          <div class="cover cover--v6">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 2 · 13 March 2026</div>
-            <div class="mini-kicker">Legal Perspective</div>
-            <div class="mini-headline">Sovereign Immunity, Revisited</div>
-            <div class="mini-rule"><span>The Hague</span><span>p. 1 &ndash; 48</span></div>
+            <div class="mini-meta">Vol. 14 · No. 41 · 11 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-forest)">Special Spotlight</div>
+            <div class="mini-headline">Delta-Zero 2031: Phase 2</div>
+            <div class="mini-rule"><span>Roadmap</span><span>p. 1 &ndash; 56</span></div>
           </div>
-          <div class="meta">Vol. I · No. 2 &nbsp;·&nbsp; 13 Mar 2026</div>
-          <h3><a href="article.html">Sovereign Immunity, Revisited</a></h3>
-          <p class="desc">When a state&rsquo;s borders become climatological, what of its legal person?</p>
+          <div class="meta">Vol. 14 &middot; No. 41 &nbsp;&middot;&nbsp; 11 Apr 2026</div>
+          <h3><a href="article.html">Delta-Zero 2031: The Eco-Diplomacy Phase</a></h3>
+          <p class="desc">Phase 2 of the eight-phase roadmap for a carbon-neutral economy &mdash; the diplomatic groundwork.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
           <div class="cover cover--v3">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 3 · 20 March 2026</div>
-            <div class="mini-kicker" style="color:var(--tgp-aubergine)">The Lyceum</div>
-            <div class="mini-headline">Existential Risks</div>
-            <div class="mini-rule"><span>Essay</span><span>p. 1 &ndash; 44</span></div>
+            <div class="mini-meta">Vol. 14 · No. 40 · 4 April 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-aubergine)">Philosophy</div>
+            <div class="mini-headline">Sartre &amp; The Algorithm</div>
+            <div class="mini-rule"><span>Existentialism</span><span>p. 1 &ndash; 48</span></div>
           </div>
-          <div class="meta">Vol. I · No. 3 &nbsp;·&nbsp; 20 Mar 2026</div>
-          <h3><a href="article.html">Existential Risks in the Age of Technological Acceleration</a></h3>
-          <p class="desc">Palaeolithic emotions, mediaeval institutions, god-like technology.</p>
+          <div class="meta">Vol. 14 &middot; No. 40 &nbsp;&middot;&nbsp; 4 Apr 2026</div>
+          <h3><a href="article.html">Existentialism &amp; AI: Sartre vs The Algorithm</a></h3>
+          <p class="desc">Can a system that lacks bad faith ever know freedom? A long-form companion to the cover essay.</p>
+          <a class="link" href="article.html">Read this issue &rarr;</a>
+        </article>
+
+        <article class="issue">
+          <div class="cover cover--v2">
+            <div class="mini-masthead">The Global Polymath</div>
+            <div class="mini-meta">Vol. 14 · No. 39 · 28 March 2026</div>
+            <div class="mini-kicker">Global Law</div>
+            <div class="mini-headline">The Treaty Architecture</div>
+            <div class="mini-rule"><span>The Hague</span><span>p. 1 &ndash; 50</span></div>
+          </div>
+          <div class="meta">Vol. 14 &middot; No. 39 &nbsp;&middot;&nbsp; 28 Mar 2026</div>
+          <h3><a href="article.html">The Treaty Architecture: How Nations Agree to Exist</a></h3>
+          <p class="desc"><i>Pacta Sunt Servanda</i>, <i>Opinio Juris</i>, and the limits of consent.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
           <div class="cover cover--v4">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 4 · 27 March 2026</div>
+            <div class="mini-meta">Vol. 14 · No. 38 · 21 March 2026</div>
             <div class="mini-kicker" style="color:var(--tgp-ochre)">Literature</div>
-            <div class="mini-headline">Shakespeare, Four Centuries On</div>
-            <div class="mini-rule"><span>Arts &amp; Letters</span><span>p. 1 &ndash; 50</span></div>
+            <div class="mini-headline">Homer to Shakespeare</div>
+            <div class="mini-rule"><span>Arts &amp; Letters</span><span>p. 1 &ndash; 44</span></div>
           </div>
-          <div class="meta">Vol. I · No. 4 &nbsp;·&nbsp; 27 Mar 2026</div>
-          <h3><a href="article.html">Shakespeare, Four Centuries On</a></h3>
-          <p class="desc">The sonnets hold up; our relationship to them is what has not.</p>
-          <a class="link" href="article.html">Read this issue &rarr;</a>
-        </article>
-
-        <article class="issue">
-          <div class="cover cover--v5">
-            <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 5 · 3 April 2026</div>
-            <div class="mini-kicker" style="color:var(--tgp-navy)">Economy</div>
-            <div class="mini-headline">The Quiet Decoupling</div>
-            <div class="mini-rule"><span>Markets</span><span>p. 1 &ndash; 56</span></div>
-          </div>
-          <div class="meta">Vol. I · No. 5 &nbsp;·&nbsp; 3 Apr 2026</div>
-          <h3><a href="article.html">The Post-Pandemic Decoupling</a></h3>
-          <p class="desc">Containers move again, along lines an economist of the 1990s would not recognise.</p>
+          <div class="meta">Vol. 14 &middot; No. 38 &nbsp;&middot;&nbsp; 21 Mar 2026</div>
+          <h3><a href="article.html">Homer to Shakespeare: Why the Classics Still Rule</a></h3>
+          <p class="desc">Three thousand years of human concern, told twice.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
           <div class="cover cover--v6">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 6 · 10 April 2026</div>
+            <div class="mini-meta">Vol. 14 · No. 37 · 14 March 2026</div>
             <div class="mini-kicker" style="color:var(--tgp-gold-deep)">Psychology</div>
-            <div class="mini-headline">Crisis Decision-Making</div>
-            <div class="mini-rule"><span>Human Mind</span><span>p. 1 &ndash; 46</span></div>
+            <div class="mini-headline">Decoding the Id</div>
+            <div class="mini-rule"><span>Freudian Conflict</span><span>p. 1 &ndash; 46</span></div>
           </div>
-          <div class="meta">Vol. I · No. 6 &nbsp;·&nbsp; 10 Apr 2026</div>
-          <h3><a href="article.html">Why Experts Fail When Experts Should Not</a></h3>
-          <p class="desc">A meta-analysis of 340 disaster after-actions, carefully reported.</p>
+          <div class="meta">Vol. 14 &middot; No. 37 &nbsp;&middot;&nbsp; 14 Mar 2026</div>
+          <h3><a href="article.html">Decoding the Id: A Modern Look at Freudian Conflict</a></h3>
+          <p class="desc">What 130 years of clinical practice has, and has not, taught us.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
-          <div class="cover cover--v7">
+          <div class="cover cover--v1">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 7 · 17 April 2026</div>
+            <div class="mini-meta">Vol. 14 · No. 36 · 7 March 2026</div>
             <div class="mini-kicker" style="color:var(--tgp-forest)">Science</div>
-            <div class="mini-headline">CRISPR at Twenty</div>
-            <div class="mini-rule"><span>Biology</span><span>p. 1 &ndash; 58</span></div>
+            <div class="mini-headline">Exoplanets &amp; TRAPPIST-1</div>
+            <div class="mini-rule"><span>Cosmology</span><span>p. 1 &ndash; 52</span></div>
           </div>
-          <div class="meta">Vol. I · No. 7 &nbsp;·&nbsp; 17 Apr 2026</div>
-          <h3><a href="article.html">CRISPR at Twenty: The Tools Grow Up</a></h3>
-          <p class="desc">The first generation of gene editors enters its austere middle age.</p>
+          <div class="meta">Vol. 14 &middot; No. 36 &nbsp;&middot;&nbsp; 7 Mar 2026</div>
+          <h3><a href="article.html">Exoplanets: The Search for Life in TRAPPIST-1</a></h3>
+          <p class="desc">Seven worlds, one star, and a transit-timing puzzle that may decide a century.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
         <article class="issue">
           <div class="cover cover--v8">
             <div class="mini-masthead">The Global Polymath</div>
-            <div class="mini-meta">Vol. I · No. 8 · 24 April 2026</div>
-            <div class="mini-kicker" style="color:var(--tgp-navy-soft)">Opinion</div>
-            <div class="mini-headline">On Thinking Across the Grain</div>
-            <div class="mini-rule"><span>Editorial</span><span>p. 1 &ndash; 52</span></div>
+            <div class="mini-meta">Vol. 14 · No. 35 · 28 February 2026</div>
+            <div class="mini-kicker" style="color:var(--tgp-gold)">Spirituality</div>
+            <div class="mini-headline">The Architecture of the Heart</div>
+            <div class="mini-rule"><span>Sufism &middot; <i>Tasawwuf</i></span><span>p. 1 &ndash; 40</span></div>
           </div>
-          <div class="meta">Vol. I · No. 8 &nbsp;·&nbsp; 24 Apr 2026</div>
-          <h3><a href="article.html">On the Usefulness of Thinking Across the Grain</a></h3>
-          <p class="desc">Our editorial case for the publication&rsquo;s founding premise.</p>
+          <div class="meta">Vol. 14 &middot; No. 35 &nbsp;&middot;&nbsp; 28 Feb 2026</div>
+          <h3><a href="article.html">The Architecture of the Heart: Understanding Sufism</a></h3>
+          <p class="desc">A concluding column on <i>Tasawwuf</i> &mdash; purifying the soul to achieve divine proximity.</p>
           <a class="link" href="article.html">Read this issue &rarr;</a>
         </article>
 
@@ -384,17 +399,17 @@
             <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
               Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
             </p>
-            <p>An independent quarterly-weekly edition published from Dhaka.</p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Dhaka, with bureaus in Singapore and the UAE.</p>
           </div>
           <div>
             <h5>Sections</h5>
             <ul>
               <li><a href="section.html?s=science">Science</a></li>
-              <li><a href="section.html?s=legal">Legal Perspective</a></li>
-              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
-              <li><a href="section.html?s=literature">Literature</a></li>
-              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
               <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
             </ul>
           </div>
           <div>
@@ -404,22 +419,23 @@
               <li><a href="archive.html">Back Issues</a></li>
               <li><a href="subscribe.html">Subscribe</a></li>
               <li><a href="newsletter.html">Weekly Dispatch</a></li>
-              <li><a href="wireframes.html">Design Explorations</a></li>
+              <li><a href="https://drrussellmostafakamal.com">drrussellmostafakamal.com</a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5>Editor &amp; Publisher</h5>
             <ul>
-              <li>12 Gulshan Avenue, Dhaka 1212</li>
-              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li><b>Dr. Russell Mostafa Kamal</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
               <li>+880 2 5566 4311</li>
             </ul>
           </div>
         </div>
         <div class="site-footer-meta">
-          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
           <span>&#10086;</span>
-          <span>Dhaka &middot; Bangladesh</span>
+          <span>Dhaka &middot; Singapore &middot; UAE</span>
         </div>
       </footer>
 

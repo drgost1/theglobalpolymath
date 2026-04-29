@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="site.css">
 <style>
   .section-hero {
-    padding: 24px 0 22px;
+    padding: 28px 0 24px;
     border-bottom: 3px double var(--tgp-navy);
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -19,19 +19,20 @@
   }
   .section-hero .roman {
     font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 56px;
+    font-weight: 900;
+    font-size: 64px;
     color: var(--tgp-gold);
     line-height: 1;
     letter-spacing: .02em;
   }
   .section-hero .mid h1 {
     font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(32px, 4.2vw, 56px);
-    line-height: 1.05;
-    letter-spacing: -.015em;
-    margin: 0 0 8px;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 64px);
+    line-height: 1.0;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
     color: var(--tgp-navy);
   }
   .section-hero .deck {
@@ -45,10 +46,10 @@
   }
   .section-hero .kick {
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-ink-mute);
     margin-bottom: 4px;
   }
@@ -82,15 +83,16 @@
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.02) saturate(0.95);
+    filter: contrast(1.04) saturate(0.95);
   }
   .section-lead .text { padding: 0 28px; display: flex; flex-direction: column; justify-content: center; }
   .section-lead h2 {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 900;
     font-size: clamp(28px, 3.2vw, 44px);
-    line-height: 1.08;
-    letter-spacing: -.01em;
+    line-height: 1.0;
+    letter-spacing: -.018em;
+    text-transform: uppercase;
     margin: 10px 0 14px;
     color: var(--tgp-ink);
   }
@@ -126,15 +128,17 @@
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.02) saturate(0.95);
+    filter: contrast(1.04) saturate(0.95);
   }
   .section-list h3 {
     font-family: var(--font-headline);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 22px;
     line-height: 1.18;
     color: var(--tgp-ink);
     margin: 0 0 8px;
+    text-transform: none;
+    letter-spacing: -.005em;
   }
   .section-list h3 a { color: inherit; text-decoration: none; }
   .section-list h3 a:hover { text-decoration: underline; }
@@ -153,10 +157,10 @@
   }
   .section-archive h4 {
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-navy);
     margin: 0 0 14px;
   }
@@ -215,6 +219,7 @@
         <div class="left">
           <span>EN</span>
           <span>Edition: International</span>
+          <span>Dhaka &middot; Singapore &middot; UAE</span>
         </div>
         <div class="right">
           <a href="subscribe.html">Subscribe</a>
@@ -225,18 +230,29 @@
 
       <!-- Masthead (small) -->
       <header class="masthead masthead--small">
-        <div class="masthead-row">
-          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
-          <div style="text-align:center">
-            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
-            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
-          </div>
+        <div class="masthead-title">
+          <a href="index.html">
+            <span class="globe-row">
+              <span>The Global</span>
+              <span class="globe">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="60" cy="60" r="52" fill="#C9A961" stroke="#1B3358" stroke-width="3"/>
+                  <ellipse cx="60" cy="60" rx="52" ry="20" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <ellipse cx="60" cy="60" rx="22" ry="52" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <line x1="8" y1="60" x2="112" y2="60" stroke="#1B3358" stroke-width="2.4"/>
+                  <line x1="60" y1="8" x2="60" y2="112" stroke="#1B3358" stroke-width="2.4"/>
+                </svg>
+              </span>
+              <span>Polymath</span>
+            </span>
+          </a>
         </div>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
       </header>
 
       <div class="dateline">
-        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
-        <span>Vol. I, No. 1</span>
+        <span><b>Vol. 14</b> &middot; No. 42</span>
+        <span>Saturday, April 18, 2026</span>
         <span id="sectionLabel">Section</span>
       </div>
 
@@ -249,11 +265,11 @@
         <div class="nav-menu">
           <a href="index.html">Front Page</a>
           <a href="section.html?s=science" data-sec="science">Science</a>
-          <a href="section.html?s=legal" data-sec="legal">Legal Perspective</a>
-          <a href="section.html?s=lyceum" data-sec="lyceum">The Lyceum</a>
-          <a href="section.html?s=literature" data-sec="literature">Literature</a>
-          <a href="section.html?s=economy" data-sec="economy">Economy</a>
+          <a href="section.html?s=philosophy" data-sec="philosophy">Philosophy</a>
+          <a href="section.html?s=global-law" data-sec="global-law">Global Law</a>
           <a href="section.html?s=psychology" data-sec="psychology">Psychology</a>
+          <a href="section.html?s=literature" data-sec="literature">Literature</a>
+          <a href="section.html?s=spirituality" data-sec="spirituality">Art &amp; Spirituality</a>
           <a href="archive.html">Archive</a>
           <a href="about.html">About</a>
           <a href="subscribe.html">Subscribe</a>
@@ -262,15 +278,15 @@
 
       <!-- Section hero -->
       <header class="section-hero">
-        <div class="roman" id="sectionRoman">§</div>
+        <div class="roman" id="sectionRoman">&sect;</div>
         <div class="mid">
           <div class="kick" id="sectionKicker">Section</div>
-          <h1 id="sectionTitle">Legal Perspective</h1>
+          <h1 id="sectionTitle">Global Law</h1>
           <p class="deck" id="sectionDeck">
             Law is the long conversation a society holds with itself about what it cannot yet agree on. We take careful notes.
           </p>
         </div>
-        <div class="date-tag">March 2026<br>Vol. I · No. 1</div>
+        <div class="date-tag">April 2026<br>Vol. XIV &middot; No. 42</div>
       </header>
 
       <!-- Section lead -->
@@ -278,12 +294,12 @@
         <div class="img"><img src="assets/img/section-hero.jpg" alt="Section lead photograph." loading="lazy"></div>
         <div class="text">
           <div class="kicker kicker--oxblood">The Section Lead &middot; This Week</div>
-          <h2><a href="article.html">The Moral Ambiguity of AI-Generated Art</a></h2>
+          <h2><a href="article.html">The Treaty Architecture: How Nations Agree to Exist</a></h2>
           <p>
-            When a statistical model assembles a canvas from ten million prior canvases,
-            who &mdash; precisely &mdash; may be said to have painted it? The courts in
-            Brussels and Mumbai have begun to disagree, and the disagreement is, if
-            anything, the most interesting thing to happen in copyright this decade.
+            <i>Pacta Sunt Servanda</i>, <i>Opinio Juris</i>, and <i>Jus Cogens</i> &mdash;
+            three names for the long, slow grammar by which states agree to mean what
+            they say. We unpack the architecture and ask, in passing, whether it can
+            survive the abundance the Webb instrument has just measured.
           </p>
           <div class="text-byline">By Raihan Chowdhury &nbsp;|&nbsp; Legal Affairs Editor &nbsp;&middot;&nbsp; 14 min read</div>
           <div style="margin-top:14px"><a class="text-more text-more--oxblood" href="article.html">Read the full essay &rarr;</a></div>
@@ -294,11 +310,11 @@
       <section class="section-list">
 
         <article>
-          <div class="thumb"><img src="assets/img/intl-hague.jpg" alt="The Hague." loading="lazy"></div>
+          <div class="thumb"><img src="assets/img/intl-hague.jpg" alt="The Peace Palace at The Hague." loading="lazy"></div>
           <div class="kicker kicker--oxblood">Analysis</div>
           <h3><a href="article.html">ICJ Hearings Open on Trans-Boundary Carbon Liability</a></h3>
           <p>For the first time, judges in the Peace Palace are being asked whether a
-             nation owes a duty of care to its neighbours&rsquo; atmosphere.</p>
+             nation owes a duty of care to its neighbours' atmosphere.</p>
           <div class="text-byline" style="margin-bottom:6px">By Kamran Ahmed &nbsp;|&nbsp; The Hague Correspondent</div>
           <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 9</a>
         </article>
@@ -307,8 +323,8 @@
           <div class="thumb"><img src="assets/img/intl-brussels.jpg" alt="Brussels." loading="lazy"></div>
           <div class="kicker kicker--oxblood">Europe</div>
           <h3><a href="article.html">Brussels Revisits the Digital Markets Act &mdash; Quietly</a></h3>
-          <p>A working paper, leaked and then promptly footnoted out of existence, hints
-             at a second-generation enforcement regime.</p>
+          <p>A working paper, leaked and then promptly footnoted out of existence,
+             hints at a second-generation enforcement regime.</p>
           <div class="text-byline" style="margin-bottom:6px">By Ingrid Laurent &nbsp;|&nbsp; Brussels Bureau</div>
           <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 13</a>
         </article>
@@ -316,7 +332,7 @@
         <article>
           <div class="thumb"><img src="assets/img/intl-monsoon.jpg" alt="South Asia." loading="lazy"></div>
           <div class="kicker kicker--oxblood">South Asia</div>
-          <h3><a href="article.html">Dhaka&rsquo;s New Data Protection Bill: A First Read</a></h3>
+          <h3><a href="article.html">Dhaka's New Data Protection Bill: A First Read</a></h3>
           <p>The draft, circulated quietly among civil-society groups, is both more
              ambitious and more cautious than its European counterpart.</p>
           <div class="text-byline" style="margin-bottom:6px">By Tasnim Ali &nbsp;|&nbsp; Legal Affairs</div>
@@ -327,35 +343,35 @@
 
       <!-- Section archive -->
       <section class="section-archive">
-        <h4>From the Archive &middot; Legal Perspective</h4>
+        <h4>From the Archive &middot; Global Law</h4>
         <ul>
           <li>
-            <span class="date">28 Feb 2026</span>
+            <span class="date">11 Apr 2026</span>
             <a href="article.html">Sovereign Immunity in the Age of Climate Displacement</a>
             <span class="dur">22 min</span>
           </li>
           <li>
-            <span class="date">21 Feb 2026</span>
+            <span class="date">4 Apr 2026</span>
             <a href="article.html">What the Tribunal at Dhaka Ruled, and Did Not</a>
             <span class="dur">14 min</span>
           </li>
           <li>
-            <span class="date">14 Feb 2026</span>
+            <span class="date">28 Mar 2026</span>
             <a href="article.html">A Short History of Expert Testimony</a>
             <span class="dur">18 min</span>
           </li>
           <li>
-            <span class="date">7 Feb 2026</span>
+            <span class="date">21 Mar 2026</span>
             <a href="article.html">The Quiet Return of Non-Refoulement</a>
             <span class="dur">11 min</span>
           </li>
           <li>
-            <span class="date">31 Jan 2026</span>
+            <span class="date">14 Mar 2026</span>
             <a href="article.html">Reflections on the First Year of the AI Act</a>
             <span class="dur">26 min</span>
           </li>
           <li>
-            <span class="date">24 Jan 2026</span>
+            <span class="date">7 Mar 2026</span>
             <a href="article.html">On the Jurisprudence of Algorithms</a>
             <span class="dur">19 min</span>
           </li>
@@ -370,17 +386,17 @@
             <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
               Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
             </p>
-            <p>An independent quarterly-weekly edition published from Dhaka.</p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Dhaka, with bureaus in Singapore and the UAE.</p>
           </div>
           <div>
             <h5>Sections</h5>
             <ul>
               <li><a href="section.html?s=science">Science</a></li>
-              <li><a href="section.html?s=legal">Legal Perspective</a></li>
-              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
-              <li><a href="section.html?s=literature">Literature</a></li>
-              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
               <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
             </ul>
           </div>
           <div>
@@ -390,22 +406,23 @@
               <li><a href="archive.html">Back Issues</a></li>
               <li><a href="subscribe.html">Subscribe</a></li>
               <li><a href="newsletter.html">Weekly Dispatch</a></li>
-              <li><a href="wireframes.html">Design Explorations</a></li>
+              <li><a href="https://drrussellmostafakamal.com">drrussellmostafakamal.com</a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5>Editor &amp; Publisher</h5>
             <ul>
-              <li>12 Gulshan Avenue, Dhaka 1212</li>
-              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li><b>Dr. Russell Mostafa Kamal</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
               <li>+880 2 5566 4311</li>
             </ul>
           </div>
         </div>
         <div class="site-footer-meta">
-          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
           <span>&#10086;</span>
-          <span>Continued on interior pages 2 &ndash; 52</span>
+          <span>Vol. 14, No. 42 &middot; Continued on interior pages 2 &ndash; 52</span>
         </div>
       </footer>
 
@@ -422,80 +439,114 @@
       deck: 'We report the experiments that matter, and we insist on reporting what the experiments do not yet show.',
       kickerClass: 'kicker--forest',
       moreClass: 'text-more--forest',
+      lead: {
+        title: 'JWST: A New Measurement of the Early Universe',
+        deck: 'The deep field that started this issue, in technical detail. Transmission spectroscopy, the water fingerprint, and an honest accounting of what the instrument cannot yet say.',
+        byline: 'By Dr. Nadira Hossain &nbsp;|&nbsp; Science Correspondent &nbsp;&middot;&nbsp; 18 min read',
+      },
     },
-    legal: {
-      title: 'Legal Perspective',
-      kicker: 'Section &middot; The Juridical',
+    philosophy: {
+      title: 'Philosophy',
+      kicker: 'Section &middot; The Examined',
       roman: 'II',
-      deck: 'Law is the long conversation a society holds with itself about what it cannot yet agree on. We take careful notes.',
-      kickerClass: 'kicker--oxblood',
-      moreClass: 'text-more--oxblood',
-    },
-    lyceum: {
-      title: 'The Lyceum',
-      kicker: 'Section &middot; The Philosophical',
-      roman: 'III',
       deck: 'Philosophy, done in earnest, is the slowest of the public virtues. These pages are for readers in no hurry.',
       kickerClass: 'kicker--aubergine',
       moreClass: 'text-more--aubergine',
+      lead: {
+        title: 'Existentialism &amp; AI: Sartre vs The Algorithm',
+        deck: 'Can a system that lacks bad faith ever know freedom? A long-form on the strange new burden of being a creature that asks the question.',
+        byline: 'By Prof. Ishaan Dey &nbsp;|&nbsp; Editor, The Lyceum &nbsp;&middot;&nbsp; 22 min read',
+      },
+    },
+    'global-law': {
+      title: 'Global Law',
+      kicker: 'Section &middot; The Juridical',
+      roman: 'III',
+      deck: 'Law is the long conversation a society holds with itself about what it cannot yet agree on. We take careful notes.',
+      kickerClass: 'kicker--oxblood',
+      moreClass: 'text-more--oxblood',
+      lead: {
+        title: 'The Treaty Architecture: How Nations Agree to Exist',
+        deck: '<i>Pacta Sunt Servanda</i>, <i>Opinio Juris</i>, and <i>Jus Cogens</i> &mdash; three names for the long, slow grammar by which states agree to mean what they say.',
+        byline: 'By Raihan Chowdhury &nbsp;|&nbsp; Legal Affairs Editor &nbsp;&middot;&nbsp; 14 min read',
+      },
+    },
+    psychology: {
+      title: 'Psychology',
+      kicker: 'Section &middot; The Inner Life',
+      roman: 'IV',
+      deck: 'Behavioural science, cautiously reported: the mind is harder to measure than the instruments that measure it.',
+      kickerClass: 'kicker--gold',
+      moreClass: 'text-more--navy',
+      lead: {
+        title: 'Decoding the Id: A Modern Look at Freudian Conflict',
+        deck: 'What 130 years of clinical practice has, and has not, taught us about the conflicts the deep field cannot photograph.',
+        byline: 'By Dr. Anika Sen &nbsp;|&nbsp; Psychology Columnist &nbsp;&middot;&nbsp; 16 min read',
+      },
     },
     literature: {
       title: 'Literature',
       kicker: 'Section &middot; Arts &amp; Letters',
-      roman: 'IV',
-      deck: 'Good books and bad ones, patiently told apart. Poetry, fiction, and the occasional literary scandal.',
+      roman: 'V',
+      deck: 'Good books and bad ones, patiently told apart. Three thousand years of human concern, told twice.',
       kickerClass: 'kicker--ochre',
       moreClass: 'text-more--ochre',
+      lead: {
+        title: 'Homer to Shakespeare: Why the Classics Still Rule',
+        deck: 'The classical canon as a single, distributed conversation across three millennia &mdash; and its relevance to a species that has just photographed the early universe.',
+        byline: 'By Tasnim Ali &nbsp;|&nbsp; Arts &amp; Letters &nbsp;&middot;&nbsp; 20 min read',
+      },
     },
-    economy: {
-      title: 'Global Economy',
-      kicker: 'Section &middot; Markets &amp; Policy',
-      roman: 'V',
-      deck: 'Numbers behave strangely when the politics tire of them. We keep one eye on each.',
-      kickerClass: 'kicker--forest',
-      moreClass: 'text-more--forest',
-    },
-    psychology: {
-      title: 'Psychology',
-      kicker: 'Section &middot; The Human Mind',
+    spirituality: {
+      title: 'Art &amp; Spirituality',
+      kicker: 'Section &middot; The Sacred Frontier',
       roman: 'VI',
-      deck: 'Behavioural science, cautiously reported: the mind is harder to measure than the instruments that measure it.',
+      deck: 'Where the tradition of the soul meets the practice of the page. We read the mystics, the architects, and the working contemplatives.',
       kickerClass: 'kicker--gold',
-      moreClass: 'text-more--navy',
-    },
-    international: {
-      title: 'International',
-      kicker: 'Section &middot; The World This Week',
-      roman: 'VII',
-      deck: 'A weekly cable from our bureaus in The Hague, Brussels, Delhi, Cairo, and Jakarta.',
-      kickerClass: 'kicker--oxblood',
-      moreClass: 'text-more--navy',
+      moreClass: 'text-more--ochre',
+      lead: {
+        title: 'The Architecture of the Heart: Understanding Sufism',
+        deck: 'A concluding column on <i>Tasawwuf</i> &mdash; the practice of purifying the soul to achieve divine proximity, read for the lay polymath.',
+        byline: 'By Liton Sarker &nbsp;|&nbsp; Spirituality &amp; Letters &nbsp;&middot;&nbsp; 12 min read',
+      },
     },
   };
 
   (function init() {
     const params = new URLSearchParams(location.search);
-    const key = (params.get('s') || 'legal').toLowerCase();
-    const cfg = SECTIONS[key] || SECTIONS.legal;
+    const key = (params.get('s') || 'global-law').toLowerCase();
+    const cfg = SECTIONS[key] || SECTIONS['global-law'];
 
-    document.title = cfg.title + ' — The Global Polymath';
-    document.getElementById('sectionTitle').textContent = cfg.title;
+    document.title = cfg.title.replace(/&amp;/g, '&') + ' — The Global Polymath';
+    document.getElementById('sectionTitle').innerHTML = cfg.title;
     document.getElementById('sectionRoman').textContent = cfg.roman;
     document.getElementById('sectionKicker').innerHTML = cfg.kicker;
     document.getElementById('sectionDeck').textContent = cfg.deck;
-    document.getElementById('sectionLabel').innerHTML = cfg.title + ' &middot; March 2026';
+    document.getElementById('sectionLabel').innerHTML = cfg.title + ' &middot; April 2026';
+
+    // Section lead
+    const sl = document.querySelector('.section-lead');
+    if (sl) {
+      sl.querySelector('h2 a').innerHTML = cfg.lead.title;
+      sl.querySelector('p').innerHTML = cfg.lead.deck;
+      sl.querySelector('.text-byline').innerHTML = cfg.lead.byline;
+    }
 
     // Highlight nav
     document.querySelectorAll('#nav a').forEach(a => {
       if (a.dataset.sec === key) a.classList.add('active');
     });
 
-    // Recolor kickers & archive heading
-    const sectionHero = document.querySelector('.section-hero');
-    if (sectionHero && cfg.kickerClass.includes('forest')) sectionHero.querySelector('.roman').style.color = 'var(--tgp-forest)';
-    if (cfg.kickerClass.includes('oxblood')) document.querySelector('.section-hero .roman').style.color = 'var(--tgp-oxblood)';
-    if (cfg.kickerClass.includes('aubergine')) document.querySelector('.section-hero .roman').style.color = 'var(--tgp-aubergine)';
-    if (cfg.kickerClass.includes('ochre')) document.querySelector('.section-hero .roman').style.color = 'var(--tgp-ochre)';
+    // Recolor roman numeral and kickers
+    const colorMap = {
+      'kicker--forest': 'var(--tgp-forest)',
+      'kicker--oxblood': 'var(--tgp-oxblood)',
+      'kicker--aubergine': 'var(--tgp-aubergine)',
+      'kicker--ochre': 'var(--tgp-ochre)',
+      'kicker--gold': 'var(--tgp-gold-deep)',
+    };
+    const accent = colorMap[cfg.kickerClass] || 'var(--tgp-gold)';
+    document.querySelector('.section-hero .roman').style.color = accent;
 
     // Swap kickers in body
     document.querySelectorAll('.section-lead .kicker, .section-list .kicker')

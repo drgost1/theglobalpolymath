@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quantum Leap in Green Energy — The Global Polymath</title>
-<meta name="description" content="A consortium of researchers in Dhaka and Delft claim a fivefold gain in photovoltaic efficiency.">
+<title>The Trinity of Human Discovery — The Global Polymath</title>
+<meta name="description" content="How the James Webb Telescope is rewriting our cosmic origin story — unveiling the Universe, the Psyche, &amp; Global Law. By Dr. Russell Mostafa Kamal.">
 <link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
@@ -12,7 +12,7 @@
   /* Article layout */
   .article-wrap {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 700px) 1fr;
+    grid-template-columns: 1fr minmax(0, 720px) 1fr;
     gap: 0;
     padding: 36px 0 20px;
   }
@@ -34,36 +34,39 @@
   }
   .article-rail-left .meta-block:last-child { border-bottom: 0; }
   .article-rail-left .meta-label {
-    font-weight: 600;
-    letter-spacing: .18em;
-    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-ink-mute);
     margin-bottom: 4px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .article-rail-left .meta-val {
     font-family: var(--font-serif);
     font-size: 14px;
     color: var(--tgp-ink);
+    line-height: 1.45;
   }
 
   .article-head { padding: 0 4px; }
   .article-head .kick {
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-forest);
     margin-bottom: 14px;
   }
   .article-head h1 {
     font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(26px, 5vw, 62px);
-    line-height: 1.06;
-    letter-spacing: -.01em;
+    font-weight: 900;
+    font-size: clamp(30px, 5.6vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -.022em;
     color: var(--tgp-ink);
+    text-transform: uppercase;
     margin: 0 0 16px;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -72,7 +75,7 @@
     font-family: var(--font-serif-alt);
     font-style: italic;
     font-weight: 500;
-    font-size: clamp(18px, 1.8vw, 22px);
+    font-size: clamp(18px, 1.8vw, 24px);
     line-height: 1.4;
     color: var(--tgp-ink-soft);
     margin: 0 0 22px;
@@ -83,6 +86,7 @@
     display: flex;
     justify-content: space-between;
     gap: 18px;
+    flex-wrap: wrap;
     font-family: var(--font-sans);
     font-size: 11px;
     letter-spacing: .08em;
@@ -90,7 +94,7 @@
     color: var(--tgp-ink-mute);
     margin-bottom: 24px;
   }
-  .article-head .byline-row b { color: var(--tgp-navy); font-weight: 600; }
+  .article-head .byline-row b { color: var(--tgp-navy); font-weight: 700; }
 
   .article-hero {
     aspect-ratio: 16 / 9;
@@ -102,7 +106,7 @@
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.02) saturate(0.95);
+    filter: contrast(1.04) saturate(0.95);
   }
   .article-hero-cap {
     font-family: var(--font-serif);
@@ -119,12 +123,12 @@
     font-size: 18px;
     line-height: 1.65;
     color: var(--tgp-ink);
-    max-width: 680px;
+    max-width: 700px;
   }
   .article-body p { margin: 0 0 20px; }
   .article-body p.lede::first-letter {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 900;
     float: left;
     font-size: 4.4em;
     line-height: 0.88;
@@ -133,10 +137,11 @@
   }
   .article-body h2 {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(20px, 3vw, 26px);
-    line-height: 1.25;
-    letter-spacing: -.005em;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 28px);
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -.012em;
     color: var(--tgp-navy);
     margin: 36px 0 14px;
     overflow-wrap: break-word;
@@ -146,8 +151,8 @@
     font-family: var(--font-serif-alt);
     font-style: italic;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 1.35;
+    font-size: 26px;
+    line-height: 1.3;
     color: var(--tgp-navy);
     border-top: 3px double var(--tgp-navy);
     border-bottom: 3px double var(--tgp-navy);
@@ -162,6 +167,43 @@
     margin: 28px 0;
     letter-spacing: 1em;
   }
+  .article-body .treaty-inline {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 22px 0;
+    font-family: var(--font-serif);
+    font-size: 14px;
+  }
+  .article-body .treaty-inline caption {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--tgp-navy);
+    text-align: left;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--tgp-navy);
+    margin-bottom: 6px;
+  }
+  .article-body .treaty-inline th, .article-body .treaty-inline td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: .5px solid var(--tgp-paper-edge);
+    vertical-align: top;
+  }
+  .article-body .treaty-inline th {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    background: var(--tgp-paper-deep);
+  }
+  .article-body .treaty-inline td:first-child {
+    font-weight: 700;
+    color: var(--tgp-navy);
+    font-style: italic;
+  }
+  .article-body .treaty-inline tr:last-child td { border-bottom: 0; }
+
   .article-end {
     text-align: center;
     font-size: 16px;
@@ -177,10 +219,10 @@
   .article-rail-right .related:last-child { border-bottom: 0; }
   .article-rail-right .related h5 {
     font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--tgp-navy);
     margin: 0 0 12px;
     padding-bottom: 6px;
@@ -188,11 +230,13 @@
   }
   .article-rail-right .related h4 {
     font-family: var(--font-headline);
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 800;
+    font-size: 17px;
     line-height: 1.2;
     color: var(--tgp-ink);
     margin: 0 0 6px;
+    text-transform: none;
+    letter-spacing: -.005em;
   }
   .article-rail-right .related h4 a { color: inherit; text-decoration: none; }
   .article-rail-right .related h4 a:hover { text-decoration: underline; }
@@ -205,7 +249,7 @@
   }
 
   @media (max-width: 1100px) {
-    .article-wrap { grid-template-columns: 0.8fr minmax(0, 620px) 0.8fr; padding: 28px 0 16px; }
+    .article-wrap { grid-template-columns: 0.8fr minmax(0, 640px) 0.8fr; padding: 28px 0 16px; }
     .article-rail-left, .article-rail-right { padding: 0 18px; }
   }
   @media (max-width: 900px) {
@@ -226,6 +270,7 @@
         <div class="left">
           <span>EN</span>
           <span>Edition: International</span>
+          <span>Dhaka &middot; Singapore &middot; UAE</span>
         </div>
         <div class="right">
           <a href="subscribe.html">Subscribe</a>
@@ -236,19 +281,30 @@
 
       <!-- Header -->
       <header class="masthead masthead--small">
-        <div class="masthead-row">
-          <img class="masthead-emblem" src="assets/emblem.svg" alt="" width="48" height="48">
-          <div style="text-align:center">
-            <div class="masthead-title"><a href="index.html" style="color:inherit;text-decoration:none">The Global Polymath</a></div>
-            <div class="masthead-tagline">Where Empirical Science Meets Human Philosophy &nbsp;&amp;&nbsp; Jurisprudence</div>
-          </div>
+        <div class="masthead-title">
+          <a href="index.html">
+            <span class="globe-row">
+              <span>The Global</span>
+              <span class="globe">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="60" cy="60" r="52" fill="#C9A961" stroke="#1B3358" stroke-width="3"/>
+                  <ellipse cx="60" cy="60" rx="52" ry="20" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <ellipse cx="60" cy="60" rx="22" ry="52" stroke="#1B3358" stroke-width="2.4" fill="none"/>
+                  <line x1="8" y1="60" x2="112" y2="60" stroke="#1B3358" stroke-width="2.4"/>
+                  <line x1="60" y1="8" x2="60" y2="112" stroke="#1B3358" stroke-width="2.4"/>
+                </svg>
+              </span>
+              <span>Polymath</span>
+            </span>
+          </a>
         </div>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
       </header>
 
       <div class="dateline">
-        <span><b>Dhaka</b> · Friday, March 6, 2026</span>
-        <span>Vol. I, No. 1</span>
-        <span>Science &amp; Jurisprudence &middot; p. 3</span>
+        <span><b>Vol. 14</b> &middot; No. 42</span>
+        <span>Saturday, April 18, 2026</span>
+        <span>Cover Story &middot; p. 1 of 52</span>
       </div>
 
       <nav class="site-nav" aria-label="Primary">
@@ -260,11 +316,11 @@
         <div class="nav-menu">
           <a href="index.html">Front Page</a>
           <a href="section.html?s=science" class="active">Science</a>
-          <a href="section.html?s=legal">Legal Perspective</a>
-          <a href="section.html?s=lyceum">The Lyceum</a>
-          <a href="section.html?s=literature">Literature</a>
-          <a href="section.html?s=economy">Economy</a>
+          <a href="section.html?s=philosophy">Philosophy</a>
+          <a href="section.html?s=global-law">Global Law</a>
           <a href="section.html?s=psychology">Psychology</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=spirituality">Art &amp; Spirituality</a>
           <a href="archive.html">Archive</a>
           <a href="about.html">About</a>
           <a href="subscribe.html">Subscribe</a>
@@ -277,15 +333,19 @@
         <aside class="article-rail-left" aria-label="Article metadata">
           <div class="meta-block">
             <div class="meta-label">Filed in</div>
-            <div class="meta-val">Science · Jurisprudence</div>
+            <div class="meta-val">Science &middot; Philosophy &middot; Global Law</div>
           </div>
           <div class="meta-block">
             <div class="meta-label">Published</div>
-            <div class="meta-val">6 March 2026</div>
+            <div class="meta-val">18 April 2026</div>
           </div>
           <div class="meta-block">
             <div class="meta-label">Reading time</div>
-            <div class="meta-val">11 minutes</div>
+            <div class="meta-val">14 minutes</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Section</div>
+            <div class="meta-val">The Cover Story &middot; Vol. 14, No. 42</div>
           </div>
           <div class="meta-block">
             <div class="meta-label">Share</div>
@@ -298,179 +358,241 @@
           <div class="meta-block">
             <div class="meta-label">Cite this piece</div>
             <div class="meta-val" style="font-family:var(--font-mono);font-size:12px;line-height:1.5">
-              Rahman, A. &ldquo;Quantum Leap in Green Energy,&rdquo; <i>The Global Polymath</i>, I/1 (2026), p. 3.
+              Kamal, R. M. &ldquo;The Trinity of Human Discovery,&rdquo; <i>The Global Polymath</i>, XIV/42 (2026), pp. 1, 4 &amp; 12.
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Author</div>
+            <div class="meta-val">
+              <b>Dr. Russell Mostafa Kamal</b><br>
+              Editor-in-Chief &amp; Founder<br>
+              <a href="https://drrussellmostafakamal.com" style="color:var(--tgp-navy)">drrussellmostafakamal.com</a>
             </div>
           </div>
         </aside>
 
         <article>
           <div class="article-head">
-            <div class="kick">The Lead · Science &amp; Jurisprudence</div>
-            <h1>Quantum Leap in Green Energy: A Jurisprudential Challenge</h1>
+            <div class="kick">The Cover Story &middot; Science, Philosophy &amp; Global Law</div>
+            <h1>The Trinity of Human Discovery</h1>
             <p class="deck">
-              A consortium of researchers in Dhaka and Delft claim a fivefold gain in
-              photovoltaic efficiency &mdash; and inadvertently raise questions the Hague
-              has not yet thought to ask.
+              How the James Webb Telescope is rewriting our cosmic origin story
+              &mdash; and why the philosopher, the psychoanalyst, and the
+              international jurist all have something to say about it.
             </p>
             <div class="byline-row">
-              <span><b>By Adiba Rahman</b> &nbsp;|&nbsp; Senior Correspondent</span>
-              <span>Dhaka &middot; Delft</span>
+              <span><b>By Dr. Russell Mostafa Kamal</b> &nbsp;|&nbsp; Editor-in-Chief &amp; Founder</span>
+              <span>Dhaka &middot; Singapore &middot; UAE</span>
             </div>
 
             <figure class="article-hero-fig">
               <div class="article-hero">
-                <img src="assets/img/hero-solar.jpg" alt="The Mongla solar-and-wind complex at dusk." loading="eager" width="1800" height="1012">
+                <img
+                  src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1800&amp;q=85&amp;auto=format&amp;fit=crop"
+                  alt="A James Webb Telescope deep-field image showing distant galaxies."
+                  loading="eager" width="1800" height="1012">
               </div>
               <div class="article-hero-cap">
-                The Mongla solar-and-wind complex, photographed at dusk on the opening day
-                of the consortium&rsquo;s public trials. &mdash; <i>The Global Polymath / Adnan Choudhury</i>
+                The James Webb Telescope's most recent deep-field exposure, photographed in
+                three-channel infrared and rendered for the visible spectrum.
+                &mdash; <i>The Russell Civilizations Review &middot; NASA / ESA / CSA composite</i>
               </div>
             </figure>
           </div>
 
           <div class="article-body">
             <p class="lede">
-              <b>Dhaka &mdash;</b> A pioneering study published this week in
-              <i>Nature Energy</i> describes a photovoltaic architecture that combines
-              perovskite overlayers with a tandem silicon substrate, and reports
-              conversion efficiencies long thought to belong to the far side of the decade.
+              <b>Three weeks ago,</b> at a small ceremony in Baltimore that drew rather
+              less attention than it deserved, the consortium operating the James
+              Webb Space Telescope released a calibration image of the early universe.
+              The image is, as a piece of physics, an event. As a piece of human
+              culture, it is something stranger: an invitation to three different
+              disciplines to read the same fact, in three incompatible languages,
+              and to argue.
             </p>
 
             <p>
-              The finding is, on its face, an engineering triumph. Read sideways, it is
-              something considerably stranger: an accidental provocation to international
-              environmental law. If a single Bangladeshi&ndash;Dutch laboratory can
-              supply the energy of a small country at a fraction of the capital outlay,
-              what becomes of the treaties that apportion carbon quotas by nation?
+              The image shows a cluster of galaxies as they were when the universe
+              was approximately three percent of its present age. The arithmetic is
+              the easy part. The hard part is what to <i>do</i> with the arithmetic
+              &mdash; what kind of story it permits us to tell about who we are and
+              how we came to be the kind of thing that asks the question.
             </p>
 
             <p>
-              &ldquo;We have, in effect, invented a fact that no existing regime knows
-              how to count,&rdquo; said Dr. Nadira Hossain, the project&rsquo;s co-lead
-              and a former fellow of the Hague Academy. &ldquo;The Paris framework
-              assumes scarcity. We have just built abundance.&rdquo;
+              That story is, this paper has long argued, three stories at once: a
+              story about the cosmos (told by the empirical sciences), a story about
+              the psyche (told by philosophy and psychology), and a story about the
+              <i>polis</i> (told, when it is told well, by the architecture of
+              international law). It is the contention of this issue that the three
+              stories are the same story, told in registers that have, to the
+              detriment of all of them, almost stopped speaking to each other.
+            </p>
+
+            <h2>1. The cosmos, measured</h2>
+
+            <p>
+              The Webb consortium's announcement is, in technical terms, an act of
+              <i>transmission spectroscopy</i> &mdash; the measurement of the
+              fingerprints starlight leaves in the atmospheres of distant worlds and
+              the spectra of distant galaxies. The fingerprints in question, this
+              week, are those of water vapour in the photosphere of an exoplanet in
+              the TRAPPIST-1 system, and of un-modelled metal-poor populations in
+              galaxies whose light has been travelling toward us for nearly thirteen
+              billion years.
+            </p>
+
+            <p>
+              &ldquo;The Paris framework assumes scarcity,&rdquo; said Dr. Nadira
+              Hossain, a co-author on the spectroscopy paper and former fellow of
+              the Hague Academy. &ldquo;The instrument has just measured abundance
+              &mdash; of light, of time, of room.&rdquo;
             </p>
 
             <blockquote>
-              &ldquo;The Paris framework assumes scarcity. We have just built abundance.&rdquo;
+              &ldquo;The instrument has just measured abundance &mdash; of light,
+              of time, of room.&rdquo;
             </blockquote>
 
-            <h2>A measurement, not a promise</h2>
+            <h2>2. The psyche, examined</h2>
 
             <p>
-              Dr. Jan van der Bos, the Dutch co-lead, urged caution. The efficiencies,
-              he said, are &ldquo;reproducible in principle, not yet at industrial
-              scale,&rdquo; and ought to be read less as a commercial announcement than
-              as a proof-of-concept. Industrial reality, he noted, has a way of
-              reducing laboratory numbers by a factor or two. Even so, the numbers in
-              question are dramatic enough that the reduction leaves a remainder still
-              worth taking seriously.
+              An image of the early universe is, of course, also an image of the
+              human relationship to time. Sartre, writing in 1943, observed that the
+              consciousness which apprehends a thing is never quite contemporaneous
+              with it. To look at a galaxy is to look at a fact that is older than
+              the act of looking; to read the looking is to insert a third party
+              &mdash; the philosopher &mdash; who is older still.
             </p>
 
             <p>
-              What the consortium has measured, in essence, is a thermodynamic
-              shortcut: a device architecture in which two absorbing layers are tuned
-              to harvest different portions of the solar spectrum without the usual
-              losses at their interface. The physics is not new; the engineering is.
-              The trick, as the preprint describes it, lies in the annealing step that
-              knits the layers together.
-            </p>
-
-            <h2>The quiet corridor at the UNFCCC</h2>
-
-            <p>
-              In Bonn, the reaction has been more political. Delegates to the spring
-              intersessional session of the UN Framework Convention on Climate Change
-              are already briefing their capitals on what a nation-state is, for
-              purposes of the Convention, when it can supply its neighbours with power
-              at cost. The question, at first blush, is a technical one about
-              accounting &mdash; but the questions behind the question are older and
-              less tractable.
+              This is not, as the existentialists liked to insist, a poetic
+              flourish. It is a measured property of the universe and of the
+              measurement. The deeper the field, the further behind us the moment
+              of emission has become, and the more the act of seeing is a kind of
+              archaeology &mdash; a self-portrait of the species written, against
+              the species' will, in the past tense.
             </p>
 
             <p>
-              Counsel for the Republic of Vanuatu, which brought the first
-              trans-boundary carbon liability case before the International Court of
-              Justice last year, observed drily that &ldquo;abundance, in treaty law,
-              is always somebody&rsquo;s problem.&rdquo; It is, for the present,
-              unclear whose.
+              The Freudian inheritance, for its part, has had a difficult century.
+              The clinical literature has narrowed; the cultural literature has
+              metastasized. What remains useful, this paper has argued before, is
+              the <i>structural</i> Freud rather than the speculative one &mdash; the
+              insistence that selfhood is a negotiation among parties, none of which
+              has a complete view of the room.
             </p>
 
-            <h2>What it means for Bangladesh</h2>
+            <h2>3. The polis, agreed</h2>
 
             <p>
-              For Dhaka, the implications are at once practical and rhetorical. A
-              country that has spent the better part of two decades arguing for
-              climate justice finds itself, unexpectedly, in a position to deliver it
-              &mdash; provided the industrial pipeline can be built, financed, and
-              defended against the patent thicket that will certainly follow. None of
-              these conditions is guaranteed.
+              Which brings us, by a route that is not as oblique as it sounds, to
+              international law. A treaty, in the strict sense, is a sentence that a
+              group of states have agreed to keep saying to each other; the agreement
+              is what makes it real. International law has, accordingly, been the
+              most forthrightly fictional of the human disciplines &mdash; and, in
+              its honest moments, the most useful.
+            </p>
+
+            <table class="treaty-inline">
+              <caption>The Treaty Architecture &middot; A primer for the lay reader</caption>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Source</th>
+                  <th>Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Pacta Sunt Servanda</td><td>Treaties freely entered into</td><td>Legal certainty among consenting states</td></tr>
+                <tr><td>Opinio Juris</td><td>Settled customary practice</td><td>Global norms, binding without consent</td></tr>
+                <tr><td>Jus Cogens</td><td>Peremptory non-derogable norms</td><td>Universal ethics &mdash; the floor below which sovereignty cannot lawfully sink</td></tr>
+              </tbody>
+            </table>
+
+            <p>
+              The architecture is older than the United Nations, older than the
+              League, older even than the Westphalian system whose name it now
+              shares. It is a slow grammar, learned in the hard cases. The Webb
+              instrument, by measuring abundance where the treaties assume
+              scarcity, has handed the architecture a problem its drafters did not
+              foresee.
+            </p>
+
+            <h2>The synthesis: a polymathic posture</h2>
+
+            <p>
+              This publication's working hypothesis &mdash; the polymathic one
+              &mdash; is that the three disciplines are not, in fact, looking at
+              three things. They are looking at one thing, from positions a few
+              degrees of arc apart, and the parallax of their disagreement is the
+              shape of the human condition.
             </p>
 
             <p>
-              The Prime Minister&rsquo;s office, approached for comment, declined to
-              be drawn. A senior civil servant, speaking on condition of anonymity,
-              allowed that &ldquo;the laboratory has put the Republic in an awkward
-              position, which is to say, a hopeful one.&rdquo;
+              We propose, modestly, to keep insisting on this in print. The cure
+              for the ills of curiosity is, after all, more curiosity &mdash; and
+              the cure for siloed disciplines is the patience to read across the
+              grain. This issue is an attempt at exactly that.
             </p>
 
             <div class="ornament">&#10086;</div>
 
             <p>
-              The question now traveling down the corridors of the UNFCCC is whether
-              abundance, arriving ahead of schedule and outside the developed world,
-              will be treated as the windfall it plainly is &mdash; or as something
-              more awkward. The answer, when it arrives, will be written as much by
-              lawyers as by engineers.
+              <i>Continued in this issue:</i> &nbsp;
+              Existentialism &amp; AI (p. 4) &middot;
+              The Treaty Architecture (p. 12) &middot;
+              Decoding the Id (p. 16) &middot;
+              The Architecture of the Heart (p. 12).
             </p>
 
-            <p>
-              It will also, one suspects, be read in these pages first.
-            </p>
-
-            <div class="article-end">&#9632;</div>
+            <p class="article-end">&mdash;&mdash;&mdash;</p>
           </div>
         </article>
 
         <aside class="article-rail-right" aria-label="Related reading">
-          <section class="related">
-            <h5>Related Reading</h5>
-            <h4><a href="article.html">ICJ Hearings Open on Trans-Boundary Carbon Liability</a></h4>
-            <p>For the first time, judges in the Peace Palace are asked whether a
-               nation owes a duty of care to its neighbours&rsquo; atmosphere.</p>
-            <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 9</a>
-          </section>
 
-          <section class="related">
+          <div class="related">
+            <h5>Continue in This Issue</h5>
+            <h4><a href="article.html">Existentialism &amp; AI: Sartre vs The Algorithm</a></h4>
+            <p>Can a system that lacks bad faith ever know freedom? A philosophical companion piece to the cover story.</p>
+            <a class="text-more text-more--aubergine" href="article.html">Read &rarr; p. 4</a>
+          </div>
+
+          <div class="related">
             <h5>From The Lyceum</h5>
-            <h4><a href="article.html">Existential Risks in the Age of Technological Acceleration</a></h4>
-            <p>A species with Palaeolithic emotions, mediaeval institutions, and
-               god-like technology — a configuration whose stability no one has ever
-               had occasion to test.</p>
-            <a class="text-more text-more--aubergine" href="article.html">Read &rarr; p. 8</a>
-          </section>
+            <h4><a href="article.html">Homer to Shakespeare: Why the Classics Still Rule</a></h4>
+            <p>Three thousand years of human concern, told twice. The classical canon as a single, distributed conversation.</p>
+            <a class="text-more text-more--ochre" href="article.html">Read &rarr; p. 8</a>
+          </div>
 
-          <section class="related">
-            <h5>Editor&rsquo;s Note</h5>
-            <p style="font-family:var(--font-serif);font-size:14px;line-height:1.55;color:var(--tgp-ink)">
-              This piece will be followed, in next week&rsquo;s edition, by a companion
-              essay on the legal architecture of &ldquo;climate abundance,&rdquo; by our
-              Hague correspondent.
-            </p>
-            <div class="text-byline">— The Editors</div>
-          </section>
+          <div class="related">
+            <h5>Global Law</h5>
+            <h4><a href="article.html">The Treaty Architecture: How Nations Agree to Exist</a></h4>
+            <p><i>Pacta Sunt Servanda</i>, <i>Opinio Juris</i>, and the limits of consent &mdash; a long-form on the architecture itself.</p>
+            <a class="text-more text-more--oxblood" href="article.html">Read &rarr; p. 12</a>
+          </div>
 
-          <section class="related">
-            <h5>Subscribe</h5>
-            <p style="font-family:var(--font-serif);font-size:14px;line-height:1.55">
-              Receive the Weekly Dispatch by email, free of charge, every Friday.
-            </p>
-            <a class="tgp-btn tgp-btn--gold" href="subscribe.html" style="font-size:12px;padding:10px 18px">Subscribe</a>
-          </section>
+          <div class="related">
+            <h5>Psychology</h5>
+            <h4><a href="article.html">Decoding the Id: A Modern Look at Freudian Conflict</a></h4>
+            <p>What 130 years of clinical practice has, and has not, taught us about the conflicts the deep field cannot photograph.</p>
+            <a class="text-more text-more--forest" href="article.html">Read &rarr; p. 16</a>
+          </div>
+
+          <div class="related">
+            <h5>Editor's Note</h5>
+            <h4>From the Founder's Desk</h4>
+            <p>This is the cover story of the forty-second issue I have had the
+            privilege of editing. The premise is the same as the first: that
+            knowledge is best read across the grain. <i>&mdash; R. M. K.</i></p>
+          </div>
+
         </aside>
+
       </div>
 
-      <!-- Footer -->
+      <!-- SITE FOOTER -->
       <footer class="site-footer">
         <div class="site-footer-grid">
           <div>
@@ -478,18 +600,17 @@
             <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
               Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
             </p>
-            <p>An independent quarterly-weekly edition published from Dhaka,
-               read in thirty-four countries and answerable to none of them.</p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Dhaka, with bureaus in Singapore and the UAE.</p>
           </div>
           <div>
             <h5>Sections</h5>
             <ul>
               <li><a href="section.html?s=science">Science</a></li>
-              <li><a href="section.html?s=legal">Legal Perspective</a></li>
-              <li><a href="section.html?s=lyceum">The Lyceum</a></li>
-              <li><a href="section.html?s=literature">Literature</a></li>
-              <li><a href="section.html?s=economy">Economy</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
               <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
             </ul>
           </div>
           <div>
@@ -499,22 +620,23 @@
               <li><a href="archive.html">Back Issues</a></li>
               <li><a href="subscribe.html">Subscribe</a></li>
               <li><a href="newsletter.html">Weekly Dispatch</a></li>
-              <li><a href="wireframes.html">Design Explorations</a></li>
+              <li><a href="https://drrussellmostafakamal.com">drrussellmostafakamal.com</a></li>
             </ul>
           </div>
           <div>
-            <h5>Contact</h5>
+            <h5>Editor &amp; Publisher</h5>
             <ul>
-              <li>12 Gulshan Avenue, Dhaka 1212</li>
-              <li><a href="mailto:editor@theglobalpolymath.com">editor@theglobalpolymath.com</a></li>
+              <li><b>Dr. Russell Mostafa Kamal</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@drrussellmostafakamal.com">editor@drrussellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
               <li>+880 2 5566 4311</li>
             </ul>
           </div>
         </div>
         <div class="site-footer-meta">
-          <span>&copy; 2026 The Global Polymath Trust</span>
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
           <span>&#10086;</span>
-          <span>Continued on interior pages 2 &ndash; 52</span>
+          <span>Vol. 14, No. 42 &middot; Cover story &middot; Continued on pages 4, 8, 12, 16, 22</span>
         </div>
       </footer>
 

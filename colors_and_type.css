@@ -3,12 +3,13 @@
    "Where Empirical Science Meets Human Philosophy & Jurisprudence"
    ========================================================= */
 
-/* Webfonts — loaded from Google Fonts CDN.
-   SUBSTITUTION NOTE: We do not have the original font files. These are the
-   closest public equivalents to the reference masthead (Playfair-style classical
-   serif w/ Caslon body + Georgia fallback). Ask the user for official .ttf/.otf
-   files if available. */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Webfonts — compact-tabloid type system per Russell Mostafa Kamal's spec.
+   Headlines + masthead: Montserrat (bold sans-serif, Helvetica/Montserrat family).
+   Body: Source Serif 4 (Times/Georgia family).
+   Decks/pull quotes: Cormorant Garamond italic.
+   Mono: IBM Plex Mono for date/issue stamps.
+   UI labels: Inter. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap');
 
 :root {
   /* ----------  BRAND CORE  ---------- */
@@ -37,12 +38,13 @@
   --tgp-ochre:       #B8862C;   /* "Literature" / tags */
 
   /* ----------  BASE TYPE FAMILIES  ---------- */
-  --font-display:    'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif;
-  --font-headline:   'Playfair Display', 'Times New Roman', Georgia, serif;
-  --font-serif:      'Source Serif 4', 'Georgia', 'Cambria', serif;   /* body */
-  --font-serif-alt:  'Cormorant Garamond', 'Garamond', serif;          /* pull quotes, decks */
-  --font-sans:       'Inter', 'Helvetica Neue', system-ui, sans-serif; /* UI, labels */
-  --font-mono:       'IBM Plex Mono', ui-monospace, Menlo, monospace;  /* dates, section kickers */
+  --font-display:    'Montserrat', 'Helvetica Neue', 'Arial Black', system-ui, sans-serif;  /* masthead, cover, display headlines */
+  --font-headline:   'Montserrat', 'Helvetica Neue', system-ui, sans-serif;                  /* h1-h4 */
+  --font-serif:      'Source Serif 4', 'Georgia', 'Times New Roman', Cambria, serif;          /* body */
+  --font-serif-alt:  'Cormorant Garamond', 'Garamond', Georgia, serif;                        /* pull quotes, decks */
+  --font-sans:       'Inter', 'Helvetica Neue', system-ui, sans-serif;                         /* UI, labels */
+  --font-mono:       'IBM Plex Mono', ui-monospace, Menlo, monospace;                          /* dates, issue stamps */
+  --font-fancy:      'Playfair Display', 'Didot', Georgia, serif;                              /* legacy serif accents (rare) */
 
   /* ----------  TYPE SCALE  ---------- */
   --fs-masthead:     clamp(56px, 9vw, 128px);   /* "THE GLOBAL POLYMATH" */
@@ -58,14 +60,14 @@
   --fs-tagline:      14px;
 
   /* ----------  LEADING  ---------- */
-  --lh-display:      1.02;
-  --lh-heading:      1.12;
+  --lh-display:      0.95;     /* tight bold sans-serif headlines */
+  --lh-heading:      1.05;
   --lh-body:         1.55;
-  --lh-tight:        1.25;
+  --lh-tight:        1.2;
 
   /* ----------  TRACKING  ---------- */
-  --ls-masthead:     -0.02em;
-  --ls-headline:     -0.01em;
+  --ls-masthead:     -0.025em; /* tight Montserrat 900 */
+  --ls-headline:     -0.015em;
   --ls-kicker:       0.18em;   /* small-caps section labels */
   --ls-tagline:      0.22em;
   --ls-body:         0;
@@ -126,10 +128,10 @@ body.tgp {
 
 .tgp-masthead {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: var(--fs-masthead);
   letter-spacing: var(--ls-masthead);
-  line-height: 1;
+  line-height: 0.92;
   color: var(--tgp-navy);
   text-transform: uppercase;
   text-align: center;
@@ -141,12 +143,12 @@ body.tgp {
   letter-spacing: var(--ls-tagline);
   text-transform: uppercase;
   color: var(--tgp-navy);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .tgp-display {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 900;
   font-size: var(--fs-display);
   line-height: var(--lh-display);
   letter-spacing: var(--ls-headline);
@@ -179,12 +181,13 @@ body.tgp {
   color: var(--tgp-ink);
 }
 
+/* Shoulder headings — Title Case (per editor: never set kickers in caps). */
 .tgp-kicker {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: var(--fs-kicker);
-  letter-spacing: var(--ls-kicker);
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--tgp-navy);
 }
 
