@@ -18,27 +18,25 @@
   }
 
   .email-header {
-    background: var(--tgp-navy);
-    padding: 28px 40px;
+    background: var(--tgp-paper);
+    padding: 24px 40px 18px;
     text-align: center;
+    border-bottom: 3px double var(--tgp-navy);
   }
-  .email-header img { display: inline-block; }
-  .email-header .title {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 36px;
-    color: var(--tgp-paper);
-    letter-spacing: -.01em;
-    text-transform: uppercase;
-    margin-top: 6px;
-    line-height: 1;
+  .email-header img {
+    display: block;
+    margin: 0 auto;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
   }
   .email-header .issue {
     font-family: var(--font-sans);
-    font-size: 10px;
-    letter-spacing: .24em;
+    font-size: 11px;
+    letter-spacing: .22em;
     text-transform: uppercase;
-    color: var(--tgp-gold);
+    color: var(--tgp-gold-deep);
+    font-weight: 600;
     margin-top: 10px;
   }
 
@@ -185,8 +183,7 @@
   <div class="email">
 
     <header class="email-header">
-      <img src="assets/emblem-mono-gold.svg" alt="" width="64" height="64">
-      <div class="title">The Global Polymath</div>
+      <img src="assets/logo.jpg" alt="The Global Polymath — Where Empirical Science Meets Human Philosophy &amp; Jurisprudence" width="280" height="280">
       <div class="issue">The Weekly Dispatch &nbsp;&middot;&nbsp; Vol. 14, Issue 42</div>
     </header>
 
