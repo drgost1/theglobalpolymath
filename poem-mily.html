@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Promise for Mily — A Sonnet by Dr. Mostafa Kamal Russell — The Global Polymath</title>
+<meta name="description" content="A Promise for Mily — a Shakespearean sonnet from the Founder's Pen of The Global Polymath, by Dr. Engineer Adv. Mohammad Mostafa Kamal Russell.">
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* The Founder's Pen — a quieter, more intimate page than the news pages.
+     Single column, generous leading, decorative furniture in the margin.
+     This is poetry: the typography is the editorial. */
+
+  .poem-cover {
+    padding: 56px 24px 28px;
+    text-align: center;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    background:
+      radial-gradient(ellipse at center top, rgba(201, 169, 97, 0.10) 0, transparent 70%),
+      linear-gradient(180deg, var(--tgp-paper) 0, var(--tgp-paper-deep) 100%);
+  }
+  .poem-cover .kick {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-gold-deep);
+    margin-bottom: 14px;
+  }
+  .poem-cover .ornament {
+    font-family: var(--font-display);
+    color: var(--tgp-gold);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: .4em;
+    margin: 0 0 10px;
+  }
+  .poem-cover h1 {
+    font-family: var(--font-fancy);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.0;
+    letter-spacing: -.012em;
+    color: var(--tgp-navy);
+    margin: 0 auto 14px;
+    max-width: 900px;
+    overflow-wrap: break-word;
+  }
+  .poem-cover .form-tag {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: clamp(16px, 1.6vw, 22px);
+    color: var(--tgp-ink-soft);
+    margin: 0 auto 22px;
+  }
+  .poem-cover .byline-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px 22px;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+  }
+  .poem-cover .byline-row b { color: var(--tgp-navy); font-weight: 700; }
+  .poem-cover .byline-row .sep { color: var(--tgp-paper-edge); }
+
+  /* Centred reading column for the verse itself */
+  .poem-stage {
+    max-width: 720px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  /* Dedication strip */
+  .dedication {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--tgp-ink-mute);
+    margin: 0 0 38px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .dedication .to {
+    display: block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--tgp-gold-deep);
+    margin-bottom: 6px;
+  }
+
+  /* The verse — Shakespearean sonnet, 4-4-4-2 stanza grouping */
+  .sonnet {
+    font-family: var(--font-serif-alt);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(20px, 2.1vw, 26px);
+    line-height: 1.7;
+    color: var(--tgp-ink);
+    text-align: center;
+    margin: 0 0 36px;
+    counter-reset: verse;
+  }
+  .sonnet .stanza {
+    margin: 0 0 24px;
+    padding-bottom: 4px;
+  }
+  .sonnet .stanza.couplet {
+    margin-top: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--tgp-paper-edge);
+    font-style: italic;
+    color: var(--tgp-navy);
+    font-size: clamp(22px, 2.3vw, 28px);
+  }
+  .sonnet .line {
+    display: block;
+    counter-increment: verse;
+    position: relative;
+    padding: 0 0;
+  }
+  .sonnet .line::before {
+    content: counter(verse);
+    position: absolute;
+    left: -52px;
+    top: .35em;
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 11px;
+    color: var(--tgp-ink-faint);
+    width: 32px;
+    text-align: right;
+    letter-spacing: .04em;
+  }
+  /* Drop initial on the first line of the sonnet */
+  .sonnet .stanza:first-child .line:first-child::first-letter {
+    font-family: var(--font-fancy);
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.6em;
+    line-height: 1;
+    color: var(--tgp-gold-deep);
+    margin-right: .04em;
+    vertical-align: -.05em;
+  }
+
+  /* Signature */
+  .signature {
+    margin: 24px 0 18px;
+    padding-top: 22px;
+    border-top: 3px double var(--tgp-navy);
+    text-align: center;
+  }
+  .signature .name {
+    font-family: var(--font-fancy);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--tgp-navy);
+    margin: 0 0 4px;
+  }
+  .signature .role {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    font-weight: 700;
+  }
+  .signature .stamp {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-ink-faint);
+    letter-spacing: .06em;
+  }
+
+  /* Editor's note below the poem */
+  .editors-note {
+    max-width: 620px;
+    margin: 36px auto 12px;
+    padding: 22px 24px;
+    background: var(--tgp-paper-deep);
+    border-left: 4px solid var(--tgp-gold);
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--tgp-ink);
+    text-align: left;
+  }
+  .editors-note h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--tgp-navy);
+    margin: 0 0 8px;
+  }
+
+  /* End-of-poem ornament */
+  .poem-fin {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--tgp-gold);
+    letter-spacing: .6em;
+    margin: 28px 0 8px;
+  }
+
+  /* Reader actions — print/share */
+  .poem-actions {
+    text-align: center;
+    margin: 24px 0 8px;
+    padding: 14px 0;
+    border-top: .5px solid var(--tgp-paper-edge);
+    border-bottom: .5px solid var(--tgp-paper-edge);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--tgp-ink-mute);
+  }
+  .poem-actions a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--tgp-navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--tgp-gold);
+    padding-bottom: 1px;
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+  .poem-actions a:hover { color: var(--tgp-navy-deep); border-bottom-color: var(--tgp-gold-deep); }
+
+  /* Margin verse-numbering only on wide screens — drop it on mobile */
+  @media (max-width: 720px) {
+    .poem-stage { margin-top: 28px; padding: 0 16px; }
+    .sonnet { font-size: 19px; line-height: 1.7; }
+    .sonnet .line::before { display: none; }
+    .poem-cover { padding: 36px 16px 22px; }
+  }
+
+  /* Print rendering — clean, single column, suitable for framing */
+  @media print {
+    .utility-bar, .site-nav, .masthead, .dateline,
+    .poem-actions, .site-footer { display: none !important; }
+    body.tgp { background: #fff; color: #000; }
+    .poem-cover { border-color: #000; background: #fff; }
+    .poem-cover h1, .signature .name { color: #000; }
+    .sonnet .stanza.couplet { border-color: #000; color: #000; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <!-- Top utility bar -->
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+          <span>Singapore &middot; Dhaka &middot; UAE</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <header class="masthead masthead--small">
+        <a class="logo-link" href="index.html" aria-label="The Global Polymath — Front Page">
+          <img class="masthead-logo" src="assets/logo.jpg"
+               alt="The Global Polymath" width="706" height="706">
+        </a>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Vol. 14</b> &middot; No. 42</span>
+        <span>Saturday, April 18, 2026</span>
+        <span>The Founder's Pen &middot; p. 41</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+        <label for="navToggle" class="nav-hamburger" aria-label="Open menu">
+          <span class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+          <span><span class="open-label">Menu</span><span class="close-label">Close</span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Front Page</a>
+          <a href="section.html?s=science">Science</a>
+          <a href="section.html?s=philosophy">Philosophy</a>
+          <a href="section.html?s=global-law">Global Law</a>
+          <a href="section.html?s=psychology">Psychology</a>
+          <a href="section.html?s=literature">Literature</a>
+          <a href="section.html?s=spirituality" class="active">Art &amp; Spirituality</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="subscribe.html">Subscribe</a>
+        </div>
+      </nav>
+
+      <!-- POEM COVER -->
+      <header class="poem-cover">
+        <div class="kick">The Founder's Pen &middot; A Sonnet</div>
+        <div class="ornament" aria-hidden="true">&sect; &middot; &sect;</div>
+        <h1>A Promise for Mily</h1>
+        <p class="form-tag">A Shakespearean sonnet, in fourteen lines of iambic pentameter</p>
+        <div class="byline-row">
+          <span><b>By Dr. Engineer Adv. Mohammad Mostafa Kamal Russell</b></span>
+          <span class="sep">|</span>
+          <span>Editor-in-Chief &middot; The Global Polymath</span>
+          <span class="sep">|</span>
+          <span>30 April 2026</span>
+        </div>
+      </header>
+
+      <!-- The verse -->
+      <section class="poem-stage" aria-labelledby="poemH1">
+
+        <p class="dedication">
+          <span class="to">For Mily &mdash;</span>
+          a quiet promise, set down on the thirtieth of April,
+          two thousand and twenty&#8209;six.
+        </p>
+
+        <div class="sonnet" role="contentinfo" aria-label="Sonnet text">
+
+          <div class="stanza">
+            <span class="line">Upon this day, my heart finds voice to speak,</span>
+            <span class="line">Of love that grew in silence, deep and true.</span>
+            <span class="line">No fleeting whim, nor fancy do I seek,</span>
+            <span class="line">But all my soul's devotion, bound to you.</span>
+          </div>
+
+          <div class="stanza">
+            <span class="line">Thy grace, a light that guides my weary way,</span>
+            <span class="line">A gentle breeze amidst the storm and strife;</span>
+            <span class="line">I offer now, in simple, plain array,</span>
+            <span class="line">The very keys and essence of my life.</span>
+          </div>
+
+          <div class="stanza">
+            <span class="line">The stars may fade and seasons drift apart,</span>
+            <span class="line">Yet constant shall my faith in thee remain.</span>
+            <span class="line">I crave to house my spirit in thy heart,</span>
+            <span class="line">And share thy every joy and every pain.</span>
+          </div>
+
+          <div class="stanza couplet">
+            <span class="line">So, Mily, grant this prayer, my love, my plea:</span>
+            <span class="line">O, walk this path of life through time with me?</span>
+          </div>
+
+        </div>
+
+        <div class="signature">
+          <div class="name">Mostafa Kamal Russell</div>
+          <div class="role">Editor-in-Chief &middot; The Global Polymath</div>
+          <div class="stamp">Composed 30.IV.MMXXVI &middot; 23:15 SGT</div>
+        </div>
+
+        <div class="poem-fin" aria-hidden="true">&sect; &middot; &sect; &middot; &sect;</div>
+
+        <aside class="editors-note">
+          <h4>An Editor's Note &mdash; on the Founder's Pen page</h4>
+          <p>
+            This page is a quieter neighbour to the rest of <i>The Global
+            Polymath</i>. Where the leader column argues and the scientific
+            review computes, the Founder's Pen sits at the back of the issue
+            and, on occasion, sings. The form here is a Shakespearean sonnet
+            &mdash; three quatrains in alternating rhyme, sealed with a final
+            couplet. The convention is six hundred years old; the sentiment, on
+            the evidence, somewhat older.
+          </p>
+        </aside>
+
+        <div class="poem-actions">
+          <a href="#" onclick="window.print();return false;">Print &middot; Save as PDF</a>
+          <a href="mailto:?subject=A%20Promise%20for%20Mily%20%E2%80%94%20The%20Global%20Polymath&amp;body=A%20sonnet%20from%20the%20Founder%27s%20Pen.%20Read%20it%20here%3A%20https%3A%2F%2Fdr.russellmostafakamal.com%2Fpoem-mily.html">Email this poem</a>
+          <a href="index.html">&larr; Return to Front Page</a>
+        </div>
+
+      </section>
+
+      <!-- SITE FOOTER -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Singapore, with bureaus in Dhaka and the UAE.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="https://dr.russellmostafakamal.com">dr.russellmostafakamal.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Editor &amp; Publisher</h5>
+            <ul>
+              <li><b>Dr. Mostafa Kamal Russell</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@dr.russellmostafakamal.com">editor@dr.russellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
+              <li>+65 6789 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
+          <span>&#10086;</span>
+          <span>Vol. 14, No. 42 &middot; The Founder's Pen &middot; p. 41</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

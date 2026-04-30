@@ -79,11 +79,25 @@
     overflow: hidden;
     background: var(--tgp-paper-deep);
   }
+  .cover-hero .img {
+    position: relative;
+  }
   .cover-hero .img img {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
     filter: contrast(1.04) saturate(0.95);
+    /* Cinemagraph drift — slow Ken Burns motion gives the front-page hero
+       the "barely-alive" feel the editor asked for in the digital edition. */
+    animation: tgp-cinemagraph 26s ease-in-out infinite alternate;
+    transform-origin: 50% 45%;
+  }
+  @keyframes tgp-cinemagraph {
+    0%   { transform: scale(1.00) translate3d(0, 0, 0); }
+    100% { transform: scale(1.05) translate3d(-1.0%, -0.6%, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover-hero .img img { animation: none; }
   }
   .cover-hero figcaption {
     padding: 8px 0;
@@ -889,6 +903,234 @@
     .cover-hero .img { aspect-ratio: 16 / 10; }
     .delta-zero-ribbon { padding: 18px 16px; }
   }
+
+  /* ---------- THE FOUNDER'S PEN — front-page poem callout ---------- */
+  .founders-pen {
+    margin-top: 28px;
+    padding: 26px 32px;
+    border-top: 1px solid var(--tgp-gold);
+    border-bottom: 1px solid var(--tgp-gold);
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(201, 169, 97, 0.10) 0, transparent 60%),
+      var(--tgp-paper-deep);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .founders-pen .head .kicker {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--tgp-gold-deep);
+    margin-bottom: 8px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .founders-pen .ornament {
+    font-family: var(--font-display);
+    color: var(--tgp-gold);
+    font-size: 18px;
+    letter-spacing: .4em;
+    margin-bottom: 10px;
+  }
+  .founders-pen h2 {
+    font-family: var(--font-fancy);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.0;
+    color: var(--tgp-navy);
+    margin: 0 0 10px;
+    letter-spacing: -.012em;
+  }
+  .founders-pen h2 a { color: inherit; text-decoration: none; }
+  .founders-pen h2 a:hover { color: var(--tgp-navy-deep); }
+  .founders-pen .form-tag {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--tgp-ink-mute);
+    margin: 0 0 10px;
+  }
+  .founders-pen .author-line {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+    font-weight: 700;
+  }
+  .founders-pen .verse {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.55;
+    color: var(--tgp-ink);
+    text-align: left;
+    border-left: 2px solid var(--tgp-gold);
+    padding: 8px 0 8px 18px;
+    margin: 0;
+  }
+  .founders-pen .verse span { display: block; }
+  .founders-pen .read-more {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--tgp-navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--tgp-gold);
+    padding-bottom: 1px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .founders-pen .read-more:hover { color: var(--tgp-navy-deep); border-bottom-color: var(--tgp-gold-deep); }
+  @media (max-width: 720px) {
+    .founders-pen { grid-template-columns: 1fr; padding: 22px 20px; gap: 18px; }
+  }
+
+  /* ---------- THE CROSSWORD — British "Quick" style ---------- */
+  .crossword {
+    margin-top: 32px;
+    padding: 28px 32px;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 3px double var(--tgp-navy);
+    background: var(--tgp-paper);
+  }
+  .crossword .head {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .crossword .head .kicker {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--tgp-gold-deep);
+    margin-bottom: 6px;
+  }
+  .crossword h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(24px, 2.8vw, 36px);
+    line-height: 1.05;
+    text-transform: none;
+    letter-spacing: -.015em;
+    color: var(--tgp-navy);
+    margin: 0 0 8px;
+  }
+  .crossword .sub {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--tgp-ink-soft);
+    margin: 0;
+  }
+  .crossword-grid { display: grid; gap: 16px; max-width: 720px; margin: 0 auto; }
+  .crossword-clue {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .crossword-clue:last-of-type { border-bottom: 0; }
+  .crossword-clue .num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--tgp-gold-deep);
+    line-height: 1;
+    padding-top: 4px;
+    text-align: right;
+  }
+  .crossword-clue .clue-body { min-width: 0; }
+  .crossword-clue .clue-text {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--tgp-ink);
+    margin-bottom: 8px;
+  }
+  .crossword-clue .clue-text .len {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    margin-left: 4px;
+  }
+  .crossword-clue .boxes { display: flex; gap: 4px; flex-wrap: wrap; }
+  .crossword-clue input.cell {
+    width: 32px;
+    height: 38px;
+    border: 1.5px solid var(--tgp-navy);
+    background: var(--tgp-paper);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+    padding: 0;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .crossword-clue input.cell:focus {
+    outline: 0;
+    border-color: var(--tgp-gold-deep);
+    background: var(--tgp-paper-deep);
+  }
+  .crossword-clue.is-correct input.cell {
+    border-color: var(--tgp-forest);
+    background: rgba(46, 83, 57, 0.08);
+    color: var(--tgp-forest);
+  }
+  .crossword-clue.is-wrong input.cell {
+    border-color: var(--tgp-oxblood);
+    background: rgba(123, 46, 46, 0.06);
+  }
+  .crossword .actions {
+    text-align: center;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--tgp-paper-edge);
+  }
+  .crossword .actions button {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 10px 20px;
+    margin: 0 6px;
+    background: var(--tgp-navy);
+    color: var(--tgp-paper);
+    border: 1px solid var(--tgp-navy);
+    cursor: pointer;
+    transition: background 120ms ease;
+  }
+  .crossword .actions button:hover { background: var(--tgp-navy-deep); }
+  .crossword .actions button.ghost {
+    background: transparent;
+    color: var(--tgp-navy);
+  }
+  .crossword .actions button.ghost:hover { background: var(--tgp-navy); color: var(--tgp-paper); }
+  .crossword .verdict {
+    margin-top: 14px;
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--tgp-ink-soft);
+    min-height: 1.4em;
+  }
+  .crossword .verdict.win { color: var(--tgp-forest); font-weight: 600; }
+  .crossword .verdict.miss { color: var(--tgp-oxblood); }
+  @media (max-width: 600px) {
+    .crossword { padding: 22px 18px; }
+    .crossword-clue { grid-template-columns: 28px 1fr; gap: 10px; }
+    .crossword-clue input.cell { width: 28px; height: 34px; font-size: 16px; }
+  }
 </style>
 </head>
 <body class="tgp">
@@ -903,6 +1145,7 @@
           <span>Singapore &middot; Dhaka &middot; UAE</span>
         </div>
         <div class="right">
+          <a href="#" onclick="window.print();return false;" title="Save the front page as PDF">Print &middot; PDF</a>
           <a href="subscribe.html">Subscribe</a>
           <a href="#">Sign In</a>
           <a href="#" aria-label="Search">&#x2315; Search</a>
@@ -989,8 +1232,8 @@
             </li>
             <li>
               <div class="tag literature">Literature</div>
-              <h4><a href="article.html">Homer to Shakespeare: Why the Classics Still Rule</a></h4>
-              <p>Three thousand years of human concern, told twice.</p>
+              <h4><a href="article-hamlet.html">The Enigma of the Dane: Why Hamlet Remains the Ultimate Mirror of Humanity</a></h4>
+              <p>Four centuries on, the Prince of Denmark is still the architect of the modern mind.</p>
               <div class="page">p. 8</div>
             </li>
             <li>
@@ -1050,10 +1293,10 @@
           <div class="kicker">Also This Week</div>
 
           <article>
-            <div class="tag">Science</div>
-            <h4><a href="article.html">Exoplanets: The Search for Life in TRAPPIST-1</a></h4>
-            <p>Seven worlds, one star, and a transit-timing puzzle that may decide a century.</p>
-            <div class="page">p. 6</div>
+            <div class="tag">Scientific Review</div>
+            <h4><a href="article-hydrogen.html">The Thermodynamic Imperative: A Mathematical Analysis of the Hydrogen Economy</a></h4>
+            <p>Beyond the rhetoric &mdash; the cold mathematics of why <i>specific energy</i>, stoichiometry, and electrolytic efficiency point one way.</p>
+            <div class="page">p. 5</div>
           </article>
 
           <article>
@@ -1247,6 +1490,24 @@
         <span class="attrib">&mdash; A reflection on this week's Lyceum essay, by M. K. Russell</span>
       </div>
 
+      <!-- THE FOUNDER'S PEN — A Promise for Mily -->
+      <section class="founders-pen" aria-labelledby="foundersPenH2">
+        <div class="head">
+          <div class="kicker">The Founder's Pen &middot; A Sonnet from the Editor-in-Chief</div>
+          <div class="ornament" aria-hidden="true">&sect; &middot; &sect;</div>
+          <h2 id="foundersPenH2"><a href="poem-mily.html"><i>A Promise for Mily</i></a></h2>
+          <p class="form-tag">A Shakespearean sonnet &mdash; three quatrains, one couplet.</p>
+          <p class="author-line">By Dr. Engineer Adv. Mohammad Mostafa Kamal Russell</p>
+          <a class="read-more" href="poem-mily.html">Read the full sonnet &rarr; p. 41</a>
+        </div>
+        <blockquote class="verse" aria-label="Excerpt from the sonnet">
+          <span>Upon this day, my heart finds voice to speak,</span>
+          <span>Of love that grew in silence, deep and true.</span>
+          <span>No fleeting whim, nor fancy do I seek,</span>
+          <span>But all my soul's devotion, bound to you&hellip;</span>
+        </blockquote>
+      </section>
+
       <!-- WEEKLY CHALLENGE -->
       <section class="weekly-challenge">
         <div class="head">
@@ -1308,8 +1569,8 @@
           <section>
             <h5>Science &amp; Cosmology</h5>
             <ul>
-              <li><a href="article.html">JWST: A new measurement of the early universe</a><span class="pg">p. 3</span></li>
-              <li><a href="article.html">Transmission spectroscopy &amp; the water fingerprint</a><span class="pg">p. 5</span></li>
+              <li><a href="article-hydrogen.html">The Thermodynamic Imperative: a mathematical analysis of hydrogen</a><span class="pg">p. 5</span></li>
+              <li><a href="article.html">JWST: a new measurement of the early universe</a><span class="pg">p. 3</span></li>
               <li><a href="article.html">Galactic genesis: a timeline of formation</a><span class="pg">p. 7</span></li>
               <li><a href="article.html">CRISPR at twenty: the tools grow up</a><span class="pg">p. 30</span></li>
             </ul>
@@ -1328,10 +1589,10 @@
           <section>
             <h5>Literature &amp; the Arts</h5>
             <ul>
-              <li><a href="article.html">Homer to Shakespeare: why the classics still rule</a><span class="pg">p. 8</span></li>
+              <li><a href="article-hamlet.html">The Enigma of the Dane: why Hamlet still rules</a><span class="pg">p. 8</span></li>
               <li><a href="article.html">The Architecture of the Heart: understanding Sufism</a><span class="pg">p. 12</span></li>
               <li><a href="article.html">Klara and the Sun, revisited</a><span class="pg">p. 38</span></li>
-              <li><a href="article.html">Rilke's letters, in a new translation</a><span class="pg">p. 40</span></li>
+              <li><a href="poem-mily.html">The Founder's Pen: <i>A Promise for Mily</i> &mdash; a sonnet</a><span class="pg">p. 41</span></li>
             </ul>
           </section>
 
@@ -1345,6 +1606,66 @@
             </ul>
           </section>
 
+        </div>
+      </section>
+
+      <!-- THE CROSSWORD — British "Quick" style, fully interactive -->
+      <section class="crossword" aria-labelledby="crosswordH2">
+        <div class="head">
+          <div class="kicker">The Polymath's Crossword &middot; Quick &middot; No. 4,217</div>
+          <h2 id="crosswordH2">The Quick Crossword</h2>
+          <p class="sub">Five clues from this week's pages. Type your answers; we'll tell you how you fared.</p>
+        </div>
+
+        <div class="crossword-grid" id="crosswordGrid">
+
+          <div class="crossword-clue" data-answer="HAMLET">
+            <div class="num">1</div>
+            <div class="clue-body">
+              <div class="clue-text">Shakespeare's Prince of Denmark <span class="len">(6)</span></div>
+              <div class="boxes" data-len="6"></div>
+            </div>
+          </div>
+
+          <div class="crossword-clue" data-answer="WATER">
+            <div class="num">2</div>
+            <div class="clue-body">
+              <div class="clue-text">The sole product of hydrogen combustion in air <span class="len">(5)</span></div>
+              <div class="boxes" data-len="5"></div>
+            </div>
+          </div>
+
+          <div class="crossword-clue" data-answer="PALACE">
+            <div class="num">3</div>
+            <div class="clue-body">
+              <div class="clue-text">The Hague's Peace ___, seat of the International Court of Justice <span class="len">(6)</span></div>
+              <div class="boxes" data-len="6"></div>
+            </div>
+          </div>
+
+          <div class="crossword-clue" data-answer="ARISTOTLE">
+            <div class="num">4</div>
+            <div class="clue-body">
+              <div class="clue-text">The Greek who taught at the original Lyceum <span class="len">(9)</span></div>
+              <div class="boxes" data-len="9"></div>
+            </div>
+          </div>
+
+          <div class="crossword-clue" data-answer="GOLD">
+            <div class="num">5</div>
+            <div class="clue-body">
+              <div class="clue-text">JWST's primary mirror is coated in this metal <span class="len">(4)</span></div>
+              <div class="boxes" data-len="4"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button type="button" id="crosswordCheck">Check My Answers</button>
+          <button type="button" class="ghost" id="crosswordReveal">Reveal Solution</button>
+          <button type="button" class="ghost" id="crosswordReset">Clear</button>
+          <div class="verdict" id="crosswordVerdict" aria-live="polite"></div>
         </div>
       </section>
 
@@ -1398,5 +1719,100 @@
 
     </main>
   </div>
+
+  <!-- Crossword interactivity — build cells, auto-advance focus, validate answers -->
+  <script>
+    (function() {
+      const grid = document.getElementById('crosswordGrid');
+      if (!grid) return;
+      const clues = Array.from(grid.querySelectorAll('.crossword-clue'));
+      const verdict = document.getElementById('crosswordVerdict');
+
+      // Build input cells for every clue from data-len
+      clues.forEach((clue) => {
+        const boxes = clue.querySelector('.boxes');
+        const len = parseInt(boxes.dataset.len, 10);
+        for (let i = 0; i < len; i++) {
+          const inp = document.createElement('input');
+          inp.type = 'text';
+          inp.maxLength = 1;
+          inp.className = 'cell';
+          inp.dataset.idx = i;
+          inp.setAttribute('aria-label', 'Letter ' + (i + 1));
+          inp.autocomplete = 'off';
+          inp.spellcheck = false;
+          boxes.appendChild(inp);
+        }
+      });
+
+      // Auto-advance focus on input, retreat on backspace
+      grid.addEventListener('input', (e) => {
+        const t = e.target;
+        if (!t.classList.contains('cell')) return;
+        t.value = t.value.toUpperCase().replace(/[^A-Z]/g, '');
+        if (t.value && t.nextElementSibling) t.nextElementSibling.focus();
+      });
+      grid.addEventListener('keydown', (e) => {
+        const t = e.target;
+        if (!t.classList.contains('cell')) return;
+        if (e.key === 'Backspace' && !t.value && t.previousElementSibling) {
+          t.previousElementSibling.focus();
+        } else if (e.key === 'ArrowLeft' && t.previousElementSibling) {
+          t.previousElementSibling.focus(); e.preventDefault();
+        } else if (e.key === 'ArrowRight' && t.nextElementSibling) {
+          t.nextElementSibling.focus(); e.preventDefault();
+        }
+      });
+
+      const readClue = (clue) => Array.from(clue.querySelectorAll('input.cell')).map(c => c.value.toUpperCase()).join('');
+
+      document.getElementById('crosswordCheck').addEventListener('click', () => {
+        let correct = 0, attempted = 0;
+        clues.forEach((clue) => {
+          const guess = readClue(clue);
+          const answer = clue.dataset.answer;
+          clue.classList.remove('is-correct', 'is-wrong');
+          if (!guess.replace(/\s/g, '')) return;
+          attempted++;
+          if (guess === answer) {
+            clue.classList.add('is-correct'); correct++;
+          } else {
+            clue.classList.add('is-wrong');
+          }
+        });
+        if (attempted === 0) {
+          verdict.textContent = 'Try a clue or two first, dear reader.';
+          verdict.className = 'verdict miss';
+        } else if (correct === clues.length) {
+          verdict.textContent = 'A clean sweep — the colophon will be looking for your name.';
+          verdict.className = 'verdict win';
+        } else {
+          verdict.textContent = correct + ' of ' + clues.length + ' correct — keep at it.';
+          verdict.className = 'verdict miss';
+        }
+      });
+
+      document.getElementById('crosswordReveal').addEventListener('click', () => {
+        clues.forEach((clue) => {
+          const cells = clue.querySelectorAll('input.cell');
+          const answer = clue.dataset.answer;
+          cells.forEach((c, i) => { c.value = answer[i] || ''; });
+          clue.classList.remove('is-wrong');
+          clue.classList.add('is-correct');
+        });
+        verdict.textContent = 'Solution revealed. The next puzzle is in our weekly dispatch.';
+        verdict.className = 'verdict';
+      });
+
+      document.getElementById('crosswordReset').addEventListener('click', () => {
+        clues.forEach((clue) => {
+          clue.classList.remove('is-correct', 'is-wrong');
+          clue.querySelectorAll('input.cell').forEach(c => c.value = '');
+        });
+        verdict.textContent = '';
+        verdict.className = 'verdict';
+      });
+    })();
+  </script>
 </body>
 </html>

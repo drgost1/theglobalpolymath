@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Enigma of the Dane: Why Hamlet Remains the Ultimate Mirror of Humanity — The Global Polymath</title>
+<meta name="description" content="A literature feature from The Global Polymath: how Shakespeare's Hamlet became the architect of the modern mind, and why it endures as the crown jewel of world drama.">
+<link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Article layout */
+  .article-wrap {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 720px) 1fr;
+    gap: 0;
+    padding: 8px 0 20px;
+  }
+  .article-rail-left,
+  .article-rail-right { padding: 0 28px; }
+  .article-rail-left {
+    border-right: 1px solid var(--tgp-rule-thin);
+    font-family: var(--font-sans);
+    font-size: 11px;
+  }
+  .article-rail-right {
+    border-left: 1px solid var(--tgp-rule-thin);
+  }
+
+  .article-rail-left .meta-block {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-left .meta-block:last-child { border-bottom: 0; }
+  .article-rail-left .meta-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-ink-mute);
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .article-rail-left .meta-val {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--tgp-ink);
+    line-height: 1.45;
+  }
+
+  /* Article cover — kicker + headline + deck + byline ABOVE the hero */
+  .article-cover {
+    padding: 36px 24px 22px;
+    text-align: center;
+    border-top: 3px double var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    background:
+      linear-gradient(180deg, transparent 0, transparent 60%, rgba(108, 49, 96, 0.07) 100%);
+  }
+  .article-cover .kick {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-aubergine);
+    margin-bottom: 14px;
+  }
+  .article-cover h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(32px, 5.6vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -.022em;
+    color: var(--tgp-ink);
+    text-transform: uppercase;
+    margin: 0 auto 18px;
+    max-width: 1080px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .article-cover .deck {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(18px, 1.9vw, 26px);
+    line-height: 1.36;
+    color: var(--tgp-ink-soft);
+    margin: 0 auto 22px;
+    max-width: 880px;
+  }
+  .article-cover .byline-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px 22px;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tgp-ink-mute);
+  }
+  .article-cover .byline-row b { color: var(--tgp-navy); font-weight: 700; }
+  .article-cover .byline-row .sep { color: var(--tgp-paper-edge); }
+
+  /* Mega hero — full-bleed cinematic image */
+  .article-mega-hero { margin: 0 0 24px; }
+  .article-mega-hero .img {
+    aspect-ratio: 21 / 9;
+    width: 100%;
+    overflow: hidden;
+    background: var(--tgp-paper-deep);
+    position: relative;
+  }
+  .article-mega-hero .img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.04) saturate(0.98);
+  }
+  .article-mega-hero .img::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent 0, rgba(15, 31, 58, 0.18) 100%);
+    pointer-events: none;
+  }
+  .article-mega-hero figcaption {
+    padding: 8px 6px;
+    border-bottom: .5px solid var(--tgp-paper-edge);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--tgp-ink-mute);
+    text-align: center;
+  }
+  .article-mega-hero figcaption i { color: var(--tgp-navy); font-style: italic; }
+
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--tgp-ink);
+    max-width: 700px;
+  }
+  .article-body p { margin: 0 0 20px; }
+  .article-body p.lede::first-letter {
+    font-family: var(--font-display);
+    font-weight: 900;
+    float: left;
+    font-size: 4.4em;
+    line-height: 0.88;
+    padding: 0.05em 0.1em 0 0;
+    color: var(--tgp-aubergine);
+  }
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.14;
+    text-transform: none;
+    letter-spacing: -.012em;
+    color: var(--tgp-aubergine);
+    margin: 36px 0 14px;
+  }
+  .article-body blockquote {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    color: var(--tgp-aubergine);
+    border-top: 3px double var(--tgp-aubergine);
+    border-bottom: 3px double var(--tgp-aubergine);
+    padding: 22px 0;
+    margin: 28px 0;
+    text-align: center;
+  }
+
+  /* Character cards — Ophelia / Gertrude */
+  .character-list {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0;
+  }
+  .character-list li {
+    padding: 14px 18px;
+    border-left: 4px solid var(--tgp-aubergine);
+    background: var(--tgp-paper-deep);
+    margin-bottom: 12px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--tgp-ink);
+  }
+  .character-list li b {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--tgp-navy);
+    font-size: 18px;
+    letter-spacing: -.005em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Key Takeaways box */
+  .takeaways {
+    margin: 32px 0;
+    padding: 22px 26px;
+    background: var(--tgp-paper-deep);
+    border-left: 5px solid var(--tgp-gold);
+  }
+  .takeaways h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 22px;
+    text-transform: none;
+    letter-spacing: -.015em;
+    color: var(--tgp-navy);
+    margin: 0 0 14px;
+  }
+  .takeaways dl { margin: 0; }
+  .takeaways dt {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--tgp-aubergine);
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 8px 0 2px;
+  }
+  .takeaways dt:first-of-type { margin-top: 0; }
+  .takeaways dd {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--tgp-ink);
+    margin: 0;
+  }
+
+  /* Hashtag footer */
+  .hashtag-row {
+    margin: 28px 0 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--tgp-paper-edge);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--tgp-ink-mute);
+    line-height: 1.7;
+  }
+  .hashtag-row .tag {
+    display: inline-block;
+    color: var(--tgp-navy);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  .article-end {
+    text-align: center;
+    font-size: 16px;
+    color: var(--tgp-navy);
+    margin: 28px 0 10px;
+  }
+
+  .article-rail-right .related {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--tgp-paper-edge);
+  }
+  .article-rail-right .related:last-child { border-bottom: 0; }
+  .article-rail-right .related h5 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tgp-navy);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: .5px solid var(--tgp-navy);
+  }
+  .article-rail-right .related h4 {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--tgp-ink);
+    margin: 0 0 6px;
+    text-transform: none;
+    letter-spacing: -.005em;
+  }
+  .article-rail-right .related h4 a { color: inherit; text-decoration: none; }
+  .article-rail-right .related h4 a:hover { text-decoration: underline; }
+  .article-rail-right .related p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0 0 6px;
+  }
+
+  @media (max-width: 1100px) {
+    .article-wrap { grid-template-columns: 0.8fr minmax(0, 640px) 0.8fr; padding: 28px 0 16px; }
+    .article-rail-left, .article-rail-right { padding: 0 18px; }
+  }
+  @media (max-width: 900px) {
+    .article-wrap { grid-template-columns: 1fr; gap: 0; padding: 24px 0 12px; }
+    .article-rail-left { order: 3; border-right: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-rail-right { order: 2; border-left: 0; border-top: 1px solid var(--tgp-rule-thin); padding: 18px 0; margin-top: 24px; }
+    .article-body { font-size: 16px; }
+  }
+  @media (max-width: 700px) {
+    .article-cover { padding: 24px 4px 16px; }
+    .article-mega-hero .img { aspect-ratio: 16 / 10; }
+  }
+</style>
+</head>
+<body class="tgp">
+  <div class="page-shell">
+    <main class="page-body">
+
+      <!-- Top utility bar -->
+      <div class="utility-bar">
+        <div class="left">
+          <span>EN</span>
+          <span>Edition: International</span>
+          <span>Singapore &middot; Dhaka &middot; UAE</span>
+        </div>
+        <div class="right">
+          <a href="subscribe.html">Subscribe</a>
+          <a href="#">Sign In</a>
+          <a href="#" aria-label="Search">&#x2315; Search</a>
+        </div>
+      </div>
+
+      <!-- Header — branded logo, small variant -->
+      <header class="masthead masthead--small">
+        <a class="logo-link" href="index.html" aria-label="The Global Polymath — Front Page">
+          <img class="masthead-logo" src="assets/logo.jpg"
+               alt="The Global Polymath" width="706" height="706">
+        </a>
+        <div class="masthead-tagline">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
+      </header>
+
+      <div class="dateline">
+        <span><b>Vol. 14</b> &middot; No. 42</span>
+        <span>Saturday, April 18, 2026</span>
+        <span>Literature &middot; p. 8</span>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+        <label for="navToggle" class="nav-hamburger" aria-label="Open menu">
+          <span class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+          <span><span class="open-label">Menu</span><span class="close-label">Close</span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Front Page</a>
+          <a href="section.html?s=science">Science</a>
+          <a href="section.html?s=philosophy">Philosophy</a>
+          <a href="section.html?s=global-law">Global Law</a>
+          <a href="section.html?s=psychology">Psychology</a>
+          <a href="section.html?s=literature" class="active">Literature</a>
+          <a href="section.html?s=spirituality">Art &amp; Spirituality</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About</a>
+          <a href="subscribe.html">Subscribe</a>
+        </div>
+      </nav>
+
+      <!-- ARTICLE COVER -->
+      <header class="article-cover">
+        <div class="kick">Literature &middot; The Shakespeare Files</div>
+        <h1>The Enigma of the Dane: Why Hamlet Remains the Ultimate Mirror of Humanity</h1>
+        <p class="deck">
+          For four centuries, the Prince of Denmark has been the quintessential
+          archetype of the modern mind &mdash; torn between action and conscience,
+          duty and doubt, life and the &ldquo;undiscovered country.&rdquo;
+        </p>
+        <div class="byline-row">
+          <span><b>By the Editorial Desk</b> <span class="sep">&middot;</span> The Global Polymath</span>
+          <span class="sep">|</span>
+          <span>Singapore <span class="sep">&middot;</span> Dhaka <span class="sep">&middot;</span> UAE</span>
+          <span class="sep">|</span>
+          <span>11 min read</span>
+        </div>
+      </header>
+
+      <!-- MEGA HERO — Hamlet illustration -->
+      <figure class="article-mega-hero">
+        <div class="img">
+          <img
+            src="assets/img/hamlet-enigma.jpg"
+            alt="Illustrated cover for The Enigma of the Dane — a quill writes 'To be, or not to be...' on parchment, with a skull and a moonlit Elsinore castle in the background."
+            loading="eager">
+        </div>
+        <figcaption>
+          The Enigma of the Dane &mdash; an editorial cover for our Shakespeare
+          Files: the quill, the skull, and a moonlit Elsinore.
+          &mdash; <i>The Global Polymath &middot; original illustration</i>
+        </figcaption>
+      </figure>
+
+      <!-- Article body -->
+      <div class="article-wrap">
+
+        <aside class="article-rail-left" aria-label="Article metadata">
+          <div class="meta-block">
+            <div class="meta-label">Filed in</div>
+            <div class="meta-val">Literature &middot; The Shakespeare Files</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Published</div>
+            <div class="meta-val">18 April 2026</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Reading time</div>
+            <div class="meta-val">11 minutes</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Section</div>
+            <div class="meta-val">Literature &middot; Vol. 14, No. 42 &middot; p. 8</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Share</div>
+            <div class="meta-val">
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Email</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">LinkedIn</a> &middot;
+              <a href="#" style="color:var(--tgp-navy);text-decoration:none">Print</a>
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Cite this piece</div>
+            <div class="meta-val" style="font-family:var(--font-mono);font-size:12px;line-height:1.5">
+              Editorial Desk. &ldquo;The Enigma of the Dane: Why Hamlet Remains the Ultimate Mirror of Humanity,&rdquo; <i>The Global Polymath</i>, XIV/42 (2026), p. 8.
+            </div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Editorial Direction</div>
+            <div class="meta-val">
+              <b>Dr. Mostafa Kamal Russell</b><br>
+              Editor-in-Chief &amp; Founder<br>
+              <a href="https://dr.russellmostafakamal.com" style="color:var(--tgp-navy)">dr.russellmostafakamal.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <article>
+
+          <div class="article-body">
+            <p class="lede">
+              <b>William Shakespeare's Hamlet</b> is not merely a play; it is a
+              profound exploration of the human condition, a philosophical
+              labyrinth, and a mirror that has reflected the anxieties of every
+              generation since its first performance around 1600. For over four
+              centuries, the Prince of Denmark has stood as the quintessential
+              archetype of the modern man &mdash; torn between action and
+              contemplation, duty and conscience, life and the
+              &ldquo;undiscovered country&rdquo; of death.
+            </p>
+
+            <p>
+              As we dissect this masterpiece for the readers of <i>The Global
+              Polymath</i>, we delve into why this &ldquo;revenge tragedy&rdquo;
+              transcended its genre to become the most discussed, analysed, and
+              performed work in the history of world literature.
+            </p>
+
+            <h2>The Architect of the Modern Mind</h2>
+
+            <p>
+              Before <i>Hamlet</i>, characters in drama were often types &mdash;
+              the loyal soldier, the wicked villain, the virtuous maiden.
+              Shakespeare broke this mould by giving Prince Hamlet an internal
+              life so vast that it seemed to leak out of the stage and into
+              reality. Hamlet is the first character in literature to possess a
+              &ldquo;consciousness&rdquo; that evolves.
+            </p>
+
+            <p>
+              The play's central conflict is not just the physical struggle
+              between Hamlet and his uncle, King Claudius, but the cerebral war
+              within Hamlet himself. His famous procrastination &mdash; his
+              &ldquo;delay&rdquo; &mdash; is not a sign of weakness but of a
+              hyper-intellectual mind grappling with the moral consequences of
+              murder. In an age of blind vengeance, Hamlet asks: <i>Is it noble
+              to strike back, or is it a deeper sin to perpetuate the cycle of
+              blood?</i>
+            </p>
+
+            <h2>&ldquo;To Be, or Not to Be&rdquo;: The Existential Pivot</h2>
+
+            <p>
+              At the heart of the play lies the world's most famous soliloquy.
+              In &ldquo;To be, or not to be,&rdquo; Hamlet moves beyond his
+              immediate situation to address the universal struggle of
+              existence. Here, Shakespeare anticipates existentialist philosophy
+              by centuries.
+            </p>
+
+            <blockquote>
+              The dread of something after death &mdash; the undiscovered
+              country &mdash; puzzles the will, and makes us rather bear those
+              ills we have than fly to others that we know not of.
+            </blockquote>
+
+            <p>
+              Hamlet weighs the &ldquo;slings and arrows of outrageous
+              fortune&rdquo; against the finality of death. This speech
+              resonates globally because it speaks to the fundamental human
+              fear of the unknown. It is the ultimate intellectual inquiry: if
+              life is a series of sufferings, why do we endure it? The answer
+              &mdash; <i>the dread of something after death</i> &mdash; is a
+              testament to the psychological realism that makes <i>Hamlet</i>
+              an international standard of literary excellence.
+            </p>
+
+            <h2>A Tapestry of Political and Moral Decay</h2>
+
+            <p>
+              For a publication like <i>The Global Polymath</i>, which often
+              looks at the intersection of law, power, and society,
+              <i>Hamlet</i> offers a chilling study of political corruption.
+              &ldquo;Something is rotten in the state of Denmark,&rdquo;
+              Marcellus famously remarks. This &ldquo;rottenness&rdquo; is a
+              metaphor for a diseased body politic where a throne is gained
+              through fratricide and maintained through surveillance.
+            </p>
+
+            <p>
+              The court of Elsinore is a place of shadows, where Polonius hides
+              behind tapestries to spy, and Rosencrantz and Guildenstern betray
+              friendship for royal favour. Shakespeare masterfully illustrates
+              how personal moral failings &mdash; specifically Claudius's
+              ambition &mdash; infect an entire nation, leading to a climax
+              where the &ldquo;state&rdquo; essentially collapses under the
+              weight of its own secrets.
+            </p>
+
+            <h2>The Women of Elsinore: Ophelia and Gertrude</h2>
+
+            <p>
+              An international critique of <i>Hamlet</i> must address its
+              complex, often tragic, portrayal of women. Gertrude and Ophelia
+              are frequently seen as victims of the male-dominated world of
+              Elsinore.
+            </p>
+
+            <ul class="character-list">
+              <li>
+                <b>Gertrude</b>
+                Her &ldquo;o'er-hasty marriage&rdquo; is the catalyst for
+                Hamlet's disillusionment. Is she a complicit conspirator or a
+                woman seeking survival in a volatile political climate?
+                Shakespeare leaves her ambiguity intact, allowing every era to
+                reinterpret her.
+              </li>
+              <li>
+                <b>Ophelia</b>
+                Her descent into madness remains one of the most haunting
+                sequences in theatre. Ophelia represents the collateral damage
+                of patriarchal power plays. Her &ldquo;flowers&rdquo; speech is
+                a coded linguistic protest against a court that silenced her.
+              </li>
+            </ul>
+
+            <h2>The Language of the Polymath</h2>
+
+            <p>
+              Technically, <i>Hamlet</i> is a linguistic marvel. Shakespeare
+              utilised a vocabulary of over four thousand unique words for this
+              play alone. The text is a masterclass in irony, puns, and
+              rhetorical devices. Hamlet himself is a &ldquo;polymath&rdquo; of
+              sorts &mdash; a student of Wittenberg, a fencer, a patron of the
+              arts, and a philosopher. He uses language as both a shield and a
+              sword, famously telling Polonius he reads &ldquo;words, words,
+              words,&rdquo; while using those very words to expose the
+              hypocrisy of the court.
+            </p>
+
+            <h2>Hamlet in the 21st Century: The Digital Ghost</h2>
+
+            <p>
+              In our contemporary world &mdash; the world <i>The Global
+              Polymath</i> reports on each week &mdash; Hamlet's struggle with
+              truth and appearance is more relevant than ever. We live in an
+              era of deepfakes and misinformation; an era where, like Hamlet,
+              we must constantly ask what is &ldquo;real&rdquo; and what is
+              &ldquo;performance.&rdquo;
+            </p>
+
+            <p>
+              Hamlet's use of <i>The Mousetrap</i> &mdash; the play within the
+              play &mdash; to &ldquo;catch the conscience of the King&rdquo; is
+              an early example of using media to expose political corruption.
+              Today, we see this in investigative journalism and the power of
+              digital transparency.
+            </p>
+
+            <h2>The Final Act: The Rest is Silence</h2>
+
+            <p>
+              The carnage of the final scene, where nearly the entire royal
+              line is decimated, serves as a grim reminder of the cost of
+              unresolved trauma and corruption. Yet, through the character of
+              Horatio, Shakespeare ensures that the &ldquo;story&rdquo;
+              survives.
+            </p>
+
+            <p>
+              <i>Hamlet</i> survives because it does not offer easy answers. It
+              ends not with a moral lesson, but with a question mark. It
+              challenges the reader to look inward. As long as there are
+              individuals who feel alienated, who question authority, or who
+              ponder the meaning of their own lives, <i>Hamlet</i> will remain
+              the crown jewel of world drama.
+            </p>
+
+            <div class="takeaways">
+              <h3>Key Takeaways</h3>
+              <dl>
+                <dt>Consciousness</dt>
+                <dd>Hamlet is the first character in Western literature whose interior monologue is the plot &mdash; the cerebral war is the play.</dd>
+
+                <dt>Existentialism</dt>
+                <dd>The &ldquo;To be, or not to be&rdquo; soliloquy anticipates Kierkegaard, Camus, and Sartre by three hundred years.</dd>
+
+                <dt>Politics</dt>
+                <dd>Elsinore is a study in surveillance, fratricide, and how a single moral failing infects a nation &mdash; uncomfortably modern reading.</dd>
+
+                <dt>Endurance</dt>
+                <dd>The text endures because it refuses to resolve. The question mark is the design.</dd>
+              </dl>
+            </div>
+
+            <p>
+              The Lyceum, this paper has long maintained, is the room where
+              the oldest questions are asked again with new instruments.
+              <i>Hamlet</i> is the question itself, dressed for a different
+              century. We mean to keep returning to it.
+            </p>
+
+            <div class="hashtag-row">
+              <span class="tag">#TheGlobalPolymath</span>
+              <span class="tag">#Hamlet</span>
+              <span class="tag">#Shakespeare</span>
+              <span class="tag">#WorldLiterature</span>
+              <span class="tag">#ToBeOrNotToBe</span>
+              <span class="tag">#Existentialism</span>
+              <span class="tag">#TheLyceum</span>
+              <span class="tag">#PolymathicInsight</span>
+            </div>
+
+            <p class="article-end">&mdash;&mdash;&mdash;</p>
+          </div>
+        </article>
+
+        <aside class="article-rail-right" aria-label="Related reading">
+
+          <div class="related">
+            <h5>From the Cover</h5>
+            <h4><a href="article.html">The Trinity of Human Discovery</a></h4>
+            <p>How the James Webb Telescope is rewriting our cosmic origin story &mdash; and why the philosopher, the psychoanalyst, and the international jurist all have something to say about it.</p>
+            <a class="text-more text-more--navy" href="article.html">Read &rarr; p. 1</a>
+          </div>
+
+          <div class="related">
+            <h5>From the Editorial Page</h5>
+            <h4><a href="article-energy.html">The Energy Dilemma: Renewables vs Fossils</a></h4>
+            <p>The Editorial Staff on the definitive geopolitical and ethical struggle of the century &mdash; and what an honest position on it must look like.</p>
+            <a class="text-more text-more--forest" href="article-energy.html">Read &rarr; p. 22</a>
+          </div>
+
+          <div class="related">
+            <h5>The Lyceum</h5>
+            <h4><a href="article.html">Sartre Was Right About Bad Faith</a></h4>
+            <p>The freedom to evade is the only freedom a system without consciousness cannot exercise &mdash; the most useful sentence yet written about machine learning.</p>
+            <a class="text-more text-more--aubergine" href="article.html">Read &rarr; p. 23</a>
+          </div>
+
+          <div class="related">
+            <h5>Editor's Note</h5>
+            <h4>From the Founder's Desk</h4>
+            <p>The Shakespeare Files is a recurring slot on this paper's Lyceum pages &mdash; one play, one century, one question at a time. <i>&mdash; M. K. R.</i></p>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- SITE FOOTER -->
+      <footer class="site-footer">
+        <div class="site-footer-grid">
+          <div>
+            <div class="masthead-title-sm">The Global Polymath</div>
+            <p style="font-family:var(--font-serif-alt);font-style:italic;color:var(--tgp-navy);margin:0 0 10px">
+              Where Empirical Science Meets Human Philosophy &amp; Jurisprudence.
+            </p>
+            <p>Published weekly by <b>The Russell Civilizations Review</b> from Singapore, with bureaus in Dhaka and the UAE.</p>
+          </div>
+          <div>
+            <h5>Sections</h5>
+            <ul>
+              <li><a href="section.html?s=science">Science</a></li>
+              <li><a href="section.html?s=philosophy">Philosophy</a></li>
+              <li><a href="section.html?s=global-law">Global Law</a></li>
+              <li><a href="section.html?s=psychology">Psychology</a></li>
+              <li><a href="section.html?s=literature">Literature</a></li>
+              <li><a href="section.html?s=spirituality">Art &amp; Spirituality</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>The Publication</h5>
+            <ul>
+              <li><a href="about.html">About &amp; Masthead</a></li>
+              <li><a href="archive.html">Back Issues</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+              <li><a href="newsletter.html">Weekly Dispatch</a></li>
+              <li><a href="https://dr.russellmostafakamal.com">dr.russellmostafakamal.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Editor &amp; Publisher</h5>
+            <ul>
+              <li><b>Dr. Mostafa Kamal Russell</b><br>Editor-in-Chief &amp; Founder</li>
+              <li><a href="mailto:editor@dr.russellmostafakamal.com">editor@dr.russellmostafakamal.com</a></li>
+              <li>YouTube: <a href="https://youtube.com/@EngineersAdvocateMohammedMosta">@EngineersAdvocateMohammedMosta</a></li>
+              <li>+65 6789 4311</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer-meta">
+          <span>&copy; 2026 The Russell Civilizations Review &middot; All rights reserved</span>
+          <span>&#10086;</span>
+          <span>Vol. 14, No. 42 &middot; Literature &middot; p. 8</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>
