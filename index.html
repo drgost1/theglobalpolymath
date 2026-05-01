@@ -1131,6 +1131,350 @@
     .crossword-clue { grid-template-columns: 28px 1fr; gap: 10px; }
     .crossword-clue input.cell { width: 28px; height: 34px; font-size: 16px; }
   }
+
+  /* =========================================================
+     E-PAPER LAYER — per Russell's reference brief
+     "British Standard E-Paper" furniture: edition strip, cover
+     overlays (Listen / Deep Dive / Expertise), tagline banner,
+     Weekly Features tile grid, and a fixed bottom pager that
+     mimics the flip-book / e-reader chrome.
+     ========================================================= */
+
+  /* Edition strip — sits BELOW the masthead logo, ABOVE the dateline */
+  .edition-strip {
+    margin-top: 8px;
+    padding: 8px 0 10px;
+    border-top: 1px solid var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--tgp-navy);
+  }
+  .edition-strip .ed-labels { display: flex; gap: 24px; flex-wrap: wrap; }
+  .edition-strip .ed-labels span {
+    position: relative;
+    padding-right: 24px;
+  }
+  .edition-strip .ed-labels span:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+    background: var(--tgp-rule-thin);
+  }
+  .edition-strip .ed-date {
+    color: var(--tgp-oxblood);
+    font-weight: 700;
+  }
+  @media (max-width: 700px) {
+    .edition-strip { font-size: 10px; gap: 14px; }
+    .edition-strip .ed-labels { gap: 14px; }
+    .edition-strip .ed-labels span { padding-right: 14px; }
+  }
+
+  /* Cover hero overlays — Listen pill (top-left), Deep Dive pill (top-right) */
+  .cover-hero { position: relative; }
+  .hero-overlay {
+    position: absolute;
+    z-index: 4;
+    top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(15, 31, 58, 0.78);
+    color: var(--tgp-paper);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: none;
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    border-radius: 999px;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: background 140ms ease, transform 140ms ease;
+  }
+  .hero-overlay:hover { background: var(--tgp-navy-deep); transform: translateY(-1px); }
+  .hero-overlay--left { left: 18px; }
+  .hero-overlay--right { right: 18px; background: rgba(201, 169, 97, 0.92); color: var(--tgp-navy); border-color: var(--tgp-gold-deep); }
+  .hero-overlay--right:hover { background: var(--tgp-gold); color: var(--tgp-navy-deep); }
+  .hero-overlay .ico {
+    display: inline-flex;
+    width: 16px; height: 16px;
+    align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .hero-overlay.is-playing { background: var(--tgp-oxblood); border-color: var(--tgp-oxblood); }
+
+  /* Expertise badge — pill that floats below the headline on the cover */
+  .cover-banner .expertise-pill {
+    display: inline-block;
+    margin: 6px auto 0;
+    padding: 6px 18px;
+    background: var(--tgp-navy);
+    color: var(--tgp-paper);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+
+  /* British Standard E-Paper tagline banner */
+  .standard-banner {
+    margin-top: 18px;
+    padding: 18px 28px;
+    background:
+      linear-gradient(90deg, rgba(27, 51, 88, 0.04) 0, transparent 30%, transparent 70%, rgba(123, 46, 46, 0.04) 100%);
+    border-top: 5px solid var(--tgp-navy);
+    border-bottom: 1px solid var(--tgp-paper-edge);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 22px;
+    align-items: center;
+  }
+  .standard-banner .seal {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--tgp-navy);
+    color: var(--tgp-navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: .04em;
+    line-height: 1;
+    text-align: center;
+    flex-shrink: 0;
+    background: var(--tgp-paper);
+  }
+  .standard-banner .seal small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: .12em;
+    margin-top: 2px;
+    color: var(--tgp-gold-deep);
+  }
+  .standard-banner .copy h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(18px, 2vw, 26px);
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: -.012em;
+    color: var(--tgp-navy);
+    margin: 0 0 4px;
+  }
+  .standard-banner .copy p {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--tgp-ink-soft);
+    margin: 0;
+  }
+  .standard-banner .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--tgp-ink-mute);
+    text-align: right;
+    line-height: 1.5;
+  }
+  .standard-banner .meta b { color: var(--tgp-navy); font-weight: 700; }
+  @media (max-width: 700px) {
+    .standard-banner { grid-template-columns: 1fr; padding: 16px 18px; }
+    .standard-banner .meta { text-align: left; }
+  }
+
+  /* Weekly Features — 4-up tile grid mirroring the reference image */
+  .weekly-features {
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 3px double var(--tgp-navy);
+  }
+  .weekly-features .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+  .weekly-features .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.05;
+    text-transform: none;
+    letter-spacing: -.015em;
+    color: var(--tgp-navy);
+    margin: 0;
+  }
+  .weekly-features .section-head .sub {
+    font-family: var(--font-serif-alt);
+    font-style: italic;
+    color: var(--tgp-ink-mute);
+    font-size: 14px;
+  }
+  .feature-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .feature-tile {
+    padding: 22px 20px;
+    border: 1px solid var(--tgp-rule-thin);
+    background:
+      linear-gradient(180deg, var(--tgp-paper) 0, var(--tgp-paper-deep) 100%);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feature-tile:hover {
+    transform: translateY(-2px);
+    border-color: var(--tgp-navy);
+    box-shadow: var(--shadow-paper);
+  }
+  .feature-tile .ico {
+    width: 42px;
+    height: 42px;
+    border: 1.5px solid var(--tgp-navy);
+    background: var(--tgp-paper);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tgp-navy);
+  }
+  .feature-tile.world .ico    { border-color: var(--tgp-oxblood); color: var(--tgp-oxblood); }
+  .feature-tile.opinion .ico  { border-color: var(--tgp-aubergine); color: var(--tgp-aubergine); }
+  .feature-tile.cross .ico    { border-color: var(--tgp-forest); color: var(--tgp-forest); }
+  .feature-tile.puzzle .ico   { border-color: var(--tgp-gold-deep); color: var(--tgp-gold-deep); }
+  .feature-tile .ico svg { width: 22px; height: 22px; }
+  .feature-tile h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.15;
+    text-transform: none;
+    letter-spacing: -.005em;
+    color: var(--tgp-navy);
+    margin: 0;
+  }
+  .feature-tile p {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--tgp-ink-soft);
+    margin: 0;
+  }
+  .feature-tile .jump {
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--tgp-navy);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--tgp-gold);
+    padding-bottom: 1px;
+    align-self: flex-start;
+  }
+  @media (max-width: 1000px) {
+    .feature-tiles { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .feature-tiles { grid-template-columns: 1fr; }
+  }
+
+  /* Bottom-fixed E-Paper Pager — Listen + section nav, e-reader chrome */
+  .epaper-pager {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(15, 31, 58, 0.92);
+    color: var(--tgp-paper);
+    border: 1px solid var(--tgp-gold);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .epaper-pager.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+  }
+  .epaper-pager button {
+    background: transparent;
+    color: var(--tgp-paper);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .epaper-pager button:hover { background: rgba(201, 169, 97, 0.22); border-color: var(--tgp-gold); }
+  .epaper-pager button[disabled] { opacity: 0.35; cursor: not-allowed; }
+  .epaper-pager .listen-btn {
+    width: auto;
+    padding: 0 14px;
+    gap: 6px;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .epaper-pager .listen-btn.is-playing { background: var(--tgp-oxblood); border-color: var(--tgp-oxblood); }
+  .epaper-pager .pager-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--tgp-gold-soft);
+    padding: 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    min-width: 96px;
+    text-align: center;
+  }
+  .epaper-pager .pager-meta b { color: var(--tgp-paper); font-weight: 700; }
+  @media (max-width: 600px) {
+    .epaper-pager { font-size: 11px; padding: 6px 8px; gap: 6px; }
+    .epaper-pager button { width: 30px; height: 30px; }
+    .epaper-pager .listen-btn { padding: 0 10px; }
+    .epaper-pager .pager-meta { min-width: 70px; padding: 0 6px; }
+  }
+  @media print {
+    .epaper-pager { display: none !important; }
+  }
 </style>
 </head>
 <body class="tgp">
@@ -1162,10 +1506,20 @@
         <div class="masthead-running">Exploring the Frontiers of Science, Philosophy, &amp; Global Law</div>
       </header>
 
+      <!-- Edition strip — British e-paper furniture per reference brief -->
+      <div class="edition-strip" role="contentinfo" aria-label="Edition information">
+        <div class="ed-labels">
+          <span>Weekly Tabloid E-Paper</span>
+          <span>International Edition</span>
+          <span>Digital Edition</span>
+        </div>
+        <div class="ed-date">Saturday &middot; 18 April 2026</div>
+      </div>
+
       <!-- Dateline -->
       <div class="dateline">
         <span><b>Vol. 14</b> &middot; No. 42</span>
-        <span>Saturday, April 18, 2026 &middot; Weekly Edition</span>
+        <span>Established Singapore &middot; Bureaus in Dhaka &amp; UAE</span>
         <span>Price: $5.00 USD &middot; BDT 150</span>
       </div>
 
@@ -1201,10 +1555,30 @@
           <em>unveiling the Universe, the Psyche, &amp; Global Law.</em>
         </p>
         <div class="byline">By <b>Dr. Mostafa Kamal Russell</b> &nbsp;&middot;&nbsp; Editor-in-Chief</div>
+        <span class="expertise-pill">Expertise &middot; Polymathic Inquiry</span>
       </section>
 
-      <!-- HERO COMPOSITE -->
+      <!-- HERO COMPOSITE — with Listen (TTS) + Deep Dive overlays per e-paper brief -->
       <figure class="cover-hero">
+        <button type="button" class="hero-overlay hero-overlay--left" id="heroListen"
+                aria-pressed="false" aria-label="Listen to this story in a British accent">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
+              <path d="M3 14V10a2 2 0 0 1 2-2h3l5-4v16l-5-4H5a2 2 0 0 1-2-2z"/>
+              <path d="M16 8a5 5 0 0 1 0 8"/>
+              <path d="M19 5a9 9 0 0 1 0 14"/>
+            </svg>
+          </span>
+          <span class="lbl">Listen</span>
+        </button>
+        <a href="article.html#deepDive" class="hero-overlay hero-overlay--right" aria-label="Deep Dive — read the full cover story">
+          <span class="lbl">Deep Dive</span>
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14">
+              <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+            </svg>
+          </span>
+        </a>
         <div class="img">
           <img
             src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1800&amp;q=85&amp;auto=format&amp;fit=crop"
@@ -1216,6 +1590,23 @@
           &mdash; <i>The Russell Civilizations Review &middot; NASA / ESA / CSA composite</i>
         </figcaption>
       </figure>
+
+      <!-- British Standard E-Paper banner -->
+      <aside class="standard-banner" aria-label="British Standard E-Paper">
+        <div class="seal" aria-hidden="true">
+          BSE&middot;P
+          <small>EST. MMXXVI</small>
+        </div>
+        <div class="copy">
+          <h2>British Standard E-Paper: Elegance, Authority, and Deep&#8209;Dive Analysis</h2>
+          <p>Set in classic British type, edited in Oxford English, and designed for the way thoughtful readers actually read &mdash; on tablet, in print, and on the long flight home.</p>
+        </div>
+        <div class="meta">
+          <b>Edition XIV / 42</b><br>
+          Composed in Singapore<br>
+          Read in 38 countries
+        </div>
+      </aside>
 
       <!-- 3-COL COVER GRID -->
       <div class="cover-grid">
@@ -1476,6 +1867,66 @@
         </div>
       </section>
 
+      <!-- WEEKLY FEATURES — 4-up tile grid per reference brief -->
+      <section class="weekly-features" aria-labelledby="weeklyFeaturesH2">
+        <div class="section-head">
+          <h2 id="weeklyFeaturesH2">Weekly Features</h2>
+          <span class="sub">Four standing pages of <i>The Global Polymath</i></span>
+        </div>
+        <div class="feature-tiles">
+
+          <a href="section.html?s=global-law" class="feature-tile world">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+              </svg>
+            </span>
+            <h3>World Intelligence: Global Geopolitics</h3>
+            <p>The Hague, Brussels, the Bay of Bengal &mdash; reported in standard British English by our international desk.</p>
+            <span class="jump">See the desk &rarr;</span>
+          </a>
+
+          <a href="article-energy.html" class="feature-tile opinion">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 4h12l4 4v12H4z"/>
+                <path d="M16 4v4h4"/>
+                <path d="M8 12h8M8 16h6"/>
+              </svg>
+            </span>
+            <h3>Analysis &amp; Opinion: Sharp Perspectives</h3>
+            <p>The leader column, the Op-Ed stack, and the letters page &mdash; argument as the British paper has practised it for two centuries.</p>
+            <span class="jump">Read the leader &rarr;</span>
+          </a>
+
+          <a href="article-hydrogen.html" class="feature-tile cross">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3v18M3 12h18"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </span>
+            <h3>Cross&#8209;Disciplinary Insights</h3>
+            <p>Where physics meets philosophy meets law &mdash; the Polymathic Links trail at the foot of every story.</p>
+            <span class="jump">Open a deep dive &rarr;</span>
+          </a>
+
+          <a href="#crosswordH2" class="feature-tile puzzle">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+              </svg>
+            </span>
+            <h3>The Interactive Crossword</h3>
+            <p>Five themed clues from this week's pages, with the auto&#8209;advance keyboard convention of the daily British paper.</p>
+            <span class="jump">Try the puzzle &rarr;</span>
+          </a>
+
+        </div>
+      </section>
+
       <!-- DELTA-ZERO RIBBON -->
       <section class="delta-zero-ribbon">
         <div class="kicker">Special Spotlight &middot; Editorial &middot; The Climate Frontier</div>
@@ -1720,6 +2171,20 @@
     </main>
   </div>
 
+  <!-- E-Paper Pager — fixed bottom chrome: Listen (TTS), section nav, page indicator -->
+  <nav class="epaper-pager" id="epaperPager" aria-label="E-Paper navigation">
+    <button type="button" id="pagerPrev" aria-label="Previous section">&larr;</button>
+    <div class="pager-meta"><b id="pagerNow">1</b> / <span id="pagerTotal">1</span></div>
+    <button type="button" id="pagerNext" aria-label="Next section">&rarr;</button>
+    <button type="button" class="listen-btn" id="pagerListen" aria-pressed="false" aria-label="Listen to this section">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" aria-hidden="true">
+        <path d="M3 14V10a2 2 0 0 1 2-2h3l5-4v16l-5-4H5a2 2 0 0 1-2-2z"/>
+        <path d="M16 8a5 5 0 0 1 0 8"/>
+      </svg>
+      <span class="lbl">Listen</span>
+    </button>
+  </nav>
+
   <!-- Crossword interactivity — build cells, auto-advance focus, validate answers -->
   <script>
     (function() {
@@ -1812,6 +2277,158 @@
         verdict.textContent = '';
         verdict.className = 'verdict';
       });
+    })();
+  </script>
+
+  <!-- E-Paper TTS (Listen) + Section Pager — Web Speech API, no server required -->
+  <script>
+    (function() {
+      /* ---------- Listen / Text-to-Speech ---------- */
+      const synth = window.speechSynthesis;
+      let voices = [];
+      let utter = null;
+
+      function pickBritishVoice() {
+        if (!voices.length) voices = synth ? synth.getVoices() : [];
+        // Prefer named British voices; fall back to en-GB; final fall-back to default.
+        return voices.find(v => /en[-_]GB/i.test(v.lang) && /Daniel|Kate|Serena|Arthur|Sonia|Libby|Ryan|Hazel/i.test(v.name))
+            || voices.find(v => /en[-_]GB/i.test(v.lang))
+            || voices.find(v => /^en/i.test(v.lang))
+            || voices[0]
+            || null;
+      }
+      if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+        synth.onvoiceschanged = () => { voices = synth.getVoices(); };
+      }
+
+      function gatherSpeechText(scope) {
+        // Pull headlines + decks + first couple of paragraphs in the section.
+        const tags = ['h1', 'h2', 'h3', 'h4', '.deck', '.kicker', 'p'];
+        const nodes = scope.querySelectorAll(tags.join(','));
+        let parts = [];
+        nodes.forEach(n => {
+          const t = (n.textContent || '').replace(/\s+/g, ' ').trim();
+          if (t && t.length > 4) parts.push(t);
+        });
+        return parts.slice(0, 18).join('. ');
+      }
+
+      function startSpeak(text, button) {
+        if (!synth) {
+          alert('Listen mode requires a modern browser with Web Speech API support.');
+          return;
+        }
+        synth.cancel();
+        utter = new SpeechSynthesisUtterance(text);
+        const v = pickBritishVoice();
+        if (v) utter.voice = v;
+        utter.lang = 'en-GB';
+        utter.rate = 0.96;
+        utter.pitch = 1.0;
+        utter.volume = 1.0;
+        utter.onend = () => { if (button) { button.classList.remove('is-playing'); button.setAttribute('aria-pressed', 'false'); } };
+        utter.onerror = utter.onend;
+        synth.speak(utter);
+        if (button) { button.classList.add('is-playing'); button.setAttribute('aria-pressed', 'true'); }
+      }
+
+      function stopSpeak(button) {
+        if (synth) synth.cancel();
+        if (button) { button.classList.remove('is-playing'); button.setAttribute('aria-pressed', 'false'); }
+      }
+
+      function bindListen(button, getScope) {
+        if (!button) return;
+        button.addEventListener('click', () => {
+          if (button.classList.contains('is-playing')) {
+            stopSpeak(button);
+            return;
+          }
+          // Stop any other Listen button
+          document.querySelectorAll('.is-playing').forEach(b => b.classList.remove('is-playing'));
+          const scope = getScope();
+          const text = gatherSpeechText(scope);
+          if (!text) return;
+          startSpeak(text, button);
+        });
+      }
+
+      bindListen(document.getElementById('heroListen'), () => {
+        // Cover banner + cover hero caption + first cover-grid item
+        return document.querySelector('.cover-banner').parentElement;
+      });
+
+      /* ---------- Section Pager ---------- */
+      // Identify the major sections in document order — these are the
+      // "pages" the reader can flip through with the arrows.
+      const sections = Array.from(document.querySelectorAll(
+        '.cover-banner, .opinion-desk, .weekly-features, .delta-zero-ribbon, ' +
+        '.weekly-challenge, .founders-pen, .intl-desk, .inside, .crossword'
+      ));
+      const pager = document.getElementById('epaperPager');
+      const pagerNow = document.getElementById('pagerNow');
+      const pagerTotal = document.getElementById('pagerTotal');
+      const btnPrev = document.getElementById('pagerPrev');
+      const btnNext = document.getElementById('pagerNext');
+      const pagerListen = document.getElementById('pagerListen');
+      let currentSection = 0;
+
+      pagerTotal.textContent = sections.length;
+
+      function scrollToSection(idx) {
+        idx = Math.max(0, Math.min(sections.length - 1, idx));
+        const target = sections[idx];
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        currentSection = idx;
+        updatePagerUI();
+      }
+
+      function updatePagerUI() {
+        pagerNow.textContent = (currentSection + 1);
+        btnPrev.disabled = currentSection <= 0;
+        btnNext.disabled = currentSection >= sections.length - 1;
+      }
+
+      btnPrev.addEventListener('click', () => scrollToSection(currentSection - 1));
+      btnNext.addEventListener('click', () => scrollToSection(currentSection + 1));
+
+      // Keyboard arrow-key navigation (Left/Right) — like a flip-book
+      document.addEventListener('keydown', (e) => {
+        if (e.target.matches('input, textarea, [contenteditable]')) return;
+        if (e.key === 'ArrowLeft')  { scrollToSection(currentSection - 1); }
+        if (e.key === 'ArrowRight') { scrollToSection(currentSection + 1); }
+      });
+
+      // Track which section is currently in view
+      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+        // Pick the most visible section
+        const visible = entries.filter(e => e.isIntersecting)
+                               .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) {
+          const idx = sections.indexOf(visible.target);
+          if (idx >= 0) { currentSection = idx; updatePagerUI(); }
+        }
+      }, { threshold: [0.18, 0.45, 0.7] }) : null;
+      if (io) sections.forEach(s => io.observe(s));
+
+      // Hide the pager when the on-screen keyboard might be open or when
+      // the user has scrolled past the entire issue (near footer).
+      const footer = document.querySelector('.site-footer');
+      const footerObs = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+        entries.forEach(e => pager.classList.toggle('is-hidden', e.isIntersecting));
+      }, { threshold: 0.4 }) : null;
+      if (footerObs && footer) footerObs.observe(footer);
+
+      // Listen-button on the pager — speaks the section currently in view
+      bindListen(pagerListen, () => sections[currentSection] || document.body);
+
+      // Stop speech on page hide (mobile tab switch / backgrounding)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && synth) synth.cancel();
+      });
+
+      updatePagerUI();
     })();
   </script>
 </body>
