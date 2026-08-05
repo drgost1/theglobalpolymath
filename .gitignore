@@ -1,0 +1,24 @@
+# MCP server byproducts — never tracked
+sqlite_mcp_server.db
+*.sqlite
+*.sqlite3
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor noise
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local-only environment / secrets
+.env
+.env.local
+.env.*.backup
+
+# Build / cache (none currently used by the static site, but reserve)
+node_modules/
+.cache/

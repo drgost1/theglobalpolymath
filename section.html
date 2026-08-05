@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Section — The Global Polymath</title>
+<meta name="description" id="sectionMetaDesc" content="The Global Polymath's Global Law desk: analysis of treaties, tribunals, and the long conversation nations hold with themselves about what they cannot yet agree on.">
+<meta property="og:image" id="sectionOgImage" content="https://theglobalpolymath.org/assets/img/intl-hague.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/emblem.svg">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="site.css">
@@ -425,6 +427,8 @@
       kicker: 'Section &middot; The Empirical',
       roman: 'I',
       deck: 'We report the experiments that matter, and we insist on reporting what the experiments do not yet show.',
+      description: "The Global Polymath's Science desk: rigorous coverage of physics, cosmology, and the experiments that matter — reported with honesty about what they do not yet show.",
+      image: 'assets/img/hero-solar.jpg',
       kickerClass: 'kicker--forest',
       moreClass: 'text-more--forest',
       lead: {
@@ -438,6 +442,8 @@
       kicker: 'Section &middot; The Examined',
       roman: 'II',
       deck: 'Philosophy, done in earnest, is the slowest of the public virtues. These pages are for readers in no hurry.',
+      description: "The Global Polymath's Philosophy desk: careful, unhurried essays on the examined life, for readers willing to think slowly.",
+      image: 'assets/img/lyceum-books.jpg',
       kickerClass: 'kicker--aubergine',
       moreClass: 'text-more--aubergine',
       lead: {
@@ -451,6 +457,8 @@
       kicker: 'Section &middot; The Juridical',
       roman: 'III',
       deck: 'Law is the long conversation a society holds with itself about what it cannot yet agree on. We take careful notes.',
+      description: "The Global Polymath's Global Law desk: analysis of treaties, tribunals, and the long conversation nations hold with themselves about what they cannot yet agree on.",
+      image: 'assets/img/intl-hague.jpg',
       kickerClass: 'kicker--oxblood',
       moreClass: 'text-more--oxblood',
       lead: {
@@ -464,6 +472,8 @@
       kicker: 'Section &middot; The Inner Life',
       roman: 'IV',
       deck: 'Behavioural science, cautiously reported: the mind is harder to measure than the instruments that measure it.',
+      description: "The Global Polymath's Psychology desk: cautious, evidence-led reporting on the inner life and the science of the mind.",
+      image: 'assets/img/strip-psych.jpg',
       kickerClass: 'kicker--gold',
       moreClass: 'text-more--navy',
       lead: {
@@ -477,6 +487,8 @@
       kicker: 'Section &middot; Arts &amp; Letters',
       roman: 'V',
       deck: 'Good books and bad ones, patiently told apart. Three thousand years of human concern, told twice.',
+      description: "The Global Polymath's Literature desk: the classical canon and contemporary letters, patiently told apart across three thousand years of human concern.",
+      image: 'assets/img/strip-lit.jpg',
       kickerClass: 'kicker--ochre',
       moreClass: 'text-more--ochre',
       lead: {
@@ -490,6 +502,8 @@
       kicker: 'Section &middot; The Sacred Frontier',
       roman: 'VI',
       deck: 'Where the tradition of the soul meets the practice of the page. We read the mystics, the architects, and the working contemplatives.',
+      description: "The Global Polymath's Art & Spirituality desk: where the tradition of the soul meets the practice of the page, from the mystics to the working contemplatives.",
+      image: 'assets/logo.jpg',
       kickerClass: 'kicker--gold',
       moreClass: 'text-more--ochre',
       lead: {
@@ -511,6 +525,11 @@
     document.getElementById('sectionKicker').innerHTML = cfg.kicker;
     document.getElementById('sectionDeck').textContent = cfg.deck;
     document.getElementById('sectionLabel').innerHTML = cfg.title + ' &middot; April 2026';
+    document.getElementById('sectionMetaDesc').setAttribute('content', cfg.description);
+    document.getElementById('sectionOgImage').setAttribute(
+      'content',
+      new URL(cfg.image, 'https://theglobalpolymath.org/').href
+    );
 
     // Section lead
     const sl = document.querySelector('.section-lead');
